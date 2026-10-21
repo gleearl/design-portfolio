@@ -52,6 +52,7 @@ Status key: ⬜ Not started · 🟡 In progress · 🔍 In review · ✅ Done
 - Which employer and client work can be shown publicly.
 
 ## Change log
+- 2026-10-21: Git repo initialised and pushed to private GitHub repo gleearl/design-portfolio (main). Kept private until MIMS content clearance is confirmed.
 - 2026-10-21: Added third work, MIMS Philippines design system (works/design-system.html), from the Figma file SPR (tokens, variables, components, templates; tools Figma and Claude). New dark cover drawn from scratch (images/design-system/cover.jpg: Tokens in, UI out, primitives to semantic tokens to components). Replaced the placeholder "MIMS Design System" card on home. Copy only uses facts from the file (version 1.0, 20 Sep 2026, 22 templates, 11 missing components, 3 corrected defects). No Figma page images on the page yet: the exports contain the internal name SPR and internal notes in their text, so they need redaction or re-export. Open: confirm MIMS clearance for public use, the cover wording, and which pages to show.
 - 2026-10-21: UI style guide cover replaced: an original modern cover (dark blue, large Aa, glass panel with the real blue scale, buttons, search field, alert colours), drawn from scratch instead of cropped from the frames. Static. Overview now says everything is set up in Figma using its components and styles.
 - 2026-10-21: Removed the "Looking back" section (and its table of contents link) from the UI style guide page; it now ends at Navigation.

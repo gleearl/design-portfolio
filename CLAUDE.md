@@ -6,14 +6,14 @@ Glee's UI/UX design portfolio: a public site that shows design case studies and 
 - Read `PROGRESS.md` at the start of every session. It holds the goal, resume point, checklist, open items and change log.
 - Update `PROGRESS.md` whenever something changes status, and add a dated line to its change log.
 - Update this file when the stack, deploy setup, domain or content rules change.
-- Source of truth: <not decided yet. Until there is a repo, Figma and this folder hold the work.>
+- Source of truth: GitHub repo gleearl/design-portfolio (private, branch main), plus Figma.
 - Build/format rules: breakpoints desktop 1440 / tablet 768 / mobile 390. <naming and file locations: not decided yet>
 
 ## Context
 - Site: design portfolio
 - Audience: <not decided yet: full-time roles, freelance clients and/or personal brand>
 - Positioning: <not decided yet: e.g. ~9 years across UI/UX and frontend, designs that ship because they are built with engineering in mind>
-- Links: <none yet: live URL, repo, Figma, content doc>
+- Links: repo https://github.com/gleearl/design-portfolio (private) · live URL, Figma, content doc: none yet
 
 ## Stack and deploy
 - Stack: plain static HTML + CSS, no build step (provisional, set while implementing the home design; fits GitHub Pages or IONOS)
