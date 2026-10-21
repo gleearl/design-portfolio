@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>easyFS | Glee, UI/UX Designer</title>
+<meta name="description" content="The easyFS web app, cloud accounting for small businesses in the Philippines: who it is for, how they use it, and the main screens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>
+try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page">
+
+<nav class="nav" aria-label="Primary">
+  <a class="name" href="/">Glee Earl Rupal</a>
+  <ul>
+    <li><a href="/#work" aria-current="page">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/notes/">Notes</a></li>
+  </ul>
+  <ul>
+    <li>
+      <button class="copy-email" id="copy-email" type="button" data-email="glee.rupal@gmail.com">
+        <span class="when-idle">Email</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span>
+      </button>
+      <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+    </li>
+    <li><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://x.com/gleeeearl" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</nav>
+<button class="gbtn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#journeys">User journeys</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#review">Review</a></li>
+    <li><a href="#invoicing">Invoicing</a></li>
+    <li><a href="#month-end">Month end</a></li>
+    <li><a href="#phone">Phone</a></li>
+  </ol>
+</nav>
+<main class="stack">
+  <article id="top" class="post-page case">
+    <a class="back" href="/#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
+    <h1 class="post-h1">easyFS, cloud accounting for small businesses</h1>
+    <p class="lede">easyFS is an accounting app for small businesses in the Philippines, from coffee shops to repair shops. I worked on it at Humedit. This page walks through the web app: who it is for, how they use it, and the main screens.</p>
+    <figure class="cover"><img src="/images/easyfs/cover.jpg" alt="Components from the easyFS web app on a pale grid: the Needs your attention list, a 2550Q deadline due in 5 days, the side navigation with a Review count of 14, the New and Post and next buttons, and the money in and money out chart" width="2400" height="1180"></figure>
+    <dl class="facts">
+      <div><dt>Project</dt><dd>easyFS</dd></div>
+      <div><dt>Company</dt><dd>Humedit Philippines</dd></div>
+      <div><dt>Platform</dt><dd>Web, desktop and phone</dd></div>
+      <div><dt>Role</dt><dd>UI/UX design</dd></div>
+    </dl>
+
+    <section class="cs" id="overview">
+      <p class="cs-label">Overview</p>
+      <h2 class="cs-title">Two kinds of users.</h2>
+      <div class="prose">
+        <p>easyFS covers sales, purchases, inventory, banking, financial statements and BIR forms. It is used by two kinds of people. Owners want a quick sense of how the business is doing. Bookkeepers and accountants do the daily entries, the bank reconciliation and the BIR filing.</p>
+        <p>I tried to keep both in mind on every screen: everyday words up front for owners, and the accounting terms and form numbers still there for the people who need them. The businesses, people and amounts shown here are made up.</p>
+      </div>
+    </section>
+
+    <section class="cs" id="journeys">
+      <p class="cs-label">User journeys</p>
+      <h2 class="cs-title">Three people, three tasks.</h2>
+      <div class="prose">
+        <p>A typical task for each kind of user, step by step. The line follows how each step feels, where it dips and where it recovers.</p>
+      </div>
+      <ol class="journeys">
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">AR</span><div><h3>Ana, owner</h3><p>Runs two coffee shops. Wants to know the business is fine and bill clients without calling the bookkeeper.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot mid l1"></span></div><span class="j-n">01</span><h4>Opens easyFS</h4><p>Logs in over coffee before the shop opens.</p><span><span class="j-mood mid">Unsure</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">02</span><h4>Sees what needs her</h4><p>Three overdue invoices, bills due Friday and a VAT return in five days.</p><span><span class="j-mood high">In control</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">03</span><h4>Starts an invoice</h4><p>Taps New, then picks a regular client from Recent.</p><span><span class="j-mood high">Quick</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">04</span><h4>Checks the amounts</h4><p>Wonders why the amount due is lower than the total, until the summary shows the withholding.</p><span><span class="j-mood low">Puzzled</span> <span class="j-mood high">then clear</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">05</span><h4>Sends it</h4><p>Sends the invoice, then a reminder to a client who is 72 days late.</p><span><span class="j-mood high">Relieved</span></span></li>
+            </ol>
+          </div>
+        </li>
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">MV</span><div><h3>Mark, bookkeeper</h3><p>Gets a pile of receipts from both branches every week, plus online orders and POS sales. Wants to clear them without posting anything twice.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">01</span><h4>Snaps the receipt</h4><p>Takes a photo with Capture before the paper fades.</p><span><span class="j-mood high">Easy</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">02</span><h4>Checks what was read</h4><p>Compares the highlighted values on the receipt with the fields.</p><span><span class="j-mood low">Doubtful</span> <span class="j-mood high">then sure</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">03</span><h4>Catches a duplicate</h4><p>A receipt is flagged as one he already posted, so he discards it.</p><span><span class="j-mood high">Protected</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">04</span><h4>Posts the rest</h4><p>Posts and moves to the next one. Picks the wrong branch once and undoes it.</p><span><span class="j-mood low">Slip</span> <span class="j-mood high">then fixed</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">05</span><h4>Explains a POS gap</h4><p>The POS shows ₱1,240 more sales than the books, and easyFS points to the missing receipt.</p><span><span class="j-mood low">Worried</span> <span class="j-mood high">then solved</span></span></li>
+            </ol>
+          </div>
+        </li>
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">RD</span><div><h3>Rosa, outside accountant</h3><p>Looks after nine small businesses. Wants to file on time with numbers she can stand behind.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot low l0"></span></div><span class="j-n">01</span><h4>Sees what is due</h4><p>Switches to the client and sees the quarterly VAT return due in five days.</p><span><span class="j-mood low">Pressured</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">02</span><h4>Reconciles the bank</h4><p>Imports the statement. 49 of 52 lines match on their own.</p><span><span class="j-mood high">Fast</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot mid l1"></span></div><span class="j-n">03</span><h4>Checks readiness</h4><p>The checklist shows three purchases with no supplier TIN.</p><span><span class="j-mood mid">Alert</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">04</span><h4>Prepares the return</h4><p>Adds the TINs and downloads the file for eBIRForms.</p><span><span class="j-mood high">Confident</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">05</span><h4>Records the filing</h4><p>Marks the return as filed so the owner can see it is done.</p><span><span class="j-mood high">Done early</span></span></li>
+            </ol>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="cs" id="home">
+      <p class="cs-label">Home</p>
+      <h2 class="cs-title">A starting point for the day.</h2>
+      <div class="prose">
+        <p>Home shows what needs attention, the next BIR deadlines, cash on hand and money in and out for the month. The side menu uses everyday words like Money in and Money out, with the accounting terms one level down.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="/images/easyfs/home.png" alt="easyFS Home: a greeting, the Needs your attention list with five items, BIR deadlines for 2550Q, 1601-EQ and 0619-E, cash on hand and in banks split by account, and a six month money in and money out bar chart" width="2880" height="2360" loading="lazy"></div>
+        <figcaption>Home</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="review">
+      <p class="cs-label">Review</p>
+      <h2 class="cs-title">Drafts wait for a person.</h2>
+      <div class="prose">
+        <p>Receipts read by Smart Capture, online store orders and POS sales come in as drafts. They wait in Review, with the receipt beside the fields read from it, until someone checks and posts them.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="/images/easyfs/review.png" alt="The Review queue: a list of drafts on the left, and on the right a receipt photo beside its supplier, TIN, receipt number, date, category and total fields, with Review later, Discard and Post and next buttons" width="2880" height="2000" loading="lazy"></div>
+        <figcaption>Review</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="invoicing">
+      <p class="cs-label">Invoicing</p>
+      <h2 class="cs-title">One page per invoice.</h2>
+      <div class="prose">
+        <p>A new invoice keeps the customer, the items and a running summary on one page, including VAT and the amount due.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="/images/easyfs/new-invoice.png" alt="New invoice form: customer search with recent customers, invoice date, payment terms, branch, an items table, notes and attachments, and a summary of VATable sales, VAT, invoice total and amount due" width="2880" height="2000" loading="lazy"></div>
+        <figcaption>New invoice</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="month-end">
+      <p class="cs-label">Month end</p>
+      <h2 class="cs-title">Reconciling and filing.</h2>
+      <div class="prose">
+        <p>Bank reconciliation lists the lines that still need a decision, each with one action. BIR forms open with a short checklist before filing, and each amount is labelled with its form item.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="/images/easyfs/reconciliation.png" alt="Bank reconciliation: statement and easyFS balances, 49 of 52 lines matched, and three lines that need a decision" width="2880" height="2000" loading="lazy"></div>
+        <figcaption>Bank reconciliation</figcaption>
+      </figure>
+      <figure class="wide">
+        <div class="wide-frame"><img src="/images/easyfs/reports.png" alt="BIR forms: upcoming and filed forms on the left, and BIR Form 2550Q on the right with a before you file checklist and the amounts for the return by item number" width="2880" height="1880" loading="lazy"></div>
+        <figcaption>BIR Form 2550Q</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="phone">
+      <p class="cs-label">Phone</p>
+      <h2 class="cs-title">Quick tasks on the go.</h2>
+      <div class="prose">
+        <p>On a phone, the app focuses on quick tasks: checking the day, capturing a receipt and sending an invoice.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame board"><img src="/images/easyfs/board-phones.png" alt="Three phone screens: Home with the attention list, the Review queue, and the new invoice form, each with a bottom bar of Home, Invoice, Capture, Review and More" width="2400" height="1720" loading="lazy"></div>
+        <figcaption>Home, Review and New invoice on a phone</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs cta" id="talk">
+      <p class="cs-label">Let’s talk</p>
+      <h2 class="cs-title">I’d love to tell you more on a call.</h2>
+      <div class="prose">
+        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through it.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="cta-btn primary copy-email" type="button" data-email="glee.rupal@gmail.com"><span class="when-idle">Email me</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span></button>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Glee Earl Rupal</span>
+</footer>
+
+</div>
+<script src="/main.js"></script>
+<script>
+// Draw each journey's mood line through its dots
+function drawJourneys() {
+  document.querySelectorAll('.j-track').forEach(function (track) {
+    var box = track.getBoundingClientRect();
+    var pts = [].map.call(track.querySelectorAll('.j-dot'), function (d) {
+      var r = d.getBoundingClientRect();
+      return (r.left + r.width / 2 - box.left).toFixed(1) + ',' + (r.top + r.height / 2 - box.top).toFixed(1);
+    });
+    track.querySelector('.j-line polyline').setAttribute('points', pts.join(' '));
+  });
+}
+drawJourneys();
+addEventListener('resize', drawJourneys);
+document.fonts && document.fonts.ready.then(drawJourneys);
+</script>
+
+</body>
+</html>

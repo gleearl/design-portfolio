@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Title of the note | Glee, UI/UX Designer</title>
-<meta name="description" content="One sentence about this note.">
+<title>Notes | Glee, Product Designer</title>
+<meta name="description" content="Notes from Glee Earl Rupal on product design, engineering and the outdoors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <script>
 try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <div class="page">
 
 <nav class="nav" aria-label="Primary">
-  <a class="name" href="../index.html">Glee Earl Rupal</a>
+  <a class="name" href="/">Glee Earl Rupal</a>
   <ul>
-    <li><a href="../index.html#work">Work</a></li>
-    <li><a href="../about.html">About</a></li>
-    <li><a href="../notes.html" aria-current="page">Notes</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/notes/" aria-current="page">Notes</a></li>
   </ul>
   <ul>
     <li>
@@ -40,14 +40,19 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
 </button>
 
 <main class="stack">
-  <article id="top" class="post-page">
-    <a class="back" href="../notes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All notes</a>
-    <h1 class="post-h1">Title of the note</h1>
-    <time class="mono post-date" datetime="2026-01-31">Jan 31, 2026</time>
-    <div class="prose">
-      <p>Write the note here, one paragraph per p tag. Use h2 for section headings.</p>
+  <section id="top">
+    <h1 class="sr-only">Notes</h1>
+    <div class="posts">
+      <p class="empty">Nothing here yet. My first note is on the way.</p>
+      <!--
+        Add each note as one row, newest first. Copy this block:
+        <a class="post" href="/notes/your-note/">
+          <time class="mono" datetime="2026-01-31">Jan 31, 2026</time>
+          <span class="post-body"><span class="post-title">Title of the note</span><span class="post-excerpt">One or two plain sentences about it.</span></span>
+        </a>
+      -->
     </div>
-  </article>
+  </section>
 </main>
 
 <footer class="footer">
@@ -55,6 +60,6 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
 </footer>
 
 </div>
-<script src="../main.js"></script>
+<script src="/main.js"></script>
 </body>
 </html>
