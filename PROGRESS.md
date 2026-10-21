@@ -35,13 +35,14 @@ Status key: ⬜ Not started · 🟡 In progress · 🔍 In review · ✅ Done
 | Accessibility pass: contrast, keyboard, alt text, heading order | ⬜ |
 | Lighthouse run: performance, accessibility, best practices, SEO | ⬜ |
 | Contact links, resume download and external links work | ⬜ |
-| Analytics set up (if wanted) | ⬜ |
+| Analytics set up (if wanted) | ✅ Cloudflare Web Analytics |
 
 ## Heuristic review log
 | Page / flow | Heuristic # | Issue | Severity | Status |
 |---|---|---|---|---|
 
 ## Decisions
+- 2026-10-21: Analytics: Cloudflare Web Analytics (free, cookie-free, includes Core Web Vitals), chosen over GA4, Clarity and GoatCounter.
 - 2026-10-21: Home page built as plain static HTML/CSS from the design canvas. Nav says Experience instead of About (no about section yet). Dark mode follows OS setting.
 - 2026-10-20: Two separate sites, each in its own folder – Glee's choice at kickoff.
 
@@ -52,6 +53,7 @@ Status key: ⬜ Not started · 🟡 In progress · 🔍 In review · ✅ Done
 - Which employer and client work can be shown publicly.
 
 ## Change log
+- 2026-10-21: Added Cloudflare Web Analytics (no cookies, no consent banner) to every page: home, about, notes, note template and the six works. Shows visits, pages, countries, referrers, devices and Core Web Vitals. Dashboard: dash.cloudflare.com, Analytics & Logs, Web Analytics, design.gleearl.com. Redirect stubs left untouched. New pages need the snippet before </body> (copy it from the note template).
 - 2026-10-22: App notifications, Four moments: on wide screens (panel 820px and up, so 1440) the type text sits on the left and both iPhones on the right (270px each), per Glee. Narrower screens keep text on top; phones keep the swipe row. Live site looked broken to Glee right after the merge; it was a browser cache of the old styles, the deployed files were fine.
 - 2026-10-22: easyPOS facts strip brought in line with the other works: Timeline 2024, Scope Product design, UI/UX design (Project, Series, Platform, Role rows removed).
 - 2026-10-22: App notifications, in-app phone: Learning tab icon redrawn to match the app (outlined board, solid person cut out in front, pointer block on the board edge) per Glee. List text now scales with the phone (16 point base, about 11.5px at the 300px phone).

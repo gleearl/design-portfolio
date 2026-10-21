@@ -20,6 +20,7 @@ Glee's UI/UX design portfolio: a public site that shows design case studies and 
 - Run locally: `python3 -m http.server 4173` from the repo root (root paths need the repo root as the server root) · Build: none
 - Deploy: GitHub Pages from main, root folder (auto-deploys on push)
 - Domain: design.gleearl.com (CNAME file in repo root, added on GitHub 2026-10-21)
+- Analytics: Cloudflare Web Analytics beacon, placed just before </body> on every content page (not the redirect stubs). Add it to every new page.
 
 ## Content rules
 - Voice: first person, plain and specific, outcomes over adjectives.
