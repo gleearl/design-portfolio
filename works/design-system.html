@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MIMS Philippines design system | Glee, UI/UX Designer</title>
-<meta name="description" content="A design system for MIMS Philippines built in Figma with variables, styles and components, from tokens up to page templates.">
+<title>MIMS web app design system | Glee, UI/UX Designer</title>
+<meta name="description" content="A design system for the MIMS web app built in Figma with variables, styles and components, from tokens up to page templates.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
@@ -46,18 +46,17 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
     <li><a href="#tokens">Tokens</a></li>
     <li><a href="#components">Components</a></li>
     <li><a href="#templates">Templates</a></li>
-    <li><a href="#gaps">Gaps</a></li>
   </ol>
 </nav>
 <main class="stack">
   <article id="top" class="post-page case">
     <a class="back" href="../index.html#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
     <h1 class="post-h1">A design system, built from tokens up</h1>
-    <p class="lede">A Figma library for the MIMS Philippines disease guidelines and news pages, where every fill, size and style is a variable, so a change to one token reaches every component and template that uses it.</p>
-    <figure class="cover"><img src="../images/design-system/cover.jpg" alt="Cover for the MIMS Philippines design system: the headline Tokens in, UI out beside a panel showing red and grey primitives, semantic token names, and buttons, a chip and a search field built from them, on a dark background" width="2400" height="1180"></figure>
+    <p class="lede">A Figma library for the MIMS web app, covering the disease guidelines and news pages, where every fill, size and style is a variable, so a change to one token reaches every component and template that uses it.</p>
+    <figure class="cover"><img src="../images/design-system/cover-components.svg" alt="Bird's-eye view of components from the MIMS web app design system: the navigation bar, the disease guidelines search with an AI suggestion, specialty chips, a breadcrumb, the Noto Sans type card, the brand red ramp, the bg/brand token, the Showing filter and button states" width="2400" height="1180"></figure>
     <dl class="facts">
       <div><dt>Project</dt><dd>Design system, version 1.0</dd></div>
-      <div><dt>Product</dt><dd>MIMS Philippines, disease guidelines and news</dd></div>
+      <div><dt>Product</dt><dd>MIMS web app, disease guidelines and news</dd></div>
       <div><dt>Tools</dt><dd>Figma and Claude</dd></div>
       <div><dt>Released</dt><dd>20 September 2026</dd></div>
       <div class="wide-fact"><dt>Scope</dt><dd>Colour, typography, spacing, grid, borders, elevation, icons, motion, components, patterns and page templates</dd></div>
@@ -79,20 +78,16 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         <p>Spacing, radius, border width, size, breakpoint and motion each have their own collection. Variables use slash names such as text/primary, and each one carries its web code syntax, so Dev Mode shows the matching CSS value.</p>
       </div>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/design-system/primitives.png" alt="Primitive colour variables: the brand red and its tints, greys, black, orange, green and a light blue, each labelled with its variable name and hex value" loading="lazy"></div>
-        <figcaption>Primitives: raw values, named by family and step</figcaption>
+        <div class="wide-frame board"><img src="../images/design-system/board-architecture.jpg" alt="Three cards from left to right: primitives with raw hex values, semantic tokens that alias them by role, and a search button whose fill, label, disabled state and radius are bound to those tokens" width="2400" height="1041" loading="lazy"></div>
+        <figcaption>Three layers: primitives, semantic tokens, components</figcaption>
       </figure>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/design-system/semantic-background.png" alt="Semantic background tokens such as page, subtle, muted, brand, brand disabled and inverse, each showing the primitive it points to" loading="lazy"></div>
-        <figcaption>Semantic tokens: each role points to one primitive</figcaption>
+        <div class="wide-frame board"><img src="../images/design-system/board-colour.jpg" alt="Colour board: the five-step brand red ramp, the thirteen-step neutral ramp, and the supporting and status colours with their variable names and hex values" width="2400" height="1278" loading="lazy"></div>
+        <figcaption>Brand red, the neutral ramp and supporting colours</figcaption>
       </figure>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/design-system/type-families.png" alt="Type families: Noto Sans as the primary typeface and Noto Serif as the long-form variant" loading="lazy"></div>
-        <figcaption>Two families, one in almost every element</figcaption>
-      </figure>
-      <figure class="wide">
-        <div class="wide-frame"><img src="../images/design-system/type-headings.png" alt="Heading text styles from H1 to H8 with size, weight, line height and a sample line for each" loading="lazy"></div>
-        <figcaption>Heading styles, each mapped to the class it came from</figcaption>
+        <div class="wide-frame board"><img src="../images/design-system/board-type.jpg" alt="Type board: Noto Sans in five weights beside the type scale, from the 28px display headline down to the 12px caption, each with its style name, weight, size and line height" width="2400" height="1280" loading="lazy"></div>
+        <figcaption>Noto Sans and the type scale, with real copy from the site</figcaption>
       </figure>
     </section>
     <section class="cs" id="components">
@@ -102,6 +97,10 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         <p>Buttons, inputs and search, chips, cards, navigation, breadcrumbs, tables and feedback each get a page, with the desktop 1440 version beside the mobile 390 one. Components use Title Case names and Property=Value variants, and hover, focus and disabled states are real variants rather than notes.</p>
         <p>Icons are 24px outlined components, swapped through instance properties and never as variants, so tinting a vector never touches the wrapper frame.</p>
       </div>
+      <figure class="wide">
+        <div class="wide-frame board"><img src="../images/design-system/board-components.jpg" alt="Component board: primary, outline and text buttons in default, hover and disabled states, sign-up buttons, a view all link, the search field with its AI suggestions, and specialty chips" width="2400" height="1096" loading="lazy"></div>
+        <figcaption>Buttons, search and chips, each state a variant</figcaption>
+      </figure>
     </section>
     <section class="cs" id="templates">
       <p class="cs-label">Templates</p>
@@ -111,16 +110,20 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         <p>A States section on each page shows what a static frame cannot, such as the sticky nav on scroll, the open mobile menu, an error toast and the mobile filter.</p>
       </div>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/design-system/template-landing.png" alt="Disease guidelines landing page at desktop width, built from library components: header, search, hero, filter chips, article cards, algorithm cards, A to Z index and footer" loading="lazy"></div>
-        <figcaption>The disease guidelines landing template at 1440</figcaption>
+        <div class="wide-frame board"><img src="../images/design-system/board-templates.jpg" alt="The disease guidelines landing template shown in a desktop browser at 1440 and on a phone at 390, both built from library components" width="2400" height="1400" loading="lazy"></div>
+        <figcaption>The disease guidelines landing template, desktop and mobile</figcaption>
       </figure>
     </section>
-    <section class="cs" id="gaps">
-      <p class="cs-label">Gaps</p>
-      <h2 class="cs-title">What the live site is missing.</h2>
+
+    <section class="cs cta" id="talk">
+      <p class="cs-label">Let’s talk</p>
+      <h2 class="cs-title">I’d love to tell you more on a call.</h2>
       <div class="prose">
-        <p>Eleven components do not exist in production, so I listed them as a backlog with a severity and the reason each one matters. The most serious is the focus ring: the search input removes its outline with no replacement, which fails the WCAG focus visible criterion. Alerts, error states, empty states and toasts follow.</p>
-        <p>I also corrected three production behaviours rather than copy them: a chip hover that reflowed the text, a tab hover that matched the active state, and a breadcrumb size that overflowed on tablet.</p>
+        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through the decisions, the trade-offs and what I’d do next.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="cta-btn primary" href="mailto:glee.rupal@gmail.com?subject=Let%E2%80%99s%20talk">Email me</a>
+        <a class="cta-btn" href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">Message on LinkedIn</a>
       </div>
     </section>
   </article>
