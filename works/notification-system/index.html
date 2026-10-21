@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MIMS app notifications | Glee, UI/UX Designer</title>
-<meta name="description" content="Helping healthcare professionals return to learning through webinar reminders, course prompts, and relevant content alerts. User engagement increased substantially following the introduction of the system.">
+<meta name="description" content="How I designed notifications for the MIMS Education app to help healthcare professionals come back to the webinars and courses they signed up for.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <script>
 try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -39,108 +39,278 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
   <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
 </button>
 
+<!-- Icons used by the HTML mockups below -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M10 3l1.6 4.9L16.5 9.5l-4.9 1.6L10 16l-1.6-4.9L3.5 9.5l4.9-1.6zM18 13l.9 2.6 2.6.9-2.6.9L18 20l-.9-2.6-2.6-.9 2.6-.9z" fill="currentColor"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zM10 19a2 2 0 0 0 4 0" fill="currentColor"/></symbol>
+  <symbol id="i-bell-line" viewBox="0 0 24 24"><path d="M12 3.5a5.5 5.5 0 0 0-5.5 5.5v4.2L4.8 16h14.4l-1.7-2.8V9A5.5 5.5 0 0 0 12 3.5zM10 19a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6 3h12v2c0 3-2.5 5-4.5 7 2 2 4.5 4 4.5 7v2H6v-2c0-3 2.5-5 4.5-7C8.5 10 6 8 6 5z" fill="currentColor"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4h3l7 4V6l-7 4zM16.5 9a4 4 0 0 1 0 6M8 14l1.2 5h2.2L10.5 14" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M3 8h12M3 16h4M19 16h2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="18" cy="8" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="10" cy="16" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="6" r="2" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="12" r="2" fill="#fff" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="18" r="2" fill="#fff" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 7v5l3 2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-sys" viewBox="0 0 74 13"><rect x="0" y="8" width="3.2" height="4.5" rx="1" fill="currentColor"/><rect x="4.8" y="6" width="3.2" height="6.5" rx="1" fill="currentColor"/><rect x="9.6" y="3.5" width="3.2" height="9" rx="1" fill="currentColor"/><rect x="14.4" y="1" width="3.2" height="11.5" rx="1" fill="currentColor"/><path d="M30 3.6a10 10 0 0 1 13 0l-1.6 1.7a7.6 7.6 0 0 0-9.8 0zM32.8 6.6a6 6 0 0 1 7.4 0l-1.6 1.7a3.6 3.6 0 0 0-4.2 0zM36.5 12.5l-2.2-2.3a3 3 0 0 1 4.4 0z" fill="currentColor"/><rect x="48.5" y=".5" width="22" height="12" rx="3.6" fill="none" stroke="currentColor" stroke-opacity=".4"/><rect x="50.5" y="2.5" width="14" height="8" rx="2" fill="currentColor"/><path d="M72 4.5v4a2 2 0 0 0 0-4z" fill="currentColor" fill-opacity=".4"/></symbol>
+  <symbol id="i-torch" viewBox="0 0 24 24"><path d="M8 2h8v4l-2 4v11a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V10L8 6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="14" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 1 2-2h2.5l1.5-2h6l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-learn" viewBox="0 0 28 28"><rect x="10" y="4" width="16" height="12" rx="1.5" fill="currentColor"/><circle cx="7" cy="9" r="3" fill="currentColor"/><path d="M1.5 22c0-4 2.5-7 5.5-7s4 1 5 2.5h7V20h-6v4h-11z" fill="currentColor"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 28 28"><rect x="6" y="5" width="16" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="10.5" y="3" width="7" height="4" rx="1" fill="#fff" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 13l1.5 1.5 2.5-2.5M9.5 19l1.5 1.5 2.5-2.5M15.5 13.5h3.5M15.5 19.5h3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 28 28"><rect x="5" y="5" width="18" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 10h10M9 18h10M12 8v4M16 16v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+</svg>
+
 <nav class="toc" aria-label="On this page">
   <p class="toc-title">On this page</p>
   <ol>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#challenge">The challenge</a></li>
-    <li><a href="#approach">My approach</a></li>
-    <li><a href="#system">The system</a></li>
+    <li><a href="#approach">Four moments</a></li>
+    <li><a href="#entry-points">Entry points</a></li>
     <li><a href="#scanning">Scanning</a></li>
     <li><a href="#destinations">Destinations</a></li>
-    <li><a href="#next-steps">Next steps</a></li>
+    <li><a href="#next-steps">Sharing it</a></li>
     <li><a href="#outcome">Outcome</a></li>
   </ol>
 </nav>
 <main class="stack">
   <article id="top" class="post-page case">
     <a class="back" href="/#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
-    <h1 class="post-h1">Helping users stay engaged with learning</h1>
-    <p class="lede">Designing a notification experience for the MIMS mobile app that helps healthcare professionals discover relevant content and follow through on learning activities.</p>
+    <h1 class="post-h1">Helping healthcare professionals come back to their learning</h1>
+    <p class="lede">I worked on the notification experience for the MIMS Education app. The aim was simple: remind people about the webinars and courses they had already shown interest in, and make the next step easy to take.</p>
     <figure class="cover"><img src="/images/notifications/cover.jpg" alt="Three phone screens from the MIMS Education app: a push notification on the lock screen, the in-app notification center and the Learning tab with a notification bell" width="2400" height="1050"></figure>
     <dl class="facts">
-      <div><dt>Project</dt><dd>MIMS app notifications</dd></div>
-      <div><dt>Product</dt><dd>MIMS Education app</dd></div>
-      <div><dt>Team</dt><dd>UX Design Team</dd></div>
-      <div><dt>Presented</dt><dd>January 2025</dd></div>
-      <div class="wide-fact"><dt>Scope</dt><dd>Notification strategy, user flows, high-fidelity UI</dd></div>
+      <div><dt>Timeline</dt><dd>2025</dd></div>
+      <div><dt>Scope</dt><dd>Product design, product strategy</dd></div>
     </dl>
 
     <section class="cs" id="overview">
       <p class="cs-label">Overview</p>
-      <h2 class="cs-title">What brings a learner back after they sign up?</h2>
+      <h2 class="cs-title">What helps someone come back after they sign up?</h2>
       <div class="prose">
-        <p>I designed a notification system proposal to increase engagement with the app’s learning content. The experience connected push notifications with an in-app notification center, giving users a clear path back to webinars, courses, and unfinished activities.</p>
-        <p>Following the introduction of the notification system, we observed a substantial increase in user engagement.</p>
+        <p>The app had plenty of good learning content, but signing up for something did not always mean coming back to it. I put together a proposal for how notifications could help: push notifications outside the app, a notification center inside it, and clear paths between the two.</p>
+        <p>After the system was introduced, we saw a clear increase in engagement. It was a team effort, and I was glad to see the idea hold up once it was in people’s hands.</p>
       </div>
-
     </section>
+
     <section class="cs" id="challenge">
       <p class="cs-label">The challenge</p>
-      <h2 class="cs-title">Signing up is only the first step of learning.</h2>
+      <h2 class="cs-title">Signing up is only the first step.</h2>
       <div class="prose">
-        <p>Registering for a webinar or enrolling in a course is only the beginning of a learning journey. Users may register weeks before an event, leave a quiz unfinished, or miss the deadline to complete a course.</p>
-        <p>The design challenge was to help users stay aware of these opportunities and understand what to do next.</p>
+        <p>Registering for a webinar or enrolling in a course is just the start. People sign up weeks before an event, leave a quiz half done, or lose track of a course deadline. Busy clinicians have a lot on their minds, so this is easy to understand.</p>
+        <p>My job was to help them notice these moments at the right time and know what to do next, without adding more noise to their day.</p>
+      </div>
+    </section>
+
+    <section class="cs" id="approach">
+      <p class="cs-label">Four moments</p>
+      <h2 class="cs-title">I started from the moments, not the messages.</h2>
+      <div class="prose">
+        <p>Before drawing any screens, I listed the moments where a nudge could actually be useful. They fell into four types. Pick one to see how it shows up as a push notification and inside the app.</p>
       </div>
 
+      <div class="nx-explorer" data-nx-tabs>
+        <div class="nx-tabs" role="tablist" aria-label="Notification types">
+          <button type="button" role="tab" id="nx-tab-a" aria-controls="nx-a" aria-selected="true"><span class="nx-key">A</span>Webinar reminders</button>
+          <button type="button" role="tab" id="nx-tab-b" aria-controls="nx-b" aria-selected="false" tabindex="-1"><span class="nx-key">B</span>Unfinished learning</button>
+          <button type="button" role="tab" id="nx-tab-c" aria-controls="nx-c" aria-selected="false" tabindex="-1"><span class="nx-key">C</span>New content</button>
+          <button type="button" role="tab" id="nx-tab-d" aria-controls="nx-d" aria-selected="false" tabindex="-1"><span class="nx-key">D</span>Announcements</button>
+        </div>
+
+        <!-- Type A -->
+        <div class="nx-panel" id="nx-a" role="tabpanel" aria-labelledby="nx-tab-a">
+          <div class="nx-copy">
+            <p class="nx-tag">Type A · Webinar reminders</p>
+            <h3>Remember an upcoming webinar</h3>
+            <p>People often register weeks ahead. A reminder close to the start time brings the webinar back to mind, and tapping it goes straight to joining.</p>
+          </div>
+          <div class="nx-stage">
+            <figure class="nx-phone" aria-label="Lock screen with two push notifications"><div class="nx-screen lock">
+              <div class="nx-wp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <div class="nx-status"><span>Globe</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <p class="nx-date">Monday, June 6</p>
+              <p class="nx-time">9:41</p>
+              <div class="nx-pushes">
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>Reminder: Your Webinar Starts Soon!</b><span>34m ago</span></p><p>Your session on Pain and Paresthesia of the Upper Extremity: Carpal and Cubital Tunnel Syndromes begins in 30 minutes. Tap here to join!</p></div></div>
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>New Webinar Alert!</b><span>34m ago</span></p><p>We’ve added new webinars this month. Check them out now!</p></div></div>
+              </div>
+              <div class="nx-lockbar" aria-hidden="true"><span><svg><use href="#i-torch"/></svg></span><span><svg><use href="#i-camera"/></svg></span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+            <figure class="nx-phone" aria-label="In-app notification list"><div class="nx-screen app">
+              <div class="nx-status"><span>9:41</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <div class="nx-bar"><svg><use href="#i-back"/></svg><b>Notifications</b><svg><use href="#i-filter"/></svg></div>
+              <div class="nx-pills"><span class="on">All</span><span>Courses</span><span>Webinars</span><span>Announcements</span></div>
+              <div class="nx-row unread"><span class="nx-ico"><svg><use href="#i-sparkle"/></svg></span><div><p>Join us for an exclusive webinar on Cardiology. Tap to register now.</p><small>2 days ago</small></div><span class="nx-btn">Register</span>
+                <div class="nx-card"><div><b>Pain and Paresthesia of the Upper Extremity: Carpal and Cubital Tunnel Syndromes</b><small><span><svg><use href="#i-check"/></svg>2 CPD points</span><span><svg><use href="#i-clock"/></svg>1 hour duration</span></small></div><img src="/images/notifications/ui/thumb-course.png" alt=""></div></div>
+              <div class="nx-row"><span class="nx-ico"><svg><use href="#i-bell"/></svg></span><div><p>Reminder: Your webinar starts in 30 minutes. Tap here to join!</p><small>2 days ago</small></div><span class="nx-btn">Learn More</span>
+                <div class="nx-card"><div><b>Pain and Paresthesia of the Upper Extremity: Carpal and Cubital Tunnel Syndromes</b><small><span><svg><use href="#i-check"/></svg>2 CPD points</span><span><svg><use href="#i-clock"/></svg>1 hour duration</span></small></div><img src="/images/notifications/ui/thumb-course.png" alt=""></div></div>
+              <div class="nx-row"><img class="nx-thumb" src="/images/notifications/ui/thumb-webinars.png" alt=""><div><p>We’ve added new webinars this month. Check them out now!</p><small>2 days ago</small></div><span class="nx-btn">Learn More</span></div>
+              <div class="nx-tabbar" aria-hidden="true"><span class="on"><svg><use href="#i-learn"/></svg>Learning</span><span><svg><use href="#i-activity"/></svg>My Activity</span><span><svg><use href="#i-settings"/></svg>Settings</span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+          </div>
+        </div>
+
+        <!-- Type B -->
+        <div class="nx-panel" id="nx-b" role="tabpanel" aria-labelledby="nx-tab-b">
+          <div class="nx-copy">
+            <p class="nx-tag">Type B · Incomplete actions</p>
+            <h3>Continue unfinished learning</h3>
+            <p>For quizzes left halfway and courses close to expiring. Each one carries a single clear action, like Resume Course or Enroll Now, so there is less to work out. I also pointed people to guidance on accessing quizzes and downloading CME/CPD certificates.</p>
+          </div>
+          <div class="nx-stage">
+            <figure class="nx-phone" aria-label="Lock screen with a course expiring push notification"><div class="nx-screen lock">
+              <div class="nx-wp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <div class="nx-status"><span>Globe</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <p class="nx-date">Monday, June 6</p>
+              <p class="nx-time">9:41</p>
+              <div class="nx-pushes">
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>Reminder: Course Expiring Soon!</b><span>34m ago</span></p><p>Your course Pain and Paresthesia of the Upper Extremity: Carpal and Cubital Tunnel Syndromes will expire in 30 days!</p></div></div>
+              </div>
+              <div class="nx-lockbar" aria-hidden="true"><span><svg><use href="#i-torch"/></svg></span><span><svg><use href="#i-camera"/></svg></span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+            <figure class="nx-phone" aria-label="In-app notification list"><div class="nx-screen app">
+              <div class="nx-status"><span>9:41</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <div class="nx-bar"><svg><use href="#i-back"/></svg><b>Notifications</b><svg><use href="#i-filter"/></svg></div>
+              <div class="nx-pills"><span class="on">All</span><span>Courses</span><span>Webinars</span><span>Announcements</span></div>
+              <div class="nx-row"><span class="nx-ico"><svg><use href="#i-hourglass"/></svg></span><div><p>Reminder: Course expiring in <b>30 days.</b></p><small>2 days ago</small></div><span class="nx-btn">Enroll Now</span>
+                <div class="nx-card"><div><b>Pain and Paresthesia of the Upper Extremity: Carpal and Cubital Tunnel Syndromes</b><small><span><svg><use href="#i-check"/></svg>2 CPD points</span><span><svg><use href="#i-clock"/></svg>1 hour duration</span></small></div><img src="/images/notifications/ui/thumb-course.png" alt=""></div></div>
+              <div class="nx-row"><span class="nx-ico"><svg><use href="#i-bell"/></svg></span><div><p>Finish Your Course, earn <b>3 CPD points</b> and get your certificate.</p><small>2 days ago</small></div><span class="nx-btn">Resume Course</span>
+                <div class="nx-card"><div><b>Pain and Paresthesia of the Upper Extremity: Carpal and Cubital Tunnel Syndromes</b><small><span><svg><use href="#i-check"/></svg>2 CPD points</span><span><svg><use href="#i-clock"/></svg>1 hour duration</span></small></div><img src="/images/notifications/ui/thumb-course.png" alt=""></div></div>
+              <div class="nx-tabbar" aria-hidden="true"><span class="on"><svg><use href="#i-learn"/></svg>Learning</span><span><svg><use href="#i-activity"/></svg>My Activity</span><span><svg><use href="#i-settings"/></svg>Settings</span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+          </div>
+        </div>
+
+        <!-- Type C -->
+        <div class="nx-panel" id="nx-c" role="tabpanel" aria-labelledby="nx-tab-c">
+          <div class="nx-copy">
+            <p class="nx-tag">Type C · New content and recommendations</p>
+            <h3>Discover relevant content</h3>
+            <p>Alerts for new webinars and courses, with suggestions based on specialty and location. I also explored ideas around past enrollments and what is popular within a specialty. These were proposals for the team to weigh, not final rules.</p>
+          </div>
+          <div class="nx-stage">
+            <figure class="nx-phone" aria-label="Lock screen with three push notifications"><div class="nx-screen lock">
+              <div class="nx-wp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <div class="nx-status"><span>Globe</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <p class="nx-date">Monday, June 6</p>
+              <p class="nx-time">9:41</p>
+              <div class="nx-pushes">
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>Popular in Internal Medicine!</b><span>34m ago</span></p><p>Discover where other healthcare professionals are enrolling.</p></div></div>
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>New Course Alert!</b><span>34m ago</span></p><p>Earn 2 CME points with our latest cardiology module.</p></div></div>
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>Keep Your Streak Alive!</b><span>34m ago</span></p><p>You recently completed Hypertension Management Basics. Explore related courses and earn 2 CME points!</p></div></div>
+              </div>
+              <div class="nx-lockbar" aria-hidden="true"><span><svg><use href="#i-torch"/></svg></span><span><svg><use href="#i-camera"/></svg></span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+            <figure class="nx-phone" aria-label="In-app notification list"><div class="nx-screen app">
+              <div class="nx-status"><span>9:41</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <div class="nx-bar"><svg><use href="#i-back"/></svg><b>Notifications</b><svg><use href="#i-filter"/></svg></div>
+              <div class="nx-pills"><span class="on">All</span><span>Courses</span><span>Webinars</span><span>Announcements</span></div>
+              <div class="nx-row"><img class="nx-thumb" src="/images/notifications/ui/thumb-popular.png" alt=""><div><p>Popular in <b>Internal Medicine!</b> Discover where other healthcare professionals are enrolling.</p><small>2 days ago</small></div><span class="nx-btn">See Courses</span></div>
+              <div class="nx-row"><span class="nx-ico"><svg><use href="#i-sparkle"/></svg></span><div><p>Earn <b>2 CME points</b> with our latest cardiology module.</p><small>2 days ago</small></div><span class="nx-btn">Enroll Now</span>
+                <div class="nx-card"><div><b>Pain and Paresthesia of the Upper Extremity: Carpal and Cubital Tunnel Syndromes</b><small><span><svg><use href="#i-check"/></svg>2 CPD points</span><span><svg><use href="#i-clock"/></svg>1 hour duration</span></small></div><img src="/images/notifications/ui/thumb-course.png" alt=""></div></div>
+              <div class="nx-row"><img class="nx-thumb" src="/images/notifications/ui/thumb-hypertension.png" alt=""><div><p>You recently completed Hypertension Management Basics. Explore related courses and earn <b>2 CME points!</b></p><small>2 days ago</small></div><span class="nx-btn">See Courses</span></div>
+              <div class="nx-tabbar" aria-hidden="true"><span class="on"><svg><use href="#i-learn"/></svg>Learning</span><span><svg><use href="#i-activity"/></svg>My Activity</span><span><svg><use href="#i-settings"/></svg>Settings</span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+          </div>
+        </div>
+
+        <!-- Type D -->
+        <div class="nx-panel" id="nx-d" role="tabpanel" aria-labelledby="nx-tab-d">
+          <div class="nx-copy">
+            <p class="nx-tag">Type D · Announcements</p>
+            <h3>Stay informed about the app</h3>
+            <p>Feature updates and promotions get a category of their own, so they don’t crowd out reminders about someone’s own learning.</p>
+          </div>
+          <div class="nx-stage">
+            <figure class="nx-phone" aria-label="Lock screen with two announcement push notifications"><div class="nx-screen lock">
+              <div class="nx-wp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <div class="nx-status"><span>Globe</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <p class="nx-date">Monday, June 6</p>
+              <p class="nx-time">9:41</p>
+              <div class="nx-pushes">
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>Introducing a New Feature!</b><span>34m ago</span></p><p>Make your learning even more fun and effective!</p></div></div>
+                <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>Exclusive Access for Physicians!</b><span>34m ago</span></p><p>Consider Lisinopril for patients with high blood pressure. Proven efficacy in lowering BP and reducing cardiovascular risk. Learn more today!</p></div></div>
+              </div>
+              <div class="nx-lockbar" aria-hidden="true"><span><svg><use href="#i-torch"/></svg></span><span><svg><use href="#i-camera"/></svg></span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+            <figure class="nx-phone" aria-label="In-app notification list"><div class="nx-screen app">
+              <div class="nx-status"><span>9:41</span><span class="nx-island"></span><svg class="nx-sys"><use href="#i-sys"/></svg></div>
+              <div class="nx-bar"><svg><use href="#i-back"/></svg><b>Notifications</b><svg><use href="#i-filter"/></svg></div>
+              <div class="nx-pills"><span class="on">All</span><span>Courses</span><span>Webinars</span><span>Announcements</span></div>
+              <div class="nx-row"><span class="nx-ico"><svg><use href="#i-megaphone"/></svg></span><div><p><b>Introducing a new feature!</b> Make your learning even more fun and effective!</p><small>2 days ago</small></div><span class="nx-btn">Learn More</span></div>
+              <div class="nx-row"><img class="nx-thumb" src="/images/notifications/ui/thumb-exclusive.png" alt=""><div><p><b>Exclusive Access for Physicians!</b> Consider Lisinopril for patients with high blood pressure. Proven efficacy in lowering BP and reducing cardiovascular risk. Learn more today!</p><small>2 days ago</small></div><span class="nx-btn">Learn More</span></div>
+              <div class="nx-tabbar" aria-hidden="true"><span class="on"><svg><use href="#i-learn"/></svg>Learning</span><span><svg><use href="#i-activity"/></svg>My Activity</span><span><svg><use href="#i-settings"/></svg>Settings</span></div>
+              <span class="nx-home"></span>
+            </div></figure>
+          </div>
+        </div>
+      </div>
     </section>
-    <section class="cs" id="approach">
-      <p class="cs-label">My approach</p>
-      <h2 class="cs-title">Four types of notification for four moments.</h2>
+
+    <section class="cs" id="entry-points">
+      <p class="cs-label">Entry points</p>
+      <h2 class="cs-title">Three ways back in, one place to land.</h2>
       <div class="prose">
-        <p>I organized the proposal around moments when a notification could help users take a meaningful action.</p>
+        <p>People can come back from outside the app or from inside it. Whichever way they come in, they end up in the same notification center, so a push they swiped away is not a reminder lost for good.</p>
       </div>
-      <ol class="types">
-        <li class="type">
-          <div class="type-text"><p class="type-tag">Type A · Webinar reminders</p><h3>Remember an upcoming webinar</h3><p>Reminders brought registered webinars back to users’ attention closer to the event, including when they had signed up well in advance.</p></div>
-          <div class="type-frame"><img src="/images/notifications/type-webinar-reminders.png" alt="A push notification and the matching in-app list for webinar reminders" loading="lazy"></div>
-        </li>
-        <li class="type">
-          <div class="type-text"><p class="type-tag">Type B · Incomplete actions</p><h3>Continue unfinished learning</h3><p>Notifications highlighted incomplete quizzes and courses nearing expiration. Clear actions helped users resume a course or find guidance on accessing quizzes and downloading CME/CPD certificates.</p></div>
-          <div class="type-frame"><img src="/images/notifications/type-incomplete-actions.png" alt="A course expiring push notification and the in-app list with Enroll Now and Resume Course actions" loading="lazy"></div>
-        </li>
-        <li class="type">
-          <div class="type-text"><p class="type-tag">Type C · New content and recommendations</p><h3>Discover relevant content</h3><p>New content alerts introduced webinars and courses, with proposed recommendations based on specialty and location. The proposal also explored recommendations related to previous enrollments and popular courses within a user’s specialty.</p></div>
-          <div class="type-frame"><img src="/images/notifications/type-new-content.png" alt="Push notifications for popular courses, a new course and a streak reminder, with the in-app list" loading="lazy"></div>
-        </li>
-        <li class="type">
-          <div class="type-text"><p class="type-tag">Type D · Announcements</p><h3>Stay informed about the app</h3><p>A separate notification category covered feature updates and promotional announcements.</p></div>
-          <div class="type-frame"><img src="/images/notifications/type-announcements.png" alt="Push notifications for a new feature and an exclusive physician announcement, with the in-app list" loading="lazy"></div>
-        </li>
-      </ol>
+
+      <div class="nx-entry">
+        <ol class="nx-doors">
+          <li class="nx-door">
+            <p class="nx-where">Outside the app</p>
+            <div class="nx-vis nx-wall"><div class="nx-wp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <div class="nx-push"><img src="/images/notifications/ui/app-icon.png" alt=""><div><p class="nx-push-head"><b>Popular in Internal Medicine!</b><span>34m ago</span></p><p>Discover where other healthcare professionals are enrolling.</p></div></div>
+            </div>
+            <h3><span class="nx-n">1</span>Push notification</h3>
+            <p>The most direct nudge. Short, specific, and opens the right screen when tapped.</p>
+          </li>
+          <li class="nx-door">
+            <p class="nx-where">Outside the app</p>
+            <div class="nx-vis nx-wall"><div class="nx-wp" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <span class="nx-appicon"><img src="/images/notifications/ui/app-icon.png" alt="MIMS Education app icon"><span class="nx-badge">1</span></span>
+            </div>
+            <h3><span class="nx-n">2</span>App icon badge</h3>
+            <p>A quiet signal on the home screen that stays after a push is missed.</p>
+          </li>
+          <li class="nx-door">
+            <p class="nx-where">Inside the app</p>
+            <div class="nx-vis nx-inapp">
+              <div class="nx-header"><b>Learning</b><svg><use href="#i-sliders"/></svg><span class="nx-bell"><svg><use href="#i-bell-line"/></svg><span class="nx-badge sm">1</span></span><svg><use href="#i-user"/></svg></div>
+            </div>
+            <h3><span class="nx-n">3</span>Bell in the Learning tab</h3>
+            <p>For people already in the app, a badge on the bell shows there is something new.</p>
+          </li>
+        </ol>
+        <svg class="nx-join" viewBox="0 0 600 56" preserveAspectRatio="none" aria-hidden="true"><path d="M100 0C100 36 300 20 300 56M300 0V56M500 0C500 36 300 20 300 56"/></svg>
+        <div class="nx-hub">
+          <div>
+            <p class="nx-where">Where they all lead</p>
+            <h3>The notification center</h3>
+            <p>One list, grouped into Courses, Webinars and Announcements, where every update stays until it is acted on.</p>
+          </div>
+          <div class="nx-app nx-mini" aria-hidden="true">
+            <div class="nx-pills"><span class="on">All</span><span>Courses</span><span>Webinars</span><span>Announcements</span></div>
+            <div class="nx-row"><span class="nx-ico"><svg><use href="#i-hourglass"/></svg></span><div><p>Reminder: Course expiring in <b>30 days.</b></p><small>2 days ago</small></div><span class="nx-btn">Enroll Now</span></div>
+            <div class="nx-row"><span class="nx-ico"><svg><use href="#i-bell"/></svg></span><div><p>Reminder: Your webinar starts in 30 minutes. Tap here to join!</p><small>2 days ago</small></div><span class="nx-btn">Learn More</span></div>
+            <div class="nx-row"><span class="nx-ico"><svg><use href="#i-megaphone"/></svg></span><div><p><b>Introducing a new feature!</b> Make your learning even more fun and effective!</p><small>2 days ago</small></div><span class="nx-btn">Learn More</span></div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section class="cs" id="system">
-      <p class="cs-label">The system</p>
-      <h2 class="cs-title">One reminder, three ways back in.</h2>
-      <div class="prose">
-        <p>The experience included entry points both outside and inside the app: push notifications, an app icon badge, and a notification bell in the Learning tab.</p>
-        <p>An in-app notification center gave users a place to revisit updates, so a missed push was never a lost reminder.</p>
-      </div>
-      <figure class="wide">
-        <div class="wide-frame"><img src="/images/notifications/ui-elements.png" alt="Slide showing the five pieces of the notification system: an app icon with a notification badge, a push notification, the in-app bell badge, the notification list and the notification detail page" loading="lazy"></div>
-        <figcaption>The five pieces: app icon badge, push notification, bell badge, notification list and detail page</figcaption>
-      </figure>
-      <div class="shots n3">
-        <figure class="shot">
-          <div class="shot-frame"><img src="/images/notifications/push-lock-screen.jpg" alt="iPhone lock screen showing two push notifications from the MIMS Education app: a webinar reminder and a new webinar alert" loading="lazy"></div>
-          <figcaption>Push notifications on the lock screen</figcaption>
-        </figure>
-        <figure class="shot">
-          <div class="shot-frame"><img src="/images/notifications/learning-tab.png" alt="The Learning tab with a notification bell in the header and a red badge showing unread updates" loading="lazy"></div>
-          <figcaption>A bell with a badge in the Learning tab</figcaption>
-        </figure>
-        <figure class="shot">
-          <div class="shot-frame"><img src="/images/notifications/notifications-courses.png" alt="The in-app notification center on the Courses tab, listing reminders such as course expiring, finish your course, and new cardiology module, each with an action button" loading="lazy"></div>
-          <figcaption>The in-app notification center</figcaption>
-        </figure>
-      </div>
-    </section>
+
     <section class="cs" id="scanning">
       <p class="cs-label">Scanning</p>
-      <h2 class="cs-title">Easy to scan, clear about what to do.</h2>
+      <h2 class="cs-title">Trying to make it easy to scan.</h2>
       <div class="prose">
-        <p>The high-fidelity designs used category tabs to organize updates, concise messages to communicate their purpose, and visible actions such as “Register,” “Resume Course,” and “See Courses.”</p>
-        <p>These decisions aimed to help users quickly distinguish a reminder about something they had already started from an invitation to explore something new.</p>
+        <p>In the notification center I used category tabs, short messages, and one visible action per item, like “Register”, “Resume Course” or “See Courses”.</p>
+        <p>The hope was that people could tell at a glance whether something was about a course they had already started or an invitation to try something new.</p>
       </div>
       <div class="shots n3">
         <figure class="shot">
@@ -157,44 +327,48 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         </figure>
       </div>
     </section>
+
     <section class="cs" id="destinations">
       <p class="cs-label">Destinations</p>
-      <h2 class="cs-title">Every notification lands somewhere useful.</h2>
+      <h2 class="cs-title">Thinking about where each tap lands.</h2>
       <div class="prose">
-        <p>The proposed flows connected notifications to relevant destinations, including course overviews, filtered content lists, My Activity, and notification details.</p>
-        <p>This made the destination part of the design. Each notification needed to explain why it mattered and lead users toward the action it suggested.</p>
+        <p>A notification is only as helpful as the screen it opens. I mapped each action to a destination, so a tap takes people to their next step instead of dropping them on the home screen.</p>
       </div>
-      <figure class="wide">
-        <div class="wide-frame"><img src="/images/notifications/flow-push.png" alt="User flow diagram: a push notification and the notification list lead to four destinations, the course overview, the notification detail page, a filtered list page and My Activity" loading="lazy"></div>
-        <figcaption>Flow: from a push notification to four possible destinations</figcaption>
-      </figure>
+      <ul class="nx-map">
+        <li><span class="nx-btn">Register</span><span class="nx-arrow" aria-hidden="true"></span><div><b>Webinar overview</b><p>Duration and dates, with registration one tap away.</p></div></li>
+        <li><span class="nx-btn">Enroll Now</span><span class="nx-arrow" aria-hidden="true"></span><div><b>Course overview</b><p>Specialty, CPD points and what the course covers, ready to enroll.</p></div></li>
+        <li><span class="nx-btn">Resume Course</span><span class="nx-arrow" aria-hidden="true"></span><div><b>My Activity</b><p>Courses in progress, each with a Resume button.</p></div></li>
+        <li><span class="nx-btn">See Courses</span><span class="nx-arrow" aria-hidden="true"></span><div><b>Filtered list</b><p>Popular courses, narrowed to the specialty the notification mentions.</p></div></li>
+        <li><span class="nx-btn">Learn More</span><span class="nx-arrow" aria-hidden="true"></span><div><b>Notification detail</b><p>The full announcement, for updates that need more than one line.</p></div></li>
+      </ul>
       <div class="shots n2">
         <figure class="shot">
           <div class="shot-frame"><img src="/images/notifications/webinar-overview.png" alt="Webinar overview screen with duration, pre-registration dates, a Register button and a Back to webinars list link" loading="lazy"></div>
-          <figcaption>Webinar overview, one tap from “Register”</figcaption>
+          <figcaption>Webinar overview, after tapping “Register”</figcaption>
         </figure>
         <figure class="shot">
           <div class="shot-frame"><img src="/images/notifications/course-overview.png" alt="Course overview screen for Asthma Exacerbation: Diagnosis and Treatment with specialty tags, CPD points, overview text and an Enroll button" loading="lazy"></div>
-          <figcaption>Course overview, one tap from “Enroll Now”</figcaption>
+          <figcaption>Course overview, after tapping “Enroll Now”</figcaption>
         </figure>
       </div>
     </section>
+
     <section class="cs" id="next-steps">
-      <p class="cs-label">Next steps</p>
-      <h2 class="cs-title">Closing the loop with the team.</h2>
+      <p class="cs-label">Sharing it</p>
+      <h2 class="cs-title">Bringing the team in early.</h2>
       <div class="prose">
-        <p>I presented the concept to the team in three parts: the concept itself, a prototype demo, and a conversation about next steps.</p>
-        <p>I ended with two questions. Does this approach align with your vision and priorities for the MIMS mobile app? And which key factors should we prioritize as we move forward with the notification feature?</p>
+        <p>I presented the concept to the team in three parts: the idea itself, a prototype demo, and an open conversation about next steps.</p>
+        <p>I closed with two questions, because the team knew things I didn’t. Does this fit your vision and priorities for the MIMS mobile app? And what should we focus on first as we move forward?</p>
       </div>
     </section>
+
     <section class="cs" id="outcome">
       <p class="cs-label">Outcome</p>
-      <h2 class="cs-title">More people came back.</h2>
+      <h2 class="cs-title">What I took away.</h2>
       <div class="prose">
-        <p>After the notification system was introduced, we saw a substantial increase in user engagement.</p>
-        <p>The project reinforced the importance of designing the full journey around a notification: identifying a relevant moment, communicating a clear reason to return, and helping the user take the next step.</p>
+        <p>After the notification system was introduced, we saw a clear increase in engagement. I’m happy it helped, and a lot of people had a hand in getting it there.</p>
+        <p>The biggest lesson for me was that a notification is a small part of a longer journey. It needs the right moment, a clear reason to come back, and a sensible place to land. If I picked this up again, I’d want to keep learning from how people respond and adjust the timing and wording from there.</p>
       </div>
-
     </section>
 
     <section class="cs cta" id="talk">

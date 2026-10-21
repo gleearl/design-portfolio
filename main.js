@@ -97,3 +97,30 @@
   // A clicked link is active straight away.
   links.forEach(function (a) { a.addEventListener('click', function () { setActive(a.getAttribute('href').slice(1)); }); });
 })();
+
+// Tabs for the notification types on the notifications case study. Without JS every panel shows, one after another.
+(function () {
+  document.querySelectorAll('[data-nx-tabs]').forEach(function (box) {
+    var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!n) return;
+        e.preventDefault();
+        select(tabs[(i + n + tabs.length) % tabs.length], true);
+      });
+    });
+    box.classList.add('ready');
+    select(tabs[0]);
+  });
+})();
