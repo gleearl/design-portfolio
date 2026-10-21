@@ -7,7 +7,7 @@ Glee's UI/UX design portfolio: a public site that shows design case studies and 
 - Update `PROGRESS.md` whenever something changes status, and add a dated line to its change log.
 - Update this file when the stack, deploy setup, domain or content rules change.
 - Source of truth: GitHub repo gleearl/design-portfolio (public, branch main), plus Figma.
-- Build/format rules: breakpoints desktop 1440 / tablet 768 / mobile 390. <naming and file locations: not decided yet>
+- Build/format rules: breakpoints desktop 1440 / tablet 768 / mobile 390. Clean URLs: every page is a folder with an index.html (about/, notes/, works/<name>/, notes/<slug>/) and is linked as /about/, /works/<name>/. Use root paths for links and assets (/styles.css, /images/...). Old .html files in the root and works/ are redirect stubs only; do not edit content there.
 
 ## Context
 - Site: design portfolio
@@ -17,7 +17,7 @@ Glee's UI/UX design portfolio: a public site that shows design case studies and 
 
 ## Stack and deploy
 - Stack: plain static HTML + CSS, no build step (provisional, set while implementing the home design; fits GitHub Pages or IONOS)
-- Run locally: `python3 -m http.server 4173` · Build: none
+- Run locally: `python3 -m http.server 4173` from the repo root (root paths need the repo root as the server root) · Build: none
 - Deploy: GitHub Pages from main, root folder (auto-deploys on push)
 - Domain: design.gleearl.com (CNAME file in repo root, added on GitHub 2026-10-21)
 
