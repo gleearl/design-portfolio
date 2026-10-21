@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MIMS web app design system | Glee, UI/UX Designer</title>
-<meta name="description" content="A design system for the MIMS web app built in Figma with variables, styles and components, from tokens up to page templates.">
+<meta name="description" content="How I wrote down the MIMS web app design system in Figma, from tokens to 22 page templates, with AI helping on the slow parts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
@@ -43,16 +43,18 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
   <p class="toc-title">On this page</p>
   <ol>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="#ai">Working with AI</a></li>
     <li><a href="#tokens">Tokens</a></li>
     <li><a href="#components">Components</a></li>
     <li><a href="#templates">Templates</a></li>
+    <li><a href="#takeaways">What I took away</a></li>
   </ol>
 </nav>
 <main class="stack">
   <article id="top" class="post-page case">
     <a class="back" href="/#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
-    <h1 class="post-h1">A design system, built from tokens up</h1>
-    <p class="lede">A Figma library for the MIMS web app, covering the disease guidelines and news pages, where every fill, size and style is a variable, so a change to one token reaches every component and template that uses it.</p>
+    <h1 class="post-h1">Writing down a design system that was already there</h1>
+    <p class="lede">The MIMS web app had grown one page at a time, and its look lived only in code. I wanted the team to have one shared set of pieces to design and build from. This is the Figma library I made for it, with AI as a helping hand along the way.</p>
     <figure class="cover"><img src="/images/design-system/cover-components.svg" alt="Bird's-eye view of components from the MIMS web app design system: the navigation bar, the disease guidelines search with an AI suggestion, specialty chips, a breadcrumb, the Noto Sans type card, the brand red ramp, the bg/brand token, the Showing filter and button states" width="2400" height="1180"></figure>
     <dl class="facts">
       <div><dt>Timeline</dt><dd>2026</dd></div>
@@ -61,18 +63,26 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
 
     <section class="cs" id="overview">
       <p class="cs-label">Overview</p>
-      <h2 class="cs-title">A mirror of the live site, made reusable.</h2>
+      <h2 class="cs-title">The site had a system. It just wasn’t written down.</h2>
       <div class="prose">
-        <p>This library records what the live disease and news pages actually are. I read every colour, size, radius and shadow from the computed styles of the site, then rebuilt them in Figma as variables, text styles and components, using Figma's library features end to end.</p>
-        <p>It is organised in four layers: foundations, components, patterns and templates. Each page of the file has one job, and a Getting Started page explains the structure, the naming rules and how to keep the file honest as the site changes.</p>
+        <p>When I started, the disease guidelines and news pages were live and working well. Their colours, type and spacing lived in the code, though, not in one place a designer could open. New designs often began from screenshots, and that is how small differences creep in: a grey that is nearly the same, a corner that is a pixel off.</p>
+        <p>I didn’t want to invent a new look. I wanted to carefully write down the one that was already there, so designers and developers could trust that what they saw in Figma was what people saw on the site.</p>
+      </div>
+    </section>
+    <section class="cs" id="ai">
+      <p class="cs-label">Working with AI</p>
+      <h2 class="cs-title">AI did the reading. I did the deciding.</h2>
+      <div class="prose">
+        <p>Reading every colour, size, radius and shadow off a live site by hand is slow, and easy to get wrong. So I worked with Claude, an AI assistant, to pull the computed styles from the pages and turn them into lists I could check, and to help with the repetitive parts of setting up variables, styles and components in Figma.</p>
+        <p>That freed up my time for the parts that need a designer’s eye: what each value is for, what it should be called, and which differences on the site were on purpose and which were slips. Nothing went into the library until I had looked at it myself.</p>
       </div>
     </section>
     <section class="cs" id="tokens">
       <p class="cs-label">Tokens</p>
-      <h2 class="cs-title">Raw values below, roles on top.</h2>
+      <h2 class="cs-title">First, the foundations.</h2>
       <div class="prose">
-        <p>Colour is split in two. Primitives hold the raw hex values: the brand red and its tints, a grey ramp and the status colours. Semantic tokens alias them and are named for their role: text, background, border, icon and feedback. Components bind only to the semantic layer, and the primitives are hidden from the pickers on purpose.</p>
-        <p>Spacing, radius, border width, size, breakpoint and motion each have their own collection. Variables use slash names such as text/primary, and each one carries its web code syntax, so Dev Mode shows the matching CSS value.</p>
+        <p>I split colour into two layers. Primitives hold the raw values: the brand red and its tints, a grey ramp and the status colours. Semantic tokens point to them and are named for their job, such as text, background, border, icon and feedback. Components only use the semantic layer, and I hid the primitives from the pickers so nobody reaches for a raw hex by accident.</p>
+        <p>Spacing, radius, border width, size, breakpoint and motion each got their own collection. Every variable has a plain name like text/primary and carries its CSS value, so developers see the matching code in Dev Mode.</p>
       </div>
       <figure class="wide">
         <div class="wide-frame board"><img src="/images/design-system/board-architecture.jpg" alt="Three cards from left to right: primitives with raw hex values, semantic tokens that alias them by role, and a search button whose fill, label, disabled state and radius are bound to those tokens" width="2400" height="1041" loading="lazy"></div>
@@ -89,10 +99,10 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
     </section>
     <section class="cs" id="components">
       <p class="cs-label">Components</p>
-      <h2 class="cs-title">One family per page, desktop and mobile.</h2>
+      <h2 class="cs-title">Then, the pieces people use every day.</h2>
       <div class="prose">
-        <p>Buttons, inputs and search, chips, cards, navigation, breadcrumbs, tables and feedback each get a page, with the desktop 1440 version beside the mobile 390 one. Components use Title Case names and Property=Value variants, and hover, focus and disabled states are real variants rather than notes.</p>
-        <p>Icons are 24px outlined components, swapped through instance properties and never as variants, so tinting a vector never touches the wrapper frame.</p>
+        <p>Buttons, inputs and search, chips, cards, navigation, breadcrumbs, tables and feedback each have their own page, with the desktop 1440 version next to the mobile 390 one. Hover, focus and disabled are real variants rather than notes on the side, so what you pick in Figma behaves like the site does.</p>
+        <p>Icons are 24px outlined components that swap through an instance property. It is a small detail, but it means changing an icon’s colour never breaks the frame around it.</p>
       </div>
       <figure class="wide">
         <div class="wide-frame board"><img src="/images/design-system/board-components.jpg" alt="Component board: primary, outline and text buttons in default, hover and disabled states, sign-up buttons, a view all link, the search field with its AI suggestions, and specialty chips" width="2400" height="1096" loading="lazy"></div>
@@ -101,15 +111,23 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
     </section>
     <section class="cs" id="templates">
       <p class="cs-label">Templates</p>
-      <h2 class="cs-title">22 page templates, all from the library.</h2>
+      <h2 class="cs-title">Finally, whole pages from the same parts.</h2>
       <div class="prose">
-        <p>Disease templates cover the landing page, the 18 disease tabs and search results. News and updates templates cover the landing page, four article types, four listings and search results. Each is built from library components with auto layout, at desktop and mobile widths.</p>
-        <p>A States section on each page shows what a static frame cannot, such as the sticky nav on scroll, the open mobile menu, an error toast and the mobile filter.</p>
+        <p>To check the library held up, I rebuilt the real pages with it: 22 templates in all. The disease side covers the landing page, the 18 disease tabs and search results. News and updates covers the landing page, four article types, four listings and search results. Each one uses only library components with auto layout, at desktop and mobile widths.</p>
+        <p>Some things a still frame can’t show, like the sticky nav on scroll, the open mobile menu, an error toast or the mobile filter. Each template page has a States section for those.</p>
       </div>
       <figure class="wide">
         <div class="wide-frame board"><img src="/images/design-system/board-templates.jpg" alt="The disease guidelines landing template shown in a desktop browser at 1440 and on a phone at 390, both built from library components" width="2400" height="1400" loading="lazy"></div>
         <figcaption>The disease guidelines landing template, desktop and mobile</figcaption>
       </figure>
+    </section>
+    <section class="cs" id="takeaways">
+      <p class="cs-label">What I took away</p>
+      <h2 class="cs-title">A library is only useful if people can trust it.</h2>
+      <div class="prose">
+        <p>Design systems are the part of the work I enjoy most, and this one reminded me why. Starting from what was real, rather than what I thought it should be, made the library something the team could rely on from day one. Version 1.0 went out on 20 September 2026, with a Getting Started page that explains the layers, the naming and how to keep the file in step with the site as it changes.</p>
+        <p>Working with AI changed how I spent my time more than what I made. The slow, careful reading got faster, which left more room for the choices that make a system feel considered. I’m still learning where it helps most, and I’d gladly use it this way again.</p>
+      </div>
     </section>
 
     <section class="cs cta" id="talk">
