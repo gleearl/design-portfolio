@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>easyHR | Glee, UI/UX Designer</title>
+<meta name="description" content="easyHR, a concept for payroll and HR for small businesses in the Philippines and the second app in the Easy series: who it is for, how they use it, and the main screens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>
+try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+<nav class="nav" aria-label="Primary">
+  <a class="name" href="../index.html">Glee Earl Rupal</a>
+  <ul>
+    <li><a href="../index.html#work" aria-current="page">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../notes.html">Notes</a></li>
+  </ul>
+  <ul>
+    <li>
+      <button class="copy-email" id="copy-email" type="button" data-email="glee.rupal@gmail.com">
+        <span class="when-idle">Email</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span>
+      </button>
+      <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+    </li>
+    <li><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://x.com/gleeeearl" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</nav>
+<button class="gbtn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#journeys">User journeys</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#attendance">Attendance</a></li>
+    <li><a href="#payroll">Payroll</a></li>
+    <li><a href="#approvals">Approvals</a></li>
+    <li><a href="#rostering">Rostering</a></li>
+    <li><a href="#reports">Reports</a></li>
+    <li><a href="#phone">Phone</a></li>
+  </ol>
+</nav>
+<main class="stack">
+  <article id="top" class="post-page case">
+    <a class="back" href="../index.html#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
+    <h1 class="post-h1">easyHR, payroll and HR for small businesses</h1>
+    <p class="lede">easyHR is a payroll and HR app for small businesses in the Philippines, including groups of companies and teams that work around the clock. It is the second app in the Easy series, after <a href="easyfs.html">easyFS</a>, and a concept I designed on the same system in green. This page walks through it: who it is for, how they use it, and the main screens.</p>
+    <figure class="cover"><img src="../images/easyhr/cover-motion.svg" alt="Animated easyHR screens in a browser window: on Home, a cursor clicks Clear DTR exceptions, the DTR and exceptions screen opens, and the cursor fills 10 forgotten time outs with the shift end" width="2400" height="1180"></figure>
+    <dl class="facts">
+      <div><dt>Project</dt><dd>easyHR</dd></div>
+      <div><dt>Series</dt><dd>Easy series, with easyFS</dd></div>
+      <div><dt>Platform</dt><dd>Web, and a phone app for employees</dd></div>
+      <div><dt>Role</dt><dd>UI/UX design, concept</dd></div>
+    </dl>
+
+    <section class="cs" id="overview">
+      <p class="cs-label">Overview</p>
+      <h2 class="cs-title">Pay that people count on.</h2>
+      <div class="prose">
+        <p>easyHR covers employee records, attendance, approvals, payroll, government reports, rostering and an employee app. HR and payroll officers run it day to day. Supervisors approve requests and build rosters. Employees use it on their phones to time in, file requests and read their payslips. An owner or finance head approves the final payroll.</p>
+        <p>I built it on the easyFS system: the same shell, components and patterns, with blue swapped for green, so the two apps read as one family. Payroll is a place where a mistake costs someone their pay, so I tried to show what is blocking pay before it goes wrong, and to keep the exact terms (DTR, 201 file, SSS, PhilHealth, HDMF, BIR 1601-C) where payroll staff expect them. The companies, people and amounts shown here are made up.</p>
+      </div>
+    </section>
+
+    <section class="cs" id="journeys">
+      <p class="cs-label">User journeys</p>
+      <h2 class="cs-title">Three people, three cut-offs.</h2>
+      <div class="prose">
+        <p>A typical task for each kind of user, step by step. The line follows how each step feels, where it dips and where it recovers. The feelings are my assumptions and still need testing with real users.</p>
+      </div>
+      <ol class="journeys">
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">CB</span><div><h3>Carla, HR and payroll officer</h3><p>Runs six payrolls a month for three companies. Wants everyone paid right and on time, without a weekend of spreadsheet checks.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot mid l1"></span></div><span class="j-n">01</span><h4>Sees what is due</h4><p>Home says payday is in 4 days and 15 exceptions block compute.</p><span><span class="j-mood mid">Oriented</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">02</span><h4>Imports biometrics</h4><p>Drops the files from four branches. One she already loaded is skipped.</p><span><span class="j-mood low">Wary</span> <span class="j-mood high">then safe</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">03</span><h4>Clears DTR exceptions</h4><p>Fills 10 forgotten time outs with the shift end in one click.</p><span><span class="j-mood low">Tedious</span> <span class="j-mood high">then quick</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">04</span><h4>Computes and reviews</h4><p>Reads why net pay is up 3.3% and checks the two flagged people.</p><span><span class="j-mood low">Worried</span> <span class="j-mood high">then sure</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">05</span><h4>Approves and releases</h4><p>Ramon, the finance head, approves on his phone. Payslips go out at 6:00 AM on payday.</p><span><span class="j-mood high">Relieved</span></span></li>
+            </ol>
+          </div>
+        </li>
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">MV</span><div><h3>Mika, merchandiser</h3><p>Visits malls all week with only her phone, and often starts the day at a store. Wants her time and overtime counted without chasing HR.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">01</span><h4>Times in from home</h4><p>Sees she is 120 m from home, inside her area, and taps Time in.</p><span><span class="j-mood high">Quick</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">02</span><h4>Times in from a store</h4><p>She is 2.4 km away. The app saves her location and asks for a reason.</p><span><span class="j-mood low">Anxious</span> <span class="j-mood high">then reassured</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">03</span><h4>Files official business</h4><p>Adds tomorrow’s two malls, so those time ins are not flagged.</p><span><span class="j-mood high">Ahead</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">04</span><h4>Files leave</h4><p>Picks two dates and sees 6.0 days left before sending.</p><span><span class="j-mood high">Sure</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">05</span><h4>Opens the payslip</h4><p>Net pay is up ₱757.21, and the payslip says it is the overtime.</p><span><span class="j-mood high">Trusting</span></span></li>
+            </ol>
+          </div>
+        </li>
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">LN</span><div><h3>Liza, nurse manager</h3><p>Rosters 14 nurses across day, evening and night shifts every week. Wants every shift covered without wearing out the same nurses.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">01</span><h4>Starts from the rotation</h4><p>The draft is already filled from the rotation, with approved leave in place.</p><span><span class="j-mood high">Head start</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot low l0"></span></div><span class="j-n">02</span><h4>Spots the gap</h4><p>Wednesday night has 2 of 3 nurses. Publish is off until it is covered.</p><span><span class="j-mood low">Alarmed</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">03</span><h4>Covers the night</h4><p>Adds a float nurse who has room and breaks no rule.</p><span><span class="j-mood high">Solved</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot mid l1"></span></div><span class="j-n">04</span><h4>Weighs fatigue</h4><p>Reads four warnings, including a nurse on 7 days in a row who asked for the shifts.</p><span><span class="j-mood mid">Torn</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">05</span><h4>Publishes with a reason</h4><p>Writes why, and 15 nurses are notified. Shifts flow to the DTR.</p><span><span class="j-mood high">Covered</span></span></li>
+            </ol>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="cs" id="home">
+      <p class="cs-label">Home</p>
+      <h2 class="cs-title">Where the payroll stands.</h2>
+      <div class="prose">
+        <p>Home leads with the next payroll run: the cut-off, payday, days left and the step it is on, with one button for the next action. Below it are the things that need attention, the remittance deadlines and who is in today.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/easyhr/home.png" alt="easyHR Home: the next payroll run for cut-off 11 to 25 October with a six step progress bar, payday Fri 30 Oct in 4 days and a Clear DTR exceptions button, a Needs your attention list with five items, remittance deadlines for BIR 1601-C, Pag-IBIG, PhilHealth and SSS, attendance today, and a six month payroll cost chart" width="2880" height="2924" loading="lazy"></div>
+        <figcaption>Home</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="attendance">
+      <p class="cs-label">Attendance</p>
+      <h2 class="cs-title">Fix the DTR before payroll.</h2>
+      <div class="prose">
+        <p>The DTR is computed from biometrics files and the employee app. Exceptions are split into the ones that block compute, like a missing time out, and the ones that can wait. Common fixes work in bulk and can be undone, and every HR edit is marked on the DTR.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/easyhr/dtr.png" alt="DTR and exceptions: a Ready for payroll bar with 15 exceptions blocking compute, tabs for exceptions, DTR by employee, remote punches and imports, and a table of exceptions such as missing time out and no schedule, each with a fix in the last column" width="2880" height="2304" loading="lazy"></div>
+        <figcaption>DTR and exceptions</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="payroll">
+      <p class="cs-label">Payroll</p>
+      <h2 class="cs-title">Review before anyone is paid.</h2>
+      <div class="prose">
+        <p>After compute, the review shows the totals, why net pay changed since the last run, and the people worth a second look. Sending for approval and recalling are easy. Releasing payslips asks first, because it cannot be undone.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/easyhr/payroll-review.png" alt="Payroll review for 11 to 25 October: gross pay, deductions, net pay to release and employer contributions, a Why net pay changed breakdown from the last run, three checks before approval, and a table of people with their change from the last run" width="2880" height="2996" loading="lazy"></div>
+        <figcaption>Payroll run, review</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="approvals">
+      <p class="cs-label">Approvals</p>
+      <h2 class="cs-title">One queue for every request.</h2>
+      <div class="prose">
+        <p>Leave, overtime, official business, shift changes and off-site time ins come into one queue, and clean items can be approved together. An off-site time in shows the distance on a map and any matching official business request. Declining needs a note, so the employee knows why.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/easyhr/approvals.png" alt="Approvals: a queue of 23 requests on the left, and on the right an off-site time in 2.4 km from home shown on a map with the 500 m allowed area, a matching official business request, a note field and Decline and Approve buttons" width="2880" height="2264" loading="lazy"></div>
+        <figcaption>Approvals</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="rostering">
+      <p class="cs-label">Rostering</p>
+      <h2 class="cs-title">Shifts covered, rest kept.</h2>
+      <div class="prose">
+        <p>For teams that work around the clock, a roster starts from a rotation pattern with approved leave already in place. The rows under the grid count nurses per shift against the minimum. A shortage blocks publishing. Fatigue rules only warn, and publishing with a warning asks for a written reason.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/easyhr/roster.png" alt="Roster for a Medical-Surgical ward, 9 to 15 November: a week grid of day, evening and night shifts for 14 nurses, coverage rows showing Wednesday night at 2 of 3, and a Before you publish panel with one shortage and four fatigue warnings" width="2880" height="2324" loading="lazy"></div>
+        <figcaption>Roster</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="reports">
+      <p class="cs-label">Reports</p>
+      <h2 class="cs-title">Government reports in one list.</h2>
+      <div class="prose">
+        <p>BIR, SSS, PhilHealth and Pag-IBIG reports for the month sit in one list with their due dates and amounts, for one company or the whole group. Payroll cost by company sits below.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/easyhr/reports.png" alt="Government reports for October: BIR 1601-C, SSS R-3 and loans, PhilHealth RF-1 and Pag-IBIG MCRF with period, due date, amount and status, and payroll cost by company for three companies" width="2880" height="2370" loading="lazy"></div>
+        <figcaption>Government reports</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="phone">
+      <p class="cs-label">Phone</p>
+      <h2 class="cs-title">The employee app.</h2>
+      <div class="prose">
+        <p>Employees use easyHR on their phones to time in, check their shift and leave, file requests and read payslips. Time in shows the distance from home and the allowed area before the button. The payslip leads with net pay and says why it changed.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame board"><img src="../images/easyhr/board-phones.png" alt="Three phone screens: Home with today’s shift, a Time in button, next payday and leave left; Time in with a map showing the 500 m area around home; and a payslip with net pay of ₱10,412.21 and the earnings and deductions" width="2400" height="1720" loading="lazy"></div>
+        <figcaption>Home, Time in and Payslip on a phone</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs cta" id="talk">
+      <p class="cs-label">Let’s talk</p>
+      <h2 class="cs-title">I’d love to tell you more on a call.</h2>
+      <div class="prose">
+        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through it.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="cta-btn primary copy-email" type="button" data-email="glee.rupal@gmail.com"><span class="when-idle">Email me</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span></button>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Glee Earl Rupal</span>
+</footer>
+
+</div>
+<script src="../main.js"></script>
+<script>
+// Draw each journey's mood line through its dots
+function drawJourneys() {
+  document.querySelectorAll('.j-track').forEach(function (track) {
+    var box = track.getBoundingClientRect();
+    var pts = [].map.call(track.querySelectorAll('.j-dot'), function (d) {
+      var r = d.getBoundingClientRect();
+      return (r.left + r.width / 2 - box.left).toFixed(1) + ',' + (r.top + r.height / 2 - box.top).toFixed(1);
+    });
+    track.querySelector('.j-line polyline').setAttribute('points', pts.join(' '));
+  });
+}
+drawJourneys();
+addEventListener('resize', drawJourneys);
+document.fonts && document.fonts.ready.then(drawJourneys);
+</script>
+
+</body>
+</html>
