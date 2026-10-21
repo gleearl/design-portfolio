@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIMS Philippines design system | Glee, UI/UX Designer</title>
+<meta name="description" content="A design system for MIMS Philippines built in Figma with variables, styles and components, from tokens up to page templates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>
+try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+<nav class="nav" aria-label="Primary">
+  <a class="name" href="../index.html">Glee Earl Rupal</a>
+  <ul>
+    <li><a href="../index.html#work" aria-current="page">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../notes.html">Notes</a></li>
+  </ul>
+  <ul>
+    <li>
+      <button class="copy-email" id="copy-email" type="button" data-email="glee.rupal@gmail.com">
+        <span class="when-idle">Email</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span>
+      </button>
+      <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+    </li>
+    <li><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://x.com/gleeeearl" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</nav>
+<button class="gbtn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#tokens">Tokens</a></li>
+    <li><a href="#components">Components</a></li>
+    <li><a href="#templates">Templates</a></li>
+    <li><a href="#gaps">Gaps</a></li>
+  </ol>
+</nav>
+<main class="stack">
+  <article id="top" class="post-page case">
+    <a class="back" href="../index.html#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
+    <h1 class="post-h1">A design system, built from tokens up</h1>
+    <p class="lede">A Figma library for the MIMS Philippines disease guidelines and news pages, where every fill, size and style is a variable, so a change to one token reaches every component and template that uses it.</p>
+    <figure class="cover"><img src="../images/design-system/cover.jpg" alt="Cover for the MIMS Philippines design system: the headline Tokens in, UI out beside a panel showing red and grey primitives, semantic token names, and buttons, a chip and a search field built from them, on a dark background" width="2400" height="1180"></figure>
+    <dl class="facts">
+      <div><dt>Project</dt><dd>Design system, version 1.0</dd></div>
+      <div><dt>Product</dt><dd>MIMS Philippines, disease guidelines and news</dd></div>
+      <div><dt>Tools</dt><dd>Figma and Claude</dd></div>
+      <div><dt>Released</dt><dd>20 September 2026</dd></div>
+      <div class="wide-fact"><dt>Scope</dt><dd>Colour, typography, spacing, grid, borders, elevation, icons, motion, components, patterns and page templates</dd></div>
+    </dl>
+
+    <section class="cs" id="overview">
+      <p class="cs-label">Overview</p>
+      <h2 class="cs-title">A mirror of the live site, made reusable.</h2>
+      <div class="prose">
+        <p>This library records what the live disease and news pages actually are. I read every colour, size, radius and shadow from the computed styles of the site, then rebuilt them in Figma as variables, text styles and components, using Figma's library features end to end.</p>
+        <p>It is organised in four layers: foundations, components, patterns and templates. Each page of the file has one job, and a Getting Started page explains the structure, the naming rules and how to keep the file honest as the site changes.</p>
+      </div>
+    </section>
+    <section class="cs" id="tokens">
+      <p class="cs-label">Tokens</p>
+      <h2 class="cs-title">Raw values below, roles on top.</h2>
+      <div class="prose">
+        <p>Colour is split in two. Primitives hold the raw hex values: the brand red and its tints, a grey ramp and the status colours. Semantic tokens alias them and are named for their role: text, background, border, icon and feedback. Components bind only to the semantic layer, and the primitives are hidden from the pickers on purpose.</p>
+        <p>Spacing, radius, border width, size, breakpoint and motion each have their own collection. Variables use slash names such as text/primary, and each one carries its web code syntax, so Dev Mode shows the matching CSS value.</p>
+      </div>
+    </section>
+    <section class="cs" id="components">
+      <p class="cs-label">Components</p>
+      <h2 class="cs-title">One family per page, desktop and mobile.</h2>
+      <div class="prose">
+        <p>Buttons, inputs and search, chips, cards, navigation, breadcrumbs, tables and feedback each get a page, with the desktop 1440 version beside the mobile 390 one. Components use Title Case names and Property=Value variants, and hover, focus and disabled states are real variants rather than notes.</p>
+        <p>Icons are 24px outlined components, swapped through instance properties and never as variants, so tinting a vector never touches the wrapper frame.</p>
+      </div>
+    </section>
+    <section class="cs" id="templates">
+      <p class="cs-label">Templates</p>
+      <h2 class="cs-title">22 page templates, all from the library.</h2>
+      <div class="prose">
+        <p>Disease templates cover the landing page, the 18 disease tabs and search results. News and updates templates cover the landing page, four article types, four listings and search results. Each is built from library components with auto layout, at desktop and mobile widths.</p>
+        <p>A States section on each page shows what a static frame cannot, such as the sticky nav on scroll, the open mobile menu, an error toast and the mobile filter.</p>
+      </div>
+    </section>
+    <section class="cs" id="gaps">
+      <p class="cs-label">Gaps</p>
+      <h2 class="cs-title">What the live site is missing.</h2>
+      <div class="prose">
+        <p>Eleven components do not exist in production, so I listed them as a backlog with a severity and the reason each one matters. The most serious is the focus ring: the search input removes its outline with no replacement, which fails the WCAG focus visible criterion. Alerts, error states, empty states and toasts follow.</p>
+        <p>I also corrected three production behaviours rather than copy them: a chip hover that reflowed the text, a tab hover that matched the active state, and a breadcrumb size that overflowed on tablet.</p>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Glee Earl Rupal</span>
+</footer>
+
+</div>
+<script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIMS notification experience | Glee, UI/UX Designer</title>
+<meta name="description" content="Helping healthcare professionals return to learning through webinar reminders, course prompts, and relevant content alerts. User engagement increased substantially following the introduction of the system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>
+try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+<nav class="nav" aria-label="Primary">
+  <a class="name" href="../index.html">Glee Earl Rupal</a>
+  <ul>
+    <li><a href="../index.html#work" aria-current="page">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../notes.html">Notes</a></li>
+  </ul>
+  <ul>
+    <li>
+      <button class="copy-email" id="copy-email" type="button" data-email="glee.rupal@gmail.com">
+        <span class="when-idle">Email</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span>
+      </button>
+      <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+    </li>
+    <li><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://x.com/gleeeearl" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</nav>
+<button class="gbtn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#challenge">The challenge</a></li>
+    <li><a href="#approach">My approach</a></li>
+    <li><a href="#system">The system</a></li>
+    <li><a href="#scanning">Scanning</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#next-steps">Next steps</a></li>
+    <li><a href="#outcome">Outcome</a></li>
+  </ol>
+</nav>
+<main class="stack">
+  <article id="top" class="post-page case">
+    <a class="back" href="../index.html#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
+    <h1 class="post-h1">Helping users stay engaged with learning</h1>
+    <p class="lede">Designing a notification experience for the MIMS mobile app that helps healthcare professionals discover relevant content and follow through on learning activities.</p>
+    <figure class="cover"><img src="../images/notifications/cover.jpg" alt="Three phone screens from the MIMS Education app: a push notification on the lock screen, the in-app notification center and the Learning tab with a notification bell" width="2400" height="1050"></figure>
+    <dl class="facts">
+      <div><dt>Project</dt><dd>Notification system</dd></div>
+      <div><dt>Product</dt><dd>MIMS Education app</dd></div>
+      <div><dt>Team</dt><dd>UX Design Team</dd></div>
+      <div><dt>Presented</dt><dd>January 2025</dd></div>
+      <div class="wide-fact"><dt>Scope</dt><dd>Notification strategy, user flows, high-fidelity UI</dd></div>
+    </dl>
+
+    <section class="cs" id="overview">
+      <p class="cs-label">Overview</p>
+      <h2 class="cs-title">What brings a learner back after they sign up?</h2>
+      <div class="prose">
+        <p>I designed a notification system proposal to increase engagement with the app’s learning content. The experience connected push notifications with an in-app notification center, giving users a clear path back to webinars, courses, and unfinished activities.</p>
+        <p>Following the introduction of the notification system, we observed a substantial increase in user engagement.</p>
+      </div>
+
+    </section>
+    <section class="cs" id="challenge">
+      <p class="cs-label">The challenge</p>
+      <h2 class="cs-title">Signing up is only the first step of learning.</h2>
+      <div class="prose">
+        <p>Registering for a webinar or enrolling in a course is only the beginning of a learning journey. Users may register weeks before an event, leave a quiz unfinished, or miss the deadline to complete a course.</p>
+        <p>The design challenge was to help users stay aware of these opportunities and understand what to do next.</p>
+      </div>
+
+    </section>
+    <section class="cs" id="approach">
+      <p class="cs-label">My approach</p>
+      <h2 class="cs-title">Four types of notification for four moments.</h2>
+      <div class="prose">
+        <p>I organized the proposal around moments when a notification could help users take a meaningful action.</p>
+      </div>
+      <ol class="types">
+        <li class="type">
+          <div class="type-text"><p class="type-tag">Type A · Webinar reminders</p><h3>Remember an upcoming webinar</h3><p>Reminders brought registered webinars back to users’ attention closer to the event, including when they had signed up well in advance.</p></div>
+          <div class="type-frame"><img src="../images/notifications/type-webinar-reminders.png" alt="A push notification and the matching in-app list for webinar reminders" loading="lazy"></div>
+        </li>
+        <li class="type">
+          <div class="type-text"><p class="type-tag">Type B · Incomplete actions</p><h3>Continue unfinished learning</h3><p>Notifications highlighted incomplete quizzes and courses nearing expiration. Clear actions helped users resume a course or find guidance on accessing quizzes and downloading CME/CPD certificates.</p></div>
+          <div class="type-frame"><img src="../images/notifications/type-incomplete-actions.png" alt="A course expiring push notification and the in-app list with Enroll Now and Resume Course actions" loading="lazy"></div>
+        </li>
+        <li class="type">
+          <div class="type-text"><p class="type-tag">Type C · New content and recommendations</p><h3>Discover relevant content</h3><p>New content alerts introduced webinars and courses, with proposed recommendations based on specialty and location. The proposal also explored recommendations related to previous enrollments and popular courses within a user’s specialty.</p></div>
+          <div class="type-frame"><img src="../images/notifications/type-new-content.png" alt="Push notifications for popular courses, a new course and a streak reminder, with the in-app list" loading="lazy"></div>
+        </li>
+        <li class="type">
+          <div class="type-text"><p class="type-tag">Type D · Announcements</p><h3>Stay informed about the app</h3><p>A separate notification category covered feature updates and promotional announcements.</p></div>
+          <div class="type-frame"><img src="../images/notifications/type-announcements.png" alt="Push notifications for a new feature and an exclusive physician announcement, with the in-app list" loading="lazy"></div>
+        </li>
+      </ol>
+    </section>
+    <section class="cs" id="system">
+      <p class="cs-label">The system</p>
+      <h2 class="cs-title">One reminder, three ways back in.</h2>
+      <div class="prose">
+        <p>The experience included entry points both outside and inside the app: push notifications, an app icon badge, and a notification bell in the Learning tab.</p>
+        <p>An in-app notification center gave users a place to revisit updates, so a missed push was never a lost reminder.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/notifications/ui-elements.png" alt="Slide showing the five pieces of the notification system: an app icon with a notification badge, a push notification, the in-app bell badge, the notification list and the notification detail page" loading="lazy"></div>
+        <figcaption>The five pieces: app icon badge, push notification, bell badge, notification list and detail page</figcaption>
+      </figure>
+      <div class="shots n3">
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/push-lock-screen.jpg" alt="iPhone lock screen showing two push notifications from the MIMS Education app: a webinar reminder and a new webinar alert" loading="lazy"></div>
+          <figcaption>Push notifications on the lock screen</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/learning-tab.png" alt="The Learning tab with a notification bell in the header and a red badge showing unread updates" loading="lazy"></div>
+          <figcaption>A bell with a badge in the Learning tab</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/notifications-courses.png" alt="The in-app notification center on the Courses tab, listing reminders such as course expiring, finish your course, and new cardiology module, each with an action button" loading="lazy"></div>
+          <figcaption>The in-app notification center</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="cs" id="scanning">
+      <p class="cs-label">Scanning</p>
+      <h2 class="cs-title">Easy to scan, clear about what to do.</h2>
+      <div class="prose">
+        <p>The high-fidelity designs used category tabs to organize updates, concise messages to communicate their purpose, and visible actions such as “Register,” “Resume Course,” and “See Courses.”</p>
+        <p>These decisions aimed to help users quickly distinguish a reminder about something they had already started from an invitation to explore something new.</p>
+      </div>
+      <div class="shots n3">
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/notifications-courses.png" alt="Notification center on the Courses tab with Enroll Now, Resume Course and See Courses actions" loading="lazy"></div>
+          <figcaption>Courses: resume, enroll, finish</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/notifications-webinars.png" alt="Notification center on the Webinars tab with a Register action for an exclusive cardiology webinar and a reminder that a webinar starts in 30 minutes" loading="lazy"></div>
+          <figcaption>Webinars: register, join</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/notifications-announcements.png" alt="Notification center on the Announcements tab with Learn More actions for a new feature and a physician announcement" loading="lazy"></div>
+          <figcaption>Announcements: app updates</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="cs" id="destinations">
+      <p class="cs-label">Destinations</p>
+      <h2 class="cs-title">Every notification lands somewhere useful.</h2>
+      <div class="prose">
+        <p>The proposed flows connected notifications to relevant destinations, including course overviews, filtered content lists, My Activity, and notification details.</p>
+        <p>This made the destination part of the design. Each notification needed to explain why it mattered and lead users toward the action it suggested.</p>
+      </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/notifications/flow-push.png" alt="User flow diagram: a push notification and the notification list lead to four destinations, the course overview, the notification detail page, a filtered list page and My Activity" loading="lazy"></div>
+        <figcaption>Flow: from a push notification to four possible destinations</figcaption>
+      </figure>
+      <div class="shots n2">
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/webinar-overview.png" alt="Webinar overview screen with duration, pre-registration dates, a Register button and a Back to webinars list link" loading="lazy"></div>
+          <figcaption>Webinar overview, one tap from “Register”</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="../images/notifications/course-overview.png" alt="Course overview screen for Asthma Exacerbation: Diagnosis and Treatment with specialty tags, CPD points, overview text and an Enroll button" loading="lazy"></div>
+          <figcaption>Course overview, one tap from “Enroll Now”</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="cs" id="next-steps">
+      <p class="cs-label">Next steps</p>
+      <h2 class="cs-title">Closing the loop with the team.</h2>
+      <div class="prose">
+        <p>I presented the concept to the team in three parts: the concept itself, a prototype demo, and a conversation about next steps.</p>
+        <p>I ended with two questions. Does this approach align with your vision and priorities for the MIMS mobile app? And which key factors should we prioritize as we move forward with the notification feature?</p>
+      </div>
+    </section>
+    <section class="cs" id="outcome">
+      <p class="cs-label">Outcome</p>
+      <h2 class="cs-title">More people came back.</h2>
+      <div class="prose">
+        <p>After the notification system was introduced, we saw a substantial increase in user engagement.</p>
+        <p>The project reinforced the importance of designing the full journey around a notification: identifying a relevant moment, communicating a clear reason to return, and helping the user take the next step.</p>
+      </div>
+
+    </section>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Glee Earl Rupal</span>
+</footer>
+
+</div>
+<script src="../main.js"></script>
+</body>
+</html>

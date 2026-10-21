@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 525" role="img" aria-label="Animated illustration: a bell with a badge rings, notifications slide into a phone, and action chips float beside it">
+  <title>Notifications reaching a learner</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0.45">
+      <stop offset="0" stop-color="#E2E8D0"/>
+      <stop offset="0.55" stop-color="#DEE2F0"/>
+      <stop offset="1" stop-color="#EEE2D6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#141828" flood-opacity="0.16"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#141828" flood-opacity="0.14"/>
+    </filter>
+    <clipPath id="screen"><rect x="482" y="64" width="236" height="500" rx="26"/></clipPath>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .ink { fill: #32404F; }
+    .muted { fill: #6B7482; }
+    .red { fill: #C8161D; }
+    .box { transform-box: fill-box; transform-origin: center; }
+    .ring { animation: ring 4.5s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 8%; }
+    .pulse { animation: pulse 3s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .pulse.b { animation-delay: 1.5s; }
+    .badge { animation: pop 4.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .card { opacity: 0; animation: slide 9s cubic-bezier(.2,.8,.2,1) infinite; }
+    .c2 { animation-delay: 1.2s; }
+    .c3 { animation-delay: 2.4s; }
+    .chip { animation: bob 5s ease-in-out infinite; }
+    .chip.b { animation-delay: 1.2s; }
+    .chip.c { animation-delay: 2.4s; }
+    .flow { stroke-dasharray: 6 10; animation: dash 2.2s linear infinite; }
+    @keyframes ring { 0%, 55%, 100% { transform: rotate(0); } 6% { transform: rotate(14deg); } 12% { transform: rotate(-12deg); } 18% { transform: rotate(9deg); } 24% { transform: rotate(-6deg); } 30% { transform: rotate(3deg); } 36% { transform: rotate(0); } }
+    @keyframes pulse { 0% { transform: scale(.55); opacity: .5; } 100% { transform: scale(1.6); opacity: 0; } }
+    @keyframes pop { 0%, 6%, 100% { transform: scale(1); } 12% { transform: scale(1.25); } 20% { transform: scale(1); } }
+    @keyframes slide { 0% { opacity: 0; transform: translateY(-26px); } 7% { opacity: 1; transform: translateY(0); } 80% { opacity: 1; transform: translateY(0); } 92%, 100% { opacity: 0; transform: translateY(10px); } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes dash { to { stroke-dashoffset: -32; } }
+    @media (prefers-reduced-motion: reduce) {
+      .ring, .pulse, .badge, .chip, .flow { animation: none; }
+      .card { animation: none; opacity: 1; }
+    }
+  </style>
+
+  <rect width="1200" height="525" fill="url(#bg)"/>
+
+  <!-- soft background shapes -->
+  <circle cx="150" cy="90" r="120" fill="#fff" opacity=".28"/>
+  <circle cx="1090" cy="450" r="150" fill="#fff" opacity=".24"/>
+
+  <!-- flow lines: reminder to phone to next step -->
+  <path class="flow" d="M372 262 C 420 262, 440 262, 480 262" fill="none" stroke="#32404F" stroke-opacity=".45" stroke-width="2.5" stroke-linecap="round"/>
+  <path class="flow" d="M720 200 C 770 200, 790 150, 840 150" fill="none" stroke="#32404F" stroke-opacity=".45" stroke-width="2.5" stroke-linecap="round"/>
+  <path class="flow" d="M720 270 C 770 270, 790 270, 840 270" fill="none" stroke="#32404F" stroke-opacity=".45" stroke-width="2.5" stroke-linecap="round"/>
+  <path class="flow" d="M720 340 C 770 340, 790 390, 840 390" fill="none" stroke="#32404F" stroke-opacity=".45" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- bell -->
+  <g transform="translate(270 262)">
+    <circle class="pulse" r="62" fill="#fff" opacity=".5"/>
+    <circle class="pulse b" r="62" fill="#fff" opacity=".5"/>
+    <circle r="78" fill="#fff" filter="url(#shadow)"/>
+    <g class="ring">
+      <path d="M0 -36 C -22 -36, -32 -18, -32 2 L -32 18 L -42 30 L 42 30 L 32 18 L 32 2 C 32 -18, 22 -36, 0 -36 Z" fill="#32404F"/>
+      <path d="M-11 38 a11 11 0 0 0 22 0 Z" fill="#32404F"/>
+      <circle cx="0" cy="-42" r="5" fill="#32404F"/>
+    </g>
+    <g class="badge">
+      <circle cx="34" cy="-40" r="19" fill="#C8161D" stroke="#fff" stroke-width="4"/>
+      <text x="34" y="-33" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">3</text>
+    </g>
+  </g>
+
+  <!-- phone -->
+  <g filter="url(#shadow)">
+    <rect x="470" y="52" width="260" height="520" rx="38" fill="#fff"/>
+    <rect x="470" y="52" width="260" height="520" rx="38" fill="none" stroke="#32404F" stroke-opacity=".18" stroke-width="2"/>
+  </g>
+  <g clip-path="url(#screen)">
+    <rect x="482" y="64" width="236" height="500" fill="#fff"/>
+    <rect x="590" y="74" width="20" height="5" rx="2.5" fill="#32404F" opacity=".2"/>
+    <text x="600" y="112" text-anchor="middle" font-size="15" font-weight="600" class="ink">Notifications</text>
+    <line x1="482" y1="128" x2="718" y2="128" stroke="#32404F" stroke-opacity=".12"/>
+    <g font-size="11" class="muted">
+      <text x="498" y="152">All</text>
+      <rect x="528" y="138" width="56" height="20" rx="10" fill="#FBE7E7"/>
+      <text x="556" y="152" text-anchor="middle" class="red" font-weight="600">Courses</text>
+      <text x="598" y="152">Webinars</text>
+    </g>
+
+    <g class="card c1">
+      <rect x="494" y="172" width="212" height="92" rx="14" fill="#EAEEF5"/>
+      <circle cx="518" cy="198" r="12" fill="#D2E6F5"/>
+      <path d="M518 189 l2.4 6 6 2.4 -6 2.4 -2.4 6 -2.4 -6 -6 -2.4 6 -2.4 Z" fill="#2B6C9B"/>
+      <text x="540" y="196" font-size="11.5" font-weight="600" class="ink">Your webinar starts soon</text>
+      <text x="540" y="212" font-size="10.5" class="muted">Tap here to join</text>
+      <rect x="540" y="226" width="82" height="24" rx="12" class="red"/>
+      <text x="581.0" y="242" text-anchor="middle" font-size="10.5" font-weight="600" fill="#fff">Learn More</text>
+    </g>
+    <g class="card c2">
+      <rect x="494" y="274" width="212" height="92" rx="14" fill="#FFFFFF" stroke="#32404F" stroke-opacity=".12"/>
+      <circle cx="518" cy="300" r="12" fill="#D2E6F5"/>
+      <path d="M518 291 l2.4 6 6 2.4 -6 2.4 -2.4 6 -2.4 -6 -6 -2.4 6 -2.4 Z" fill="#2B6C9B"/>
+      <text x="540" y="298" font-size="11.5" font-weight="600" class="ink">Course expiring in 30 days</text>
+      <text x="540" y="314" font-size="10.5" class="muted">2 CPD points left to earn</text>
+      <rect x="540" y="328" width="100" height="24" rx="12" class="red"/>
+      <text x="590.0" y="344" text-anchor="middle" font-size="10.5" font-weight="600" fill="#fff">Resume Course</text>
+    </g>
+    <g class="card c3">
+      <rect x="494" y="376" width="212" height="92" rx="14" fill="#EAEEF5"/>
+      <circle cx="518" cy="402" r="12" fill="#D2E6F5"/>
+      <path d="M518 393 l2.4 6 6 2.4 -6 2.4 -2.4 6 -2.4 -6 -6 -2.4 6 -2.4 Z" fill="#2B6C9B"/>
+      <text x="540" y="400" font-size="11.5" font-weight="600" class="ink">New cardiology course</text>
+      <text x="540" y="416" font-size="10.5" class="muted">Earn 2 CME points</text>
+      <rect x="540" y="430" width="88" height="24" rx="12" class="red"/>
+      <text x="584.0" y="446" text-anchor="middle" font-size="10.5" font-weight="600" fill="#fff">See Courses</text>
+    </g>
+  </g>
+
+  <!-- action chips -->
+  <g class="chip" filter="url(#soft)">
+    <rect x="840" y="132" width="150" height="40" rx="20" fill="#fff"/>
+    <circle cx="862" cy="152" r="8" fill="#6B7A3A"/>
+    <text x="880" y="157" font-size="14" font-weight="600" class="ink">Register</text>
+  </g>
+  <g class="chip b" filter="url(#soft)">
+    <rect x="840" y="252" width="190" height="40" rx="20" fill="#fff"/>
+    <circle cx="862" cy="272" r="8" fill="#E65F2E"/>
+    <text x="880" y="277" font-size="14" font-weight="600" class="ink">Resume Course</text>
+  </g>
+  <g class="chip c" filter="url(#soft)">
+    <rect x="840" y="372" width="164" height="40" rx="20" fill="#fff"/>
+    <circle cx="862" cy="392" r="8" fill="#2B6C9B"/>
+    <text x="880" y="397" font-size="14" font-weight="600" class="ink">See Courses</text>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#fff" opacity=".9">
+    <path class="chip" d="M130 400 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5 Z"/>
+    <path class="chip b" d="M1110 120 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4 Z"/>
+    <path class="chip c" d="M390 90 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/>
+  </g>
+</svg>
