@@ -15,7 +15,7 @@ Folder and docs set up. Next action: decide the goal and audience (checklist ite
 | # | Item | Status | Notes |
 |---|---|---|---|
 | 1 | Decide goal and audience (full-time roles, freelance clients, personal brand) | ⬜ | |
-| 2 | Pick 3–4 case studies to feature and check what can be shown publicly | 🟡 | 3 of 3–4 written: MIMS notification experience (works/notification-system.html), UI style guide (works/ui-style-guide.html) and MIMS Philippines design system (works/design-system.html, no images yet). Needs a public-use check with MIMS and for askchamber |
+| 2 | Pick 3–4 case studies to feature and check what can be shown publicly | 🟡 | 4 written: easyFS web app (works/easyfs.html, self-initiated redesign of Glee's Humedit-era product, fictional data only), MIMS notification experience (works/notification-system.html), UI style guide (works/ui-style-guide.html) and MIMS Philippines design system (works/design-system.html, no images yet). Needs a public-use check with MIMS and for askchamber |
 | 3 | Write bio / about copy | ⬜ | |
 | 4 | Visual direction and key pages in Figma (home, case study template, about, contact) | 🟡 | Home designed as a Claude Design canvas (liquid glass); implemented as static `index.html` + `styles.css`. Case study template, about, contact still to do |
 | 5 | Write case studies | 🟡 | 1 done (notifications), no images yet |
@@ -52,6 +52,7 @@ Status key: ⬜ Not started · 🟡 In progress · 🔍 In review · ✅ Done
 - Which employer and client work can be shown publicly.
 
 ## Change log
+- 2026-10-21: Added fourth work, easyFS web app (works/easyfs.html), from ../easyfs-redesign. Self-initiated redesign of the cloud accounting app Glee designed at Humedit. Per Glee: features only the new web app, no before screens of the earlier design. Sections: Overview, Users (3 personas), User journeys (3 journey maps), Home, Review, Invoicing, Month end (reconciliation + 2550Q), Phone, Next (assumptions to test). Screens rendered at 2x from the HTML prototype (the prototype-only User journeys nav link hidden in the shots); journey maps cropped from design/journey.html and open full size on click. New static cover (images/easyfs/cover.jpg) built from the app's own components on a pale grid. Home card added after the design system card. Open: confirm role and dates on the original easyFS work, and whether to name Humedit.
 - 2026-10-21: Pushed site updates to main (GitHub Pages). Custom domain design.gleearl.com set via a CNAME file added on GitHub; recorded in CLAUDE.md.
 - 2026-10-21: Added a closing "Let’s talk" section to all three work pages: "I’d love to tell you more on a call." with Email me (mailto) and Message on LinkedIn buttons.
 - 2026-10-21: Removed the Gaps section (and its table of contents link) from the design system case study, at Glee's request. Board screenshots kept with equal margins (a mistaken tight crop was undone from the browser cache).
