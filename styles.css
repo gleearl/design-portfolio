@@ -419,3 +419,34 @@ html { scroll-behavior: smooth; }
   * { transition: none !important; }
   .tile.reveal { opacity: 1; transform: none; }
 }
+
+/* User journeys drawn on the page: persona, five steps, and a mood line */
+.journeys { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.journey { padding: 28px; border-radius: 20px; background: var(--panel); }
+.j-who { display: flex; gap: 14px; align-items: flex-start; max-width: 600px; }
+.j-avatar { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--bg); color: var(--ink); font-size: 14px; font-weight: 500; box-shadow: 0 0 0 1px var(--line); }
+.j-who h3 { margin: 0; font-size: 15px; font-weight: 500; color: var(--ink); }
+.j-who p { margin: 2px 0 0; color: var(--faint); }
+.j-track { position: relative; margin-top: 24px; }
+.j-line { display: none; }
+.j-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.j-step { display: flex; flex-direction: column; gap: 4px; }
+.j-step .j-n { font-size: 13px; color: var(--faint); font-family: 'Geist Mono', monospace; }
+.j-step h4 { margin: 0; font-size: 15px; font-weight: 500; color: var(--ink); }
+.j-step p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+.j-mood { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 13px; color: var(--faint); }
+.j-mood::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--olive); }
+.j-mood.low::before { background: var(--accent); }
+.j-mood.mid::before { background: var(--faint); }
+.j-dots { display: none; }
+@media (min-width: 900px) {
+  .j-line { display: block; position: absolute; left: 0; top: 0; width: 100%; height: 72px; overflow: visible; pointer-events: none; }
+  .j-line polyline { fill: none; stroke: var(--faint); stroke-opacity: .45; stroke-width: 1.5; stroke-dasharray: 4 4; }
+  .j-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+  .j-dots { display: block; position: relative; height: 72px; margin-bottom: 14px; }
+  .j-dot { position: absolute; z-index: 1; left: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: var(--olive); box-shadow: 0 0 0 4px var(--panel); }
+  .j-dot.low { background: var(--accent); }
+  .j-dot.mid { background: var(--faint); }
+  .j-dot.l0 { top: 60px; } .j-dot.l1 { top: 36px; } .j-dot.l2 { top: 12px; }
+  .j-dot.a { left: calc(50% - 16px); } .j-dot.b { left: calc(50% + 16px); }
+}

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>easyFS web app | Glee, UI/UX Designer</title>
-<meta name="description" content="A redesign of easyFS, cloud accounting for Philippine small businesses: a calm home for owners, a review queue for automated entries, and BIR filing that tells you what is missing.">
+<title>easyFS | Glee, UI/UX Designer</title>
+<meta name="description" content="The easyFS web app, cloud accounting for small businesses in the Philippines: who it is for, how they use it, and the main screens.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
@@ -43,159 +43,154 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
   <p class="toc-title">On this page</p>
   <ol>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#users">Users</a></li>
     <li><a href="#journeys">User journeys</a></li>
     <li><a href="#home">Home</a></li>
     <li><a href="#review">Review</a></li>
     <li><a href="#invoicing">Invoicing</a></li>
     <li><a href="#month-end">Month end</a></li>
     <li><a href="#phone">Phone</a></li>
-    <li><a href="#next">Next</a></li>
   </ol>
 </nav>
 <main class="stack">
   <article id="top" class="post-page case">
     <a class="back" href="../index.html#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
-    <h1 class="post-h1">Accounting that tells you what to do next</h1>
-    <p class="lede">easyFS is cloud accounting for Philippine small businesses. I redesigned the web app so an owner can see how the business is doing in one glance, while the bookkeeper and accountant still get every BIR form and journal entry they need.</p>
-    <figure class="cover"><img src="../images/easyfs/cover.jpg" alt="Components from the easyFS web app on a pale grid: the Needs your attention list with drafts, possible duplicates and a Z-reading mismatch, a 2550Q deadline due in 5 days, the side navigation with a Review count of 14, the New and Post and next buttons, and the money in and money out chart" width="2400" height="1180"></figure>
+    <h1 class="post-h1">easyFS, cloud accounting for small businesses</h1>
+    <p class="lede">easyFS is an accounting app for small businesses in the Philippines, from coffee shops to repair shops. I worked on it at Humedit. This page walks through the web app: who it is for, how they use it, and the main screens.</p>
+    <figure class="cover"><img src="../images/easyfs/cover.jpg" alt="Components from the easyFS web app on a pale grid: the Needs your attention list, a 2550Q deadline due in 5 days, the side navigation with a Review count of 14, the New and Post and next buttons, and the money in and money out chart" width="2400" height="1180"></figure>
     <dl class="facts">
-      <div><dt>Project</dt><dd>easyFS web app redesign</dd></div>
-      <div><dt>Product</dt><dd>easyFS by Humedit Philippines</dd></div>
-      <div><dt>Type</dt><dd>Self-initiated concept</dd></div>
-      <div><dt>Prototype</dt><dd>11 linked screens in HTML</dd></div>
-      <div class="wide-fact"><dt>Scope</dt><dd>User journeys, information architecture, design tokens, components, key screens at desktop and phone, clickable prototype</dd></div>
+      <div><dt>Project</dt><dd>easyFS</dd></div>
+      <div><dt>Company</dt><dd>Humedit Philippines</dd></div>
+      <div><dt>Platform</dt><dd>Web, desktop and phone</dd></div>
+      <div><dt>Role</dt><dd>UI/UX design</dd></div>
     </dl>
 
     <section class="cs" id="overview">
       <p class="cs-label">Overview</p>
-      <h2 class="cs-title">Compliance-heavy, but calm.</h2>
+      <h2 class="cs-title">Two kinds of users.</h2>
       <div class="prose">
-        <p>I designed easyFS while I worked at Humedit. It is a BIR CAS-ready accounting app used by coffee shops, retailers, spas and repair shops, and it covers sales, purchases, inventory, banking, financial statements and BIR forms.</p>
-        <p>This project is my own redesign of that web app, done after I left. The goal was simple: keep everything an accountant needs, but make the first screen answer the questions an owner actually asks. Where is my money, what needs me today, and when is the next BIR deadline.</p>
-        <p>I designed it directly in HTML and CSS, with tokens, shared components and one file per screen, so the set doubles as a clickable prototype. Every business, person and amount in it is made up.</p>
+        <p>easyFS covers sales, purchases, inventory, banking, financial statements and BIR forms. It is used by two kinds of people. Owners want a quick sense of how the business is doing. Bookkeepers and accountants do the daily entries, the bank reconciliation and the BIR filing.</p>
+        <p>I tried to keep both in mind on every screen: everyday words up front for owners, and the accounting terms and form numbers still there for the people who need them. The businesses, people and amounts shown here are made up.</p>
       </div>
-    </section>
-
-    <section class="cs" id="users">
-      <p class="cs-label">Users</p>
-      <h2 class="cs-title">One app, three very different days.</h2>
-      <div class="prose">
-        <p>easyFS has two kinds of users who rarely want the same screen. Owners want to know if the business is fine and to bill a client without calling anyone. Bookkeepers and accountants encode, reconcile and file, often for several clients at once.</p>
-        <p>I wrote three personas to keep both sides in view. They are illustrative, based on common small business accounting problems, and still need usability testing to confirm.</p>
-      </div>
-      <figure class="wide">
-        <div class="wide-frame board"><img src="../images/easyfs/journey-personas.png" alt="Three persona cards: Ana Reyes, owner of Kapehan Co. with two coffee shops in Cebu, who wants to know if the business is OK; Mark Villanueva, in-house bookkeeper, who wants to clear receipts fast without posting anything twice; Rosa Dela Cruz, an external CPA with nine clients, who wants to file on time with numbers she can defend" width="2560" height="510" loading="lazy"></div>
-        <figcaption>Owner, bookkeeper and outside accountant</figcaption>
-      </figure>
     </section>
 
     <section class="cs" id="journeys">
       <p class="cs-label">User journeys</p>
-      <h2 class="cs-title">Five steps each, mapped to the screens.</h2>
+      <h2 class="cs-title">Three people, three tasks.</h2>
       <div class="prose">
-        <p>Each journey follows one persona through the job they do most. Every step records what they do, what they think and how they feel, then names the part of the design that helps and the usability heuristic behind it. I used these maps to decide what each screen had to get right.</p>
+        <p>A typical task for each kind of user, step by step. The line follows how each step feels, where it dips and where it recovers.</p>
       </div>
-      <figure class="wide">
-        <div class="wide-frame board"><a href="../images/easyfs/journey-owner.png" target="_blank" rel="noopener"><img src="../images/easyfs/journey-owner.png" alt="Journey map, Ana checks the business and bills a client: open easyFS, see what needs her, start an invoice, check the amounts, send and follow up. Rows show doing, thinking, feeling, usual friction, the design response and the heuristic behind it" width="2560" height="1622" loading="lazy"></a></div>
-        <figcaption>Journey 1: Ana checks the business and bills a client.</figcaption>
-      </figure>
-      <figure class="wide">
-        <div class="wide-frame board"><a href="../images/easyfs/journey-bookkeeper.png" target="_blank" rel="noopener"><img src="../images/easyfs/journey-bookkeeper.png" alt="Journey map, Mark clears a week of receipts: snap the receipt, check what was read, catch a duplicate, post the rest, explain a POS gap. Design responses include capture in the phone bottom bar, side by side review, a duplicate flag, post and next with undo, and a Z-reading check" width="2560" height="1662" loading="lazy"></a></div>
-        <figcaption>Journey 2: Mark clears a week of receipts</figcaption>
-      </figure>
-      <figure class="wide">
-        <div class="wide-frame board"><a href="../images/easyfs/journey-accountant.png" target="_blank" rel="noopener"><img src="../images/easyfs/journey-accountant.png" alt="Journey map, Rosa closes the quarter and files 2550Q: know what is due, reconcile the bank, check readiness, prepare the return, record the filing. Design responses include deadlines on Home, a match view that counts down, a before you file checklist, figures labeled with form items, and filed status everywhere" width="2560" height="1606" loading="lazy"></a></div>
-        <figcaption>Journey 3: Rosa closes the quarter and files 2550Q</figcaption>
-      </figure>
-      <div class="prose">
-        <h2>What the three journeys share</h2>
-        <p>One place for "what needs me". Drafts before posting, so automation saves typing but people decide what reaches the books. Plain words first, with accounting terms one layer down. Undo instead of confirm for everyday actions. And BIR names, item numbers and due dates kept exact.</p>
-      </div>
+      <ol class="journeys">
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">AR</span><div><h3>Ana, owner</h3><p>Runs two coffee shops. Wants to know the business is fine and bill clients without calling the bookkeeper.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot mid l1"></span></div><span class="j-n">01</span><h4>Opens easyFS</h4><p>Logs in over coffee before the shop opens.</p><span><span class="j-mood mid">Unsure</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">02</span><h4>Sees what needs her</h4><p>Three overdue invoices, bills due Friday and a VAT return in five days.</p><span><span class="j-mood high">In control</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">03</span><h4>Starts an invoice</h4><p>Taps New, then picks a regular client from Recent.</p><span><span class="j-mood high">Quick</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">04</span><h4>Checks the amounts</h4><p>Wonders why the amount due is lower than the total, until the summary shows the withholding.</p><span><span class="j-mood low">Puzzled</span> <span class="j-mood high">then clear</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">05</span><h4>Sends it</h4><p>Sends the invoice, then a reminder to a client who is 72 days late.</p><span><span class="j-mood high">Relieved</span></span></li>
+            </ol>
+          </div>
+        </li>
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">MV</span><div><h3>Mark, bookkeeper</h3><p>Gets a pile of receipts from both branches every week, plus online orders and POS sales. Wants to clear them without posting anything twice.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">01</span><h4>Snaps the receipt</h4><p>Takes a photo with Capture before the paper fades.</p><span><span class="j-mood high">Easy</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">02</span><h4>Checks what was read</h4><p>Compares the highlighted values on the receipt with the fields.</p><span><span class="j-mood low">Doubtful</span> <span class="j-mood high">then sure</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">03</span><h4>Catches a duplicate</h4><p>A receipt is flagged as one he already posted, so he discards it.</p><span><span class="j-mood high">Protected</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">04</span><h4>Posts the rest</h4><p>Posts and moves to the next one. Picks the wrong branch once and undoes it.</p><span><span class="j-mood low">Slip</span> <span class="j-mood high">then fixed</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot a low l0"></span><span class="j-dot b high l2"></span></div><span class="j-n">05</span><h4>Explains a POS gap</h4><p>The POS shows ₱1,240 more sales than the books, and easyFS points to the missing receipt.</p><span><span class="j-mood low">Worried</span> <span class="j-mood high">then solved</span></span></li>
+            </ol>
+          </div>
+        </li>
+        <li class="journey">
+          <div class="j-who"><span class="j-avatar" aria-hidden="true">RD</span><div><h3>Rosa, outside accountant</h3><p>Looks after nine small businesses. Wants to file on time with numbers she can stand behind.</p></div></div>
+          <div class="j-track">
+            <svg class="j-line" aria-hidden="true"><polyline points=""/></svg>
+            <ol class="j-steps">
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot low l0"></span></div><span class="j-n">01</span><h4>Sees what is due</h4><p>Switches to the client and sees the quarterly VAT return due in five days.</p><span><span class="j-mood low">Pressured</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">02</span><h4>Reconciles the bank</h4><p>Imports the statement. 49 of 52 lines match on their own.</p><span><span class="j-mood high">Fast</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot mid l1"></span></div><span class="j-n">03</span><h4>Checks readiness</h4><p>The checklist shows three purchases with no supplier TIN.</p><span><span class="j-mood mid">Alert</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">04</span><h4>Prepares the return</h4><p>Adds the TINs and downloads the file for eBIRForms.</p><span><span class="j-mood high">Confident</span></span></li>
+              <li class="j-step"><div class="j-dots" aria-hidden="true"><span class="j-dot high l2"></span></div><span class="j-n">05</span><h4>Records the filing</h4><p>Marks the return as filed so the owner can see it is done.</p><span><span class="j-mood high">Done early</span></span></li>
+            </ol>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <section class="cs" id="home">
       <p class="cs-label">Home</p>
-      <h2 class="cs-title">Three questions, in order.</h2>
+      <h2 class="cs-title">A starting point for the day.</h2>
       <div class="prose">
-        <p>Home answers what needs my attention, how much money I have, and how this month is going. The attention list puts five items in priority order, each with one action. BIR deadlines show days left and status. Cash is the single big number on the page, with each account and when it was last reconciled.</p>
-        <p>The navigation uses the owner's words first: Sales is labelled Money in, Purchases is Money out, and Review carries a live count. The company and branch always show together in the switcher, so nobody posts to the wrong books.</p>
+        <p>Home shows what needs attention, the next BIR deadlines, cash on hand and money in and out for the month. The side menu uses everyday words like Money in and Money out, with the accounting terms one level down.</p>
       </div>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/easyfs/home.png" alt="easyFS Home at 1440: a greeting, the Needs your attention list with five items and action buttons, BIR deadlines for 2550Q, 1601-EQ and 0619-E, cash on hand and in banks of 1,284,560.40 pesos split by account, and a six month money in and money out bar chart" width="2880" height="2360" loading="lazy"></div>
-        <figcaption>Home: attention list, BIR deadlines, cash and the month so far</figcaption>
+        <div class="wide-frame"><img src="../images/easyfs/home.png" alt="easyFS Home: a greeting, the Needs your attention list with five items, BIR deadlines for 2550Q, 1601-EQ and 0619-E, cash on hand and in banks split by account, and a six month money in and money out bar chart" width="2880" height="2360" loading="lazy"></div>
+        <figcaption>Home</figcaption>
       </figure>
     </section>
 
     <section class="cs" id="review">
       <p class="cs-label">Review</p>
-      <h2 class="cs-title">Nothing reaches the books until you post it.</h2>
+      <h2 class="cs-title">Drafts wait for a person.</h2>
       <div class="prose">
-        <p>Smart Capture reads receipts and bills, and Shopee, Lazada, TikTok Shop and easyPOS send sales in on their own. All of it lands in one Review queue as drafts. The receipt photo sits beside the fields read from it, with the read values highlighted, and anything unclear is marked "Check 1 field".</p>
-        <p>Possible duplicates are flagged before they are posted. Post and next has a keyboard shortcut, and a toast with Undo replaces the confirm dialog, so a bookkeeper can clear a week of receipts quickly and still fix a slip in a second.</p>
+        <p>Receipts read by Smart Capture, online store orders and POS sales come in as drafts. They wait in Review, with the receipt beside the fields read from it, until someone checks and posts them.</p>
       </div>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/easyfs/review.png" alt="The Review queue: 14 drafts filtered by source, a list on the left with possible duplicate and check 1 field tags, and on the right a Mandaue Dairy Supply receipt photo beside its supplier, TIN, receipt number, date, category and total fields, with Review later, Discard and Post and next buttons" width="2880" height="2000" loading="lazy"></div>
-        <figcaption>Review: the receipt next to what was read from it</figcaption>
+        <div class="wide-frame"><img src="../images/easyfs/review.png" alt="The Review queue: a list of drafts on the left, and on the right a receipt photo beside its supplier, TIN, receipt number, date, category and total fields, with Review later, Discard and Post and next buttons" width="2880" height="2000" loading="lazy"></div>
+        <figcaption>Review</figcaption>
       </figure>
     </section>
 
     <section class="cs" id="invoicing">
       <p class="cs-label">Invoicing</p>
-      <h2 class="cs-title">An invoice an owner can send alone.</h2>
+      <h2 class="cs-title">One page per invoice.</h2>
       <div class="prose">
-        <p>New is one button in the top bar. Recent customers sit under the search, and their terms and withholding come from the customer record. The summary on the right updates as lines change and spells out VATable sales, VAT and the amount due, so a lower amount due never looks like a mistake.</p>
-        <p>The form also shows it is ready for BIR e-invoicing: when the invoice is sent, easyFS assigns the next number and transmits it to the BIR EIS.</p>
+        <p>A new invoice keeps the customer, the items and a running summary on one page, including VAT and the amount due.</p>
       </div>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/easyfs/new-invoice.png" alt="New invoice form: customer search with recent customers, invoice date, payment terms with the due date, branch, an items table with tax per line, notes and attachments, a summary of VATable sales, VAT, invoice total and amount due, and a green notice that the invoice is ready for BIR e-invoicing" width="2880" height="2000" loading="lazy"></div>
-        <figcaption>New invoice with a live summary in plain words</figcaption>
+        <div class="wide-frame"><img src="../images/easyfs/new-invoice.png" alt="New invoice form: customer search with recent customers, invoice date, payment terms, branch, an items table, notes and attachments, and a summary of VATable sales, VAT, invoice total and amount due" width="2880" height="2000" loading="lazy"></div>
+        <figcaption>New invoice</figcaption>
       </figure>
     </section>
 
     <section class="cs" id="month-end">
       <p class="cs-label">Month end</p>
-      <h2 class="cs-title">Reconcile, then file with no surprises.</h2>
+      <h2 class="cs-title">Reconciling and filing.</h2>
       <div class="prose">
-        <p>Bank reconciliation starts from the imported statement. Most lines match on their own; the rest sit next to a suggested entry with one action each, and "Left to resolve" counts down until Finish unlocks. Timing differences such as an uncashed check are explained, not flagged.</p>
-        <p>Each BIR form opens with a "Before you file" checklist. It confirms the quarter is posted and reconciled, and says what a problem costs, for example input VAT that cannot be claimed yet because three purchases have no supplier TIN. Every figure is labelled with its form item and links to the entries behind it.</p>
+        <p>Bank reconciliation lists the lines that still need a decision, each with one action. BIR forms open with a short checklist before filing, and each amount is labelled with its form item.</p>
       </div>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/easyfs/reconciliation.png" alt="Reconcile Main checking: bank and easyFS balances, timing differences and the amount left to resolve, 49 of 52 lines matched, and three lines that need a decision with Post and match, Record expense and Record income actions" width="2880" height="2000" loading="lazy"></div>
-        <figcaption>Bank reconciliation that counts down to zero</figcaption>
+        <div class="wide-frame"><img src="../images/easyfs/reconciliation.png" alt="Bank reconciliation: statement and easyFS balances, 49 of 52 lines matched, and three lines that need a decision" width="2880" height="2000" loading="lazy"></div>
+        <figcaption>Bank reconciliation</figcaption>
       </figure>
       <figure class="wide">
-        <div class="wide-frame"><img src="../images/easyfs/reports.png" alt="BIR forms: upcoming, certificate and filed forms on the left, and BIR Form 2550Q on the right with a before you file checklist, the amounts for the return by item number, VAT payable, and buttons to download the eBIRForms file, print or mark as filed" width="2880" height="1880" loading="lazy"></div>
-        <figcaption>2550Q with a readiness checklist and item numbers</figcaption>
+        <div class="wide-frame"><img src="../images/easyfs/reports.png" alt="BIR forms: upcoming and filed forms on the left, and BIR Form 2550Q on the right with a before you file checklist and the amounts for the return by item number" width="2880" height="1880" loading="lazy"></div>
+        <figcaption>BIR Form 2550Q</figcaption>
       </figure>
     </section>
 
     <section class="cs" id="phone">
       <p class="cs-label">Phone</p>
-      <h2 class="cs-title">Desktop first, phone for quick tasks.</h2>
+      <h2 class="cs-title">Quick tasks on the go.</h2>
       <div class="prose">
-        <p>The full product is designed for 1440 first. On a phone, people mostly do three things: capture a receipt, issue an invoice and check today's numbers. The bottom bar is built around those, with Capture in the middle so a receipt can be snapped before the paper fades.</p>
+        <p>On a phone, the app focuses on quick tasks: checking the day, capturing a receipt and sending an invoice.</p>
       </div>
       <figure class="wide">
-        <div class="wide-frame board"><img src="../images/easyfs/board-phones.png" alt="Three phone screens at 390: Home with the attention list, the Review queue with drafts, and the new invoice form, each with a bottom bar of Home, Invoice, Capture, Review and More" width="2400" height="1720" loading="lazy"></div>
-        <figcaption>Home, Review and New invoice at 390</figcaption>
+        <div class="wide-frame board"><img src="../images/easyfs/board-phones.png" alt="Three phone screens: Home with the attention list, the Review queue, and the new invoice form, each with a bottom bar of Home, Invoice, Capture, Review and More" width="2400" height="1720" loading="lazy"></div>
+        <figcaption>Home, Review and New invoice on a phone</figcaption>
       </figure>
-    </section>
-
-    <section class="cs" id="next">
-      <p class="cs-label">Next</p>
-      <h2 class="cs-title">Assumptions to test.</h2>
-      <div class="prose">
-        <p>The journeys are hypotheses, so the next step is testing them with three to five owners, bookkeepers and accountants. The questions I would measure first:</p>
-        <p>Do owners understand amount due versus invoice total without help? Is highlighting values on the receipt enough for bookkeepers to trust Smart Capture? Is Undo a safe replacement for confirm dialogs when posting? Does a readiness checklist reduce late or amended BIR returns?</p>
-      </div>
     </section>
 
     <section class="cs cta" id="talk">
       <p class="cs-label">Let’s talk</p>
       <h2 class="cs-title">I’d love to tell you more on a call.</h2>
       <div class="prose">
-        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through the prototype, the decisions and the trade-offs.</p>
+        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through it.</p>
       </div>
       <div class="cta-actions">
         <a class="cta-btn primary" href="mailto:glee.rupal@gmail.com?subject=Let%E2%80%99s%20talk">Email me</a>
@@ -211,5 +206,22 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
 
 </div>
 <script src="../main.js"></script>
+<script>
+// Draw each journey's mood line through its dots
+function drawJourneys() {
+  document.querySelectorAll('.j-track').forEach(function (track) {
+    var box = track.getBoundingClientRect();
+    var pts = [].map.call(track.querySelectorAll('.j-dot'), function (d) {
+      var r = d.getBoundingClientRect();
+      return (r.left + r.width / 2 - box.left).toFixed(1) + ',' + (r.top + r.height / 2 - box.top).toFixed(1);
+    });
+    track.querySelector('.j-line polyline').setAttribute('points', pts.join(' '));
+  });
+}
+drawJourneys();
+addEventListener('resize', drawJourneys);
+document.fonts && document.fonts.ready.then(drawJourneys);
+</script>
+
 </body>
 </html>
