@@ -22,10 +22,9 @@
 })();
 
 // Copy email: click copies the address, label shows "Copied" for a moment.
+// Used by the nav button and the Let's talk button on work pages.
 (function () {
-  var btn = document.getElementById('copy-email');
   var status = document.getElementById('copy-status');
-  var timer;
 
   function fallbackCopy(text) {
     var ta = document.createElement('textarea');
@@ -41,20 +40,23 @@
     return ok;
   }
 
-  btn.addEventListener('click', function () {
-    var email = btn.dataset.email;
-    var done = function (ok) {
-      status.textContent = ok ? 'Email address copied' : 'Could not copy. Email: ' + email;
-      if (!ok) return;
-      btn.classList.add('copied');
-      clearTimeout(timer);
-      timer = setTimeout(function () { btn.classList.remove('copied'); status.textContent = ''; }, 1800);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(fallbackCopy(email)); });
-    } else {
-      done(fallbackCopy(email));
-    }
+  document.querySelectorAll('.copy-email').forEach(function (btn) {
+    var timer;
+    btn.addEventListener('click', function () {
+      var email = btn.dataset.email;
+      var done = function (ok) {
+        status.textContent = ok ? 'Email address copied' : 'Could not copy. Email: ' + email;
+        if (!ok) return;
+        btn.classList.add('copied');
+        clearTimeout(timer);
+        timer = setTimeout(function () { btn.classList.remove('copied'); status.textContent = ''; }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(fallbackCopy(email)); });
+      } else {
+        done(fallbackCopy(email));
+      }
+    });
   });
 })();
 

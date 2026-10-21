@@ -219,7 +219,9 @@ a:hover { color: var(--accent); }
 .gcard:hover { transform: translateY(-3px); background: var(--glass-strong); color: var(--ink); }
 .gcard:hover .mini { transform: scale(1.03); }
 .card-text { display: flex; flex-direction: column; gap: 2px; padding: 0 6px; }
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .card-title { font-weight: 500; }
+.card-year { flex: none; font-size: 13px; color: var(--faint); font-family: 'Geist Mono', monospace; }
 .card-meta { font-size: 15px; color: var(--faint); }
 
 .thumb { aspect-ratio: 2400 / 1180; /* matches the cover images, so nothing is cropped */ border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -396,6 +398,8 @@ html { scroll-behavior: smooth; }
 .cta-btn:hover { background: var(--panel); color: var(--ink); }
 .cta-btn.primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 .cta-btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cta-btn.copy-email { justify-content: center; min-width: 136px; cursor: pointer; }
+.cta-btn.copy-email.copied { background: var(--olive); border-color: var(--olive); color: var(--bg); }
 
 /* Footer */
 .footer {
