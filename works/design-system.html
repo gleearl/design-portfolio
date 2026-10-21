@@ -78,6 +78,22 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         <p>Colour is split in two. Primitives hold the raw hex values: the brand red and its tints, a grey ramp and the status colours. Semantic tokens alias them and are named for their role: text, background, border, icon and feedback. Components bind only to the semantic layer, and the primitives are hidden from the pickers on purpose.</p>
         <p>Spacing, radius, border width, size, breakpoint and motion each have their own collection. Variables use slash names such as text/primary, and each one carries its web code syntax, so Dev Mode shows the matching CSS value.</p>
       </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/design-system/primitives.png" alt="Primitive colour variables: the brand red and its tints, greys, black, orange, green and a light blue, each labelled with its variable name and hex value" loading="lazy"></div>
+        <figcaption>Primitives: raw values, named by family and step</figcaption>
+      </figure>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/design-system/semantic-background.png" alt="Semantic background tokens such as page, subtle, muted, brand, brand disabled and inverse, each showing the primitive it points to" loading="lazy"></div>
+        <figcaption>Semantic tokens: each role points to one primitive</figcaption>
+      </figure>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/design-system/type-families.png" alt="Type families: Noto Sans as the primary typeface and Noto Serif as the long-form variant" loading="lazy"></div>
+        <figcaption>Two families, one in almost every element</figcaption>
+      </figure>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/design-system/type-headings.png" alt="Heading text styles from H1 to H8 with size, weight, line height and a sample line for each" loading="lazy"></div>
+        <figcaption>Heading styles, each mapped to the class it came from</figcaption>
+      </figure>
     </section>
     <section class="cs" id="components">
       <p class="cs-label">Components</p>
@@ -94,6 +110,10 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         <p>Disease templates cover the landing page, the 18 disease tabs and search results. News and updates templates cover the landing page, four article types, four listings and search results. Each is built from library components with auto layout, at desktop and mobile widths.</p>
         <p>A States section on each page shows what a static frame cannot, such as the sticky nav on scroll, the open mobile menu, an error toast and the mobile filter.</p>
       </div>
+      <figure class="wide">
+        <div class="wide-frame"><img src="../images/design-system/template-landing.png" alt="Disease guidelines landing page at desktop width, built from library components: header, search, hero, filter chips, article cards, algorithm cards, A to Z index and footer" loading="lazy"></div>
+        <figcaption>The disease guidelines landing template at 1440</figcaption>
+      </figure>
     </section>
     <section class="cs" id="gaps">
       <p class="cs-label">Gaps</p>
