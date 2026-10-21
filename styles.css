@@ -507,6 +507,7 @@ html { scroll-behavior: smooth; }
 
 /* In-app notification list */
 .nx-app, .nx-screen.app { color: #1F2329; font-family: 'Fira Sans', system-ui, sans-serif; font-size: calc(var(--u) * 14.5); line-height: 1.35; }
+.nx-screen.app > * { font-size: calc(var(--u) * 16); }
 .nx-app { overflow: hidden; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px rgba(20, 22, 28, .06); padding-bottom: 4px; }
 .nx-app svg, .nx-screen.app svg { width: calc(var(--u) * 24); height: calc(var(--u) * 24); }
 .nx-bar { display: grid; grid-template-columns: calc(var(--u) * 24) 1fr calc(var(--u) * 24); align-items: center; height: calc(var(--u) * 50); padding: 0 calc(var(--u) * 20); border-bottom: 1px solid #E6E8EB; }
