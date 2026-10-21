@@ -468,6 +468,12 @@ html { scroll-behavior: smooth; }
 @container (min-width: 540px) {
   .nx-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; gap: 24px; margin: 0; padding: 8px 0 4px; overflow: visible; }
 }
+/* Wide: text on the left, both phones on the right */
+@container (min-width: 820px) {
+  .nx-panel { grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; }
+  .nx-stage { grid-template-columns: repeat(2, 270px); gap: 20px; padding: 8px 0; }
+  .nx-copy { max-width: 340px; padding-left: 8px; }
+}
 
 /* iPhone frame. Inside the screen, --u is one iPhone point (the screen is 390 points wide),
    so the mockups keep their proportions at any size. Outside a phone --u falls back to .8px. */
