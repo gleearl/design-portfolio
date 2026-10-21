@@ -338,17 +338,6 @@ a:hover { color: var(--accent); }
 .cs-label { margin: 0; color: var(--olive); }
 .cs-title { margin: 0; max-width: 600px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.2; letter-spacing: -0.02em; }
 .cs .prose { max-width: 600px; margin-top: 4px; }
-.types { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; }
-.type { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 32px 0; border-top: 1px solid var(--line); align-items: center; }
-.type:last-child { border-bottom: 1px solid var(--line); }
-.type-text { display: flex; flex-direction: column; gap: 6px; max-width: 420px; }
-.type-text h3, .types h3 { margin: 0; font-size: 15px; font-weight: 500; color: var(--ink); }
-.type-text p { margin: 0; color: var(--faint); }
-.type-text .type-tag { color: var(--olive); }
-.type-tag .mono { margin-right: 8px; font-size: 13px; }
-.type-frame { padding: 20px; border-radius: 20px; background: var(--panel); }
-.type-frame img { display: block; width: 100%; height: auto; border-radius: 12px; }
-@media (min-width: 720px) { .type { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 48px; } }
 .wide { margin: 24px 0 0; display: flex; flex-direction: column; gap: 10px; }
 .wide-frame { padding: 24px; border-radius: 20px; background: var(--panel); }
 .wide img { display: block; width: 100%; height: auto; border-radius: 12px; }
@@ -370,11 +359,6 @@ a:hover { color: var(--accent); }
 .case .cs-title { font-size: 32px; line-height: 1.15; letter-spacing: -0.025em; }
 .case .prose p { font-size: 16px; line-height: 1.65; color: var(--muted); }
 .facts dt { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-.type-text { gap: 8px; }
-.type-text .type-tag { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-.type-tag .mono { display: none; }
-.type-text h3 { font-family: 'Newsreader', Georgia, serif; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; }
-.type-text p:not(.type-tag) { font-size: 16px; line-height: 1.65; color: var(--muted); }
 .shot figcaption, .wide figcaption { font-size: 14px; }
 
 /* Table of contents, right side of case studies on wide screens */
@@ -455,3 +439,149 @@ html { scroll-behavior: smooth; }
   .j-dot.l0 { top: 60px; } .j-dot.l1 { top: 36px; } .j-dot.l2 { top: 12px; }
   .j-dot.a { left: calc(50% - 16px); } .j-dot.b { left: calc(50% + 16px); }
 }
+
+/* Notifications case study: notification types, entry points and destinations drawn in HTML.
+   The app mockups keep the app's own colours (light, red actions) in both site themes. */
+.nx-explorer, .nx-entry { container-type: inline-size; margin-top: 24px; }
+.nx-explorer { padding: 20px; border-radius: 20px; background: var(--panel); }
+.nx-tabs { display: none; }
+.nx-explorer.ready .nx-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-bottom: 24px; }
+@container (min-width: 820px) { .nx-explorer.ready .nx-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.nx-tabs button { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--faint); font: inherit; font-size: 14px; text-align: left; cursor: pointer; transition: color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.nx-tabs button:hover { color: var(--ink); }
+.nx-tabs button[aria-selected="true"] { color: var(--ink); font-weight: 500; border-color: var(--ink); box-shadow: var(--shadow); }
+.nx-key { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--panel); font-family: 'Geist Mono', monospace; font-size: 12px; font-weight: 400; }
+.nx-tabs button[aria-selected="true"] .nx-key { background: var(--ink); color: var(--bg); }
+.nx-panel { display: grid; gap: 20px; }
+.nx-panel[hidden] { display: none; }
+.nx-panel + .nx-panel { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+.nx-explorer.ready .nx-panel + .nx-panel { margin-top: 0; padding-top: 0; border-top: 0; }
+.nx-explorer.ready .nx-panel:not([hidden]) { animation: nx-in .4s var(--ease); }
+@keyframes nx-in { from { opacity: 0; transform: translateY(8px); } }
+.nx-copy { display: flex; flex-direction: column; gap: 8px; max-width: 560px; }
+.nx-copy h3, .nx-hub h3 { margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; }
+.nx-copy p { margin: 0; font-size: 16px; line-height: 1.65; color: var(--muted); }
+.case .nx-copy .nx-tag, .nx-where { margin: 0; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--olive); }
+.nx-stage { display: flex; gap: 16px; margin: 0 -14px; padding: 4px 14px 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.nx-stage::-webkit-scrollbar { display: none; }
+.nx-stage > .nx-phone { flex: 0 0 80%; scroll-snap-align: center; }
+@container (min-width: 540px) {
+  .nx-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; gap: 24px; margin: 0; padding: 8px 0 4px; overflow: visible; }
+}
+
+/* iPhone frame. Inside the screen, --u is one iPhone point (the screen is 390 points wide),
+   so the mockups keep their proportions at any size. Outside a phone --u falls back to .8px. */
+.nx-explorer, .nx-entry { --u: .8px; }
+.nx-phone { margin: 0; aspect-ratio: 9 / 19.5; padding: 3.2%; border-radius: 16% / 7.4%; background: #121316; box-shadow: inset 0 0 0 1.5px #3B3D44, 0 0 0 1px rgba(20, 22, 28, .1), 0 30px 60px -20px rgba(20, 22, 28, .45); }
+.nx-screen { position: relative; isolation: isolate; height: 100%; overflow: hidden; border-radius: 13% / 6%; background: #fff; container-type: inline-size; }
+.nx-screen > * { --u: calc(100cqw / 390); }
+.nx-status { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; height: calc(var(--u) * 54); padding: calc(var(--u) * 6) calc(var(--u) * 30) 0 calc(var(--u) * 34); font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif; font-size: calc(var(--u) * 16); font-weight: 600; color: #000; }
+.nx-island { position: absolute; left: 50%; top: calc(var(--u) * 11); width: calc(var(--u) * 122); height: calc(var(--u) * 36); margin-left: calc(var(--u) * -61); border-radius: calc(var(--u) * 20); background: #000; }
+.nx-sys { width: calc(var(--u) * 74); height: calc(var(--u) * 13); }
+.nx-home { position: absolute; z-index: 3; left: 50%; bottom: calc(var(--u) * 8); width: calc(var(--u) * 134); height: calc(var(--u) * 5); margin-left: calc(var(--u) * -67); border-radius: 3px; background: #000; }
+
+/* Lock screen, after the iOS 16 default wallpaper */
+.nx-screen.lock { background: #2C6BB6; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif; }
+.nx-screen.lock .nx-status { color: #fff; font-weight: 500; }
+.nx-screen.lock .nx-home { background: #fff; }
+.nx-wp { position: absolute; z-index: -1; inset: 0; overflow: hidden; background: linear-gradient(180deg, #2C69B4, #3A86C6 45%, #2F67C2); }
+.nx-wp i { position: absolute; aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 30px rgba(0, 0, 0, .12); }
+.nx-wp i:nth-child(1) { width: 150%; left: -78%; top: 14%; background: radial-gradient(circle at 62% 42%, #F3B872 0, #E7A462 28%, #7FB0BC 62%, #4E92BF 100%); }
+.nx-wp i:nth-child(2) { width: 135%; left: 32%; top: 6%; background: linear-gradient(205deg, #1F4ED2, #3C7FE2 55%, #6AAEE3); }
+.nx-wp i:nth-child(3) { width: 170%; left: -55%; top: 58%; background: linear-gradient(165deg, #F7DA6C, #EFB65C 45%, #E4954F); }
+.nx-wp i:nth-child(4) { width: 130%; left: 45%; top: 74%; background: linear-gradient(180deg, #3A73DA, #2148B6); }
+.nx-date { margin: calc(var(--u) * 14) 0 0; text-align: center; font-size: calc(var(--u) * 21); font-weight: 500; color: rgba(222, 247, 255, .95); }
+.nx-time { margin: 0; text-align: center; font-size: calc(var(--u) * 100); line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; color: rgba(222, 247, 255, .95); }
+.nx-screen.lock .nx-pushes { position: absolute; left: calc(var(--u) * 10); right: calc(var(--u) * 10); bottom: calc(var(--u) * 116); }
+.nx-pushes { display: flex; flex-direction: column; gap: calc(var(--u) * 8); }
+.nx-lockbar { position: absolute; left: calc(var(--u) * 46); right: calc(var(--u) * 46); bottom: calc(var(--u) * 42); display: flex; justify-content: space-between; }
+.nx-lockbar span { display: grid; place-items: center; width: calc(var(--u) * 50); height: calc(var(--u) * 50); border-radius: 50%; background: rgba(20, 30, 40, .32); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.nx-lockbar svg { width: calc(var(--u) * 22); height: calc(var(--u) * 22); color: #fff; }
+
+/* Push banner */
+.nx-push { display: grid; grid-template-columns: calc(var(--u) * 38) minmax(0, 1fr); gap: calc(var(--u) * 10); align-items: start; padding: calc(var(--u) * 12) calc(var(--u) * 14); border-radius: calc(var(--u) * 22); background: rgba(246, 246, 246, .7); -webkit-backdrop-filter: blur(18px) saturate(1.6); backdrop-filter: blur(18px) saturate(1.6); color: #111; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif; font-size: calc(var(--u) * 15); line-height: 1.3; text-align: left; }
+.nx-push img { width: calc(var(--u) * 38); height: calc(var(--u) * 38); border-radius: calc(var(--u) * 9); margin-top: calc(var(--u) * 2); }
+.nx-push p { margin: 0; }
+.nx-push-head { display: flex; justify-content: space-between; gap: calc(var(--u) * 8); }
+.nx-push-head b { font-weight: 600; }
+.nx-push-head span { flex: none; color: rgba(0, 0, 0, .45); font-size: calc(var(--u) * 13.5); }
+
+/* In-app notification list */
+.nx-app, .nx-screen.app { color: #1F2329; font-family: 'Fira Sans', system-ui, sans-serif; font-size: calc(var(--u) * 14.5); line-height: 1.35; }
+.nx-screen.app > * { font-size: calc(var(--u) * 16); }
+.nx-app { overflow: hidden; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px rgba(20, 22, 28, .06); padding-bottom: 4px; }
+.nx-app svg, .nx-screen.app svg { width: calc(var(--u) * 24); height: calc(var(--u) * 24); }
+.nx-bar { display: grid; grid-template-columns: calc(var(--u) * 24) 1fr calc(var(--u) * 24); align-items: center; height: calc(var(--u) * 50); padding: 0 calc(var(--u) * 20); border-bottom: 1px solid #E6E8EB; }
+.nx-bar b { text-align: center; font-size: calc(var(--u) * 17); font-weight: 600; }
+.nx-pills { display: flex; gap: calc(var(--u) * 4); padding: calc(var(--u) * 14) calc(var(--u) * 14) calc(var(--u) * 8); color: #5F6670; white-space: nowrap; overflow: hidden; }
+.nx-pills span { padding: calc(var(--u) * 6) calc(var(--u) * 12); border-radius: 999px; }
+.nx-pills .on { background: #FCE9EA; color: #C8102E; }
+.nx-row { display: grid; grid-template-columns: calc(var(--u) * 44) minmax(0, 1fr) auto; gap: calc(var(--u) * 8) calc(var(--u) * 12); align-items: center; padding: calc(var(--u) * 12) calc(var(--u) * 16); }
+.nx-row.unread { background: #EEF2F8; }
+.nx-row p { margin: 0; }
+.nx-row b { font-weight: 600; }
+.nx-row small { display: block; margin-top: calc(var(--u) * 4); font-size: calc(var(--u) * 12); color: #9AA0A8; }
+.nx-ico { display: grid; place-items: center; width: calc(var(--u) * 44); height: calc(var(--u) * 44); border-radius: 50%; background: #DCEBF8; color: #1E5C99; }
+.nx-app .nx-ico svg, .nx-screen.app .nx-ico svg { width: calc(var(--u) * 22); height: calc(var(--u) * 22); }
+.nx-thumb { width: calc(var(--u) * 44); height: calc(var(--u) * 44); border-radius: calc(var(--u) * 8); object-fit: cover; }
+.nx-btn { display: inline-block; padding: calc(var(--u) * 8) calc(var(--u) * 11); border-radius: calc(var(--u) * 6); background: #C8102E; color: #fff; font-family: 'Fira Sans', system-ui, sans-serif; font-size: calc(var(--u) * 13.5); font-weight: 500; line-height: 1.2; white-space: nowrap; }
+.nx-card { grid-column: 2 / -1; display: flex; gap: calc(var(--u) * 10); align-items: center; padding: calc(var(--u) * 10); border: 1px solid #E3E6EA; border-radius: calc(var(--u) * 10); background: #fff; }
+.nx-card > div { flex: 1; min-width: 0; }
+.nx-card b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: calc(var(--u) * 13.5); }
+.nx-card small { display: flex; flex-wrap: wrap; gap: calc(var(--u) * 2) calc(var(--u) * 12); margin-top: calc(var(--u) * 5); color: #4A5260; font-size: calc(var(--u) * 12); }
+.nx-card small span { display: inline-flex; align-items: center; gap: calc(var(--u) * 4); white-space: nowrap; }
+.nx-app .nx-card small svg, .nx-screen.app .nx-card small svg { flex: none; width: calc(var(--u) * 14); height: calc(var(--u) * 14); color: #1E5C99; }
+.nx-card img { flex: none; width: calc(var(--u) * 56); height: calc(var(--u) * 56); border-radius: calc(var(--u) * 8); object-fit: cover; }
+.nx-tabbar { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(3, 1fr); height: calc(var(--u) * 84); padding-top: calc(var(--u) * 9); border-top: 1px solid #E6E8EB; background: #fff; font-size: calc(var(--u) * 12); color: #2B2F36; }
+.nx-tabbar span { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u) * 3); }
+.nx-tabbar .on { color: #C8102E; font-weight: 500; }
+.nx-screen.app .nx-tabbar svg { width: calc(var(--u) * 28); height: calc(var(--u) * 28); }
+
+/* Entry points: three doors that lead into one notification center */
+.nx-doors { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+@container (min-width: 540px) { .nx-doors { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nx-door:first-child { grid-column: 1 / -1; } }
+@container (min-width: 760px) { .nx-doors { grid-template-columns: repeat(3, minmax(0, 1fr)); } .nx-door:first-child { grid-column: auto; } }
+.nx-door { display: flex; flex-direction: column; padding: 16px; border-radius: 20px; background: var(--panel); }
+.nx-wall { position: relative; isolation: isolate; }
+.nx-vis { display: grid; place-items: center; height: 150px; margin: 10px 0 16px; overflow: hidden; border-radius: 14px; }
+.nx-vis .nx-push { width: calc(100% - 20px); max-width: 340px; }
+.nx-door h3 { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 15px; font-weight: 500; color: var(--ink); }
+.nx-door > p:not(.nx-where) { margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+.nx-n { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--faint); font-family: 'Geist Mono', monospace; font-size: 11px; font-weight: 400; color: var(--faint); }
+.nx-appicon { position: relative; width: 72px; height: 72px; }
+.nx-appicon img { display: block; width: 100%; height: 100%; border-radius: 17px; box-shadow: 0 6px 18px rgba(0, 0, 0, .18); }
+.nx-badge { position: absolute; top: -8px; right: -8px; display: grid; place-items: center; min-width: 24px; height: 24px; padding: 0 6px; border-radius: 12px; background: #FF3B30; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 500; animation: nx-pop 3.2s var(--ease) infinite; }
+.nx-badge.sm { top: -6px; right: -6px; min-width: 14px; height: 14px; padding: 0 3px; border-radius: 3px; background: #E3242B; font-size: 9.5px; }
+@keyframes nx-pop { 0%, 70%, 100% { transform: scale(1); } 76% { transform: scale(1.2); } 82% { transform: scale(.95); } }
+.nx-inapp { background: #F4F5F7; }
+.nx-header { display: flex; align-items: center; gap: 14px; width: calc(100% - 24px); padding: 18px 14px 14px; border-radius: 12px; background: #fff; box-shadow: 0 2px 0 #E3242B, 0 8px 20px rgba(20, 22, 28, .08); color: #333; font-family: 'Fira Sans', system-ui, sans-serif; }
+.nx-header b { flex: 1; font-size: 17px; font-weight: 600; }
+.nx-header svg { width: 20px; height: 20px; flex: none; }
+.nx-bell { position: relative; display: grid; transform-origin: 50% 10%; }
+.nx-door:hover .nx-bell { animation: nx-ring .9s ease-in-out; }
+@keyframes nx-ring { 15% { transform: rotate(14deg); } 30% { transform: rotate(-12deg); } 45% { transform: rotate(8deg); } 60% { transform: rotate(-5deg); } 75% { transform: rotate(2deg); } }
+.nx-join { display: none; }
+@container (min-width: 760px) { .nx-join { display: block; width: 100%; height: 44px; } .nx-join path { fill: none; stroke: var(--faint); stroke-opacity: .6; stroke-width: 1.5; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; } }
+.nx-hub { display: grid; gap: 20px; margin-top: 12px; padding: 20px; border-radius: 20px; background: var(--panel); }
+.nx-join + .nx-hub { margin-top: 0; }
+.nx-hub > div:first-child { display: flex; flex-direction: column; gap: 8px; }
+.nx-hub > div:first-child p:not(.nx-where) { margin: 0; font-size: 16px; line-height: 1.65; color: var(--muted); }
+.nx-mini { border-radius: 16px; padding-bottom: 4px; }
+@container (min-width: 600px) { .nx-hub { grid-template-columns: minmax(0, 1fr) minmax(0, 340px); align-items: center; gap: 32px; } }
+
+/* Destinations: each action and the screen it opens */
+.nx-map { list-style: none; margin: 24px 0 0; padding: 0; max-width: 720px; }
+.nx-map li { display: grid; grid-template-columns: 112px 40px minmax(0, 1fr); gap: 12px; align-items: center; padding: 16px 0; border-top: 1px solid var(--line); }
+.nx-map li:last-child { border-bottom: 1px solid var(--line); }
+.nx-map .nx-btn { justify-self: start; font-size: 13px; padding: 7px 11px; }
+.nx-arrow { position: relative; height: 1px; background: var(--faint); }
+.nx-arrow::after { content: ""; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-top: 1px solid var(--faint); border-right: 1px solid var(--faint); transform: rotate(45deg); }
+.nx-map b { font-weight: 500; color: var(--ink); }
+.nx-map p { margin: 2px 0 0; font-size: 14px; line-height: 1.5; color: var(--faint); }
+@media (max-width: 480px) { .nx-map li { grid-template-columns: 108px 20px minmax(0, 1fr); gap: 10px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-badge, .nx-door:hover .nx-bell, .nx-explorer.ready .nx-panel:not([hidden]) { animation: none; }
+}
+@container (max-width: 400px) { .nx-tabs button { padding: 8px 10px; gap: 8px; font-size: 13px; } }
+@media (max-width: 480px) { .nx-explorer { padding: 14px; } }
