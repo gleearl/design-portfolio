@@ -52,6 +52,7 @@ Status key: ⬜ Not started · 🟡 In progress · 🔍 In review · ✅ Done
 - Which employer and client work can be shown publicly.
 
 ## Change log
+- 2026-10-21: Pushed site updates to main (GitHub Pages). Custom domain design.gleearl.com set via a CNAME file added on GitHub; recorded in CLAUDE.md.
 - 2026-10-21: Added a closing "Let’s talk" section to all three work pages: "I’d love to tell you more on a call." with Email me (mailto) and Message on LinkedIn buttons.
 - 2026-10-21: Removed the Gaps section (and its table of contents link) from the design system case study, at Glee's request. Board screenshots kept with equal margins (a mistaken tight crop was undone from the browser cache).
 - 2026-10-21: Equal outer margins on case study screenshots. Design system: board-colour and board-architecture had a short bottom margin; extended to match the sides (about 110px each side incl. shadow). UI style guide: color, components, navigation and typography re-padded to 194px on all sides. Left as is: board-templates (mockups bleed by design) and overview.png (full-bleed blue).
