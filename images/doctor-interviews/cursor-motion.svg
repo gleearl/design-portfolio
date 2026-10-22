@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1180" aria-hidden="true">
+  <!-- The Figma cursor from the doctor interviews cover, laid over cover.jpg at the same size.
+       It drifts between the specialty chips like a live collaborator; still under reduced motion. -->
+  <defs>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity=".25"/></filter>
+  </defs>
+  <style>
+    .mv { animation: drift 9s cubic-bezier(.45, 0, .25, 1) infinite; }
+    /* Stays clear of the 840 x Hug label, which sits up and to the left of the resting point */
+    @keyframes drift {
+      0%, 8% { transform: translate(0, 0); }
+      26%, 36% { transform: translate(122px, -44px); }
+      54%, 64% { transform: translate(196px, 58px); }
+      80%, 88% { transform: translate(44px, 72px); }
+      100% { transform: translate(0, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) { .mv { animation: none; } }
+  </style>
+  <!-- Scene units: the cover is drawn at 2.45x, with the cursor resting at 541.4, 254.7 -->
+  <g transform="translate(1326.5 624.1) scale(2.45)">
+    <g class="mv">
+      <path d="M4 2.5l15 8.2-6.6 1.6L9 18.6z" transform="scale(1.75)" fill="#0D99FF" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" filter="url(#sh)"/>
+      <path d="M30 40 a4 4 0 0 1 4 -4 h56 a12 12 0 0 1 12 12 v10 a12 12 0 0 1 -12 12 h-48 a12 12 0 0 1 -12 -12 z" fill="#0D99FF"/>
+      <text x="42" y="60" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#fff">Glee</text>
+    </g>
+  </g>
+</svg>
