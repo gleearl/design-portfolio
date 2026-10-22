@@ -311,15 +311,23 @@ a:hover { color: var(--accent); }
 }
 
 /* Notes (blog) */
-.posts { display: flex; flex-direction: column; max-width: 600px; }
+.notes-head { display: flex; flex-direction: column; gap: 8px; max-width: 600px; }
+.notes-head .post-h1 { margin: 0; }
+.notes-sub { margin: 0; color: var(--faint); }
+.notes-board { display: flex; flex-direction: column; gap: 40px; }
+/* Note cards: a masonry board like Google Keep, newest first, filling columns top to bottom */
+.posts { columns: 3 240px; column-gap: 16px; }
 .empty { margin: 0; color: var(--faint); }
-.post { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-top: 1px solid var(--line); }
-.post:last-child { border-bottom: 1px solid var(--line); }
-.post time { flex: 0 0 96px; font-size: 13px; color: var(--faint); }
-.post-body { flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px; }
-.post-title { font-weight: 500; }
-.post-excerpt { color: var(--faint); }
-.post:hover .post-title { color: var(--accent); }
+.post { display: flex; flex-direction: column; gap: 12px; break-inside: avoid; margin: 0 0 16px; padding: 20px 20px 16px; border-radius: 16px; background: color-mix(in srgb, var(--accent) 7%, var(--bg)); border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.post-title { font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); }
+.post-excerpt { color: var(--muted); display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.post time { font-size: 13px; color: var(--faint); }
+a.post:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+a.post:hover .post-title { color: var(--accent); }
+a.post:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.post-soon { background: transparent; border: 1px dashed color-mix(in srgb, var(--faint) 45%, transparent); }
+.post-soon .post-title, .post-soon .post-excerpt { color: var(--faint); }
+@media (prefers-reduced-motion: reduce) { .post { transition: none; } a.post:hover { transform: none; } }
 .post-page { display: flex; flex-direction: column; gap: 12px; max-width: 600px; }
 .back { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; color: var(--faint); }
 .back svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s var(--ease); }
@@ -753,3 +761,11 @@ html { scroll-behavior: smooth; }
 .cover-motion { position: absolute; inset: 0; pointer-events: none; }
 .thumb.has-cover .cover-motion { position: absolute; }
 .cover .cover-motion { width: 100%; height: 100%; border-radius: 0; }
+
+
+/* Note body: reading rhythm for personal notes */
+.note p { font-size: 16px; line-height: 1.7; }
+.note h2 { margin-top: 24px; font-family: 'Newsreader', Georgia, serif; font-size: 20px; line-height: 1.3; letter-spacing: -0.01em; }
+.note .opener { font-family: 'Newsreader', Georgia, serif; font-size: 22px; line-height: 1.5; color: var(--ink); }
+.note .pull { margin: 8px 0; padding-left: 16px; border-left: 2px solid var(--accent); font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--ink); }
+.note .signoff { margin-top: 8px; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 20px; color: var(--ink); }

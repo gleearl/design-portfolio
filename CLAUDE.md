@@ -21,6 +21,7 @@ Glee's UI/UX design portfolio: a public site that shows design case studies and 
 - Deploy: GitHub Pages from main, root folder (auto-deploys on push)
 - Domain: design.gleearl.com (CNAME file in repo root, added on GitHub 2026-10-21)
 - Analytics: Cloudflare Web Analytics beacon, placed just before </body> on every content page (not the redirect stubs). Add it to every new page.
+- Share previews: every note has Open Graph and X card tags (title, description, canonical URL, date; absolute https://design.gleearl.com URLs). Text only, no share image, per Glee. Copy the tag block from notes/note-template/.
 - Favicon: an orange circle in the accent colour (#E65F2E), 62.5% of the icon box so it reads smaller in the tab: /favicon.svg, /favicon.ico (16, 32, 48) and /apple-touch-icon.png (180, on white). Every content page links all three in <head>, before the font links; add them to every new page.
 
 ## Content rules

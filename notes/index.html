@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notes | Glee, Product Designer</title>
 <meta name="description" content="Notes from Glee Earl Rupal on product design, engineering and the outdoors.">
+<link rel="canonical" href="https://design.gleearl.com/notes/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Glee Earl Rupal">
+<meta property="og:url" content="https://design.gleearl.com/notes/">
+<meta property="og:title" content="Notes | Glee Earl Rupal">
+<meta property="og:description" content="Short, personal notes on design, work and life outside it.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@gleeeearl">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -43,17 +51,29 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
 </button>
 
 <main class="stack">
-  <section id="top">
-    <h1 class="sr-only">Notes</h1>
+  <section id="top" class="notes-board">
+    <header class="notes-head">
+      <h1 class="post-h1">Notes</h1>
+      <p class="notes-sub">Short, personal notes on design, work and life outside it.</p>
+    </header>
     <div class="posts">
-      <p class="empty">Nothing here yet. My first note is on the way.</p>
+      <a class="post" href="/notes/prologue/">
+        <span class="post-title">Prologue</span>
+        <span class="post-excerpt">Hi, I'm Glee. Coffee, the outdoors, my first Tomorrowland and turning 30. A proper introduction before anything else.</span>
+        <time class="mono" datetime="2026-10-22">Oct 22, 2026</time>
+      </a>
       <!--
-        Add each note as one row, newest first. Copy this block:
+        Add each note as one card, newest first. Copy this block:
         <a class="post" href="/notes/your-note/">
+          <span class="post-title">Title of the note</span>
+          <span class="post-excerpt">One or two plain sentences about it.</span>
           <time class="mono" datetime="2026-01-31">Jan 31, 2026</time>
-          <span class="post-body"><span class="post-title">Title of the note</span><span class="post-excerpt">One or two plain sentences about it.</span></span>
         </a>
       -->
+      <div class="post post-soon" aria-hidden="true">
+        <span class="post-title">More soon</span>
+        <span class="post-excerpt">The next note is in the works.</span>
+      </div>
     </div>
   </section>
 </main>
