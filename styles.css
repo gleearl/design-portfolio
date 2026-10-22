@@ -77,10 +77,12 @@ a:hover { color: var(--accent); }
   font-size: 1.06em;
 }
 
-/* Layout */
+/* Layout. The page column is centred; on wide screens it keeps clear of the fixed nav on the left. */
+:root { --page-max: 960px; --work-max: 1320px; }
+@media (min-width: 1920px) { :root { --page-max: 1040px; --work-max: 1480px; } }
 .page {
   max-width: 640px;
-  margin: 0;
+  margin: 0 auto;
   padding: 20px 20px 48px;
   display: flex;
   flex-direction: column;
@@ -138,7 +140,10 @@ a:hover { color: var(--accent); }
   .nav ul { flex-direction: column; gap: 0; }
   .nav .name { flex: none; padding: 4px 0 0; }
   .nav ul:first-of-type { margin-top: 76px; }
-  .page { margin-left: 240px; max-width: 960px; padding-top: 96px; }
+  .page { margin: 0 auto 0 max(240px, calc((100% - var(--page-max)) / 2)); max-width: var(--page-max); padding-top: 96px; }
+  /* Works grows wider than the page column, centred on it, up to --work-max (always 2 columns; the cards grow with it).
+     The hero takes the same width so its text lines up with the left edge of Works. */
+  #top, #work { --w: clamp(100%, 100vw - 520px, var(--work-max)); width: var(--w); margin-inline: calc((100% - var(--w)) / 2); }
 }
 
 /* Copy-email: looks like a nav link; label swaps on hover/focus, and again after copying */
@@ -176,6 +181,8 @@ a:hover { color: var(--accent); }
   letter-spacing: -0.03em;
   font-weight: 500;
 }
+/* Fixed break after "look good," on desktop only; smaller screens wrap naturally */
+.hero h1 .wide-br { display: none; }
 .hero p {
   margin: 0;
   max-width: 520px;
@@ -399,8 +406,11 @@ html { scroll-behavior: smooth; }
 }
 
 @media (min-width: 1024px) {
-  .hero h1 { font-size: 64px; line-height: 1.2; }
-  .cards { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+  /* 64px, scaled down just enough that "I make digital products look good," always fits on line one */
+  .hero { container-type: inline-size; }
+  .hero h1 { font-size: min(64px, 6.8cqi); line-height: 1.2; }
+  .hero h1 .wide-br { display: inline; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
