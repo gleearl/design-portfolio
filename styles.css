@@ -141,9 +141,10 @@ a:hover { color: var(--accent); }
   .nav .name { flex: none; padding: 4px 0 0; }
   .nav ul:first-of-type { margin-top: 76px; }
   .page { margin: 0 auto 0 max(240px, calc((100% - var(--page-max)) / 2)); max-width: var(--page-max); padding-top: 96px; }
-  /* Works grows wider than the page column, centred on it, up to --work-max (always 2 columns; the cards grow with it).
-     The hero takes the same width so its text lines up with the left edge of Works. */
-  #top, #work { --w: clamp(100%, 100vw - 520px, var(--work-max)); width: var(--w); margin-inline: calc((100% - var(--w)) / 2); }
+  /* Home only: the hero, Works and footer grow wider than the page column, centred on it, up to --work-max,
+     so they share one left edge (Works stays at 2 columns; the cards grow with it).
+     Every other page keeps the page column width. */
+  .hero, #work, .page:has(#work) > .footer { --w: clamp(100%, 100vw - 520px, var(--work-max)); width: var(--w); max-width: none; margin-inline: calc((100% - var(--w)) / 2); }
 }
 
 /* Copy-email: looks like a nav link; label swaps on hover/focus, and again after copying */
@@ -193,6 +194,7 @@ a:hover { color: var(--accent); }
 }
 
 .bio { display: flex; flex-direction: column; gap: 16px; max-width: 600px; }
+.bio > * { max-width: 600px; }
 .bio p { margin: 0; color: var(--faint); }
 .bio strong { color: var(--ink); font-weight: 500; }
 
