@@ -591,3 +591,59 @@ html { scroll-behavior: smooth; }
 }
 @container (max-width: 400px) { .nx-tabs button { padding: 8px 10px; gap: 8px; font-size: 13px; } }
 @media (max-width: 480px) { .nx-explorer { padding: 14px; } }
+/* Concept boards: low-fidelity wireframes drawn on the page (doctor interviews study) */
+.concepts { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 768px) { .concepts { grid-template-columns: repeat(3, minmax(0, 1fr)); } .concepts.n2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.concept { display: flex; flex-direction: column; gap: 14px; padding: 20px; border-radius: 20px; background: var(--panel); }
+.concept-tag { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--olive); }
+.concept h3 { margin: -6px 0 0; font-size: 15px; font-weight: 500; color: var(--ink); }
+.concept p:not(.concept-tag) { margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: 11px; letter-spacing: 0.04em; }
+.badge svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+.wf { --wf-fill: color-mix(in srgb, var(--ink) 13%, transparent); --wf-soft: color-mix(in srgb, var(--ink) 6%, transparent);
+  position: relative; display: flex; flex-direction: column; gap: 7px; padding: 10px; aspect-ratio: 4 / 3; overflow: hidden;
+  border-radius: 10px; background: var(--bg); box-shadow: 0 0 0 1px var(--line); font-size: 10px; line-height: 1.2; color: var(--faint); }
+.wf.phone { aspect-ratio: 9 / 16; width: 62%; max-width: 200px; margin: 0 auto; border-radius: 18px; padding: 10px 9px; }
+.wf-bar { flex: none; display: flex; align-items: center; gap: 6px; height: 16px; padding: 0 6px; border-radius: 4px; background: var(--ink); }
+.wf-bar i { width: 18px; height: 4px; border-radius: 2px; background: var(--bg); opacity: .5; }
+.wf-bar i.logo { width: 10px; height: 10px; border-radius: 3px; opacity: .9; }
+.wf-bar .grow { flex: 1; }
+.wf-row { display: flex; gap: 7px; align-items: flex-start; min-height: 0; }
+.wf-col { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 0; }
+.wf-side { flex: 0 0 30%; display: flex; flex-direction: column; gap: 5px; }
+.wf-line { height: 5px; border-radius: 3px; background: var(--wf-fill); }
+.wf-line.h { height: 8px; width: 70%; background: color-mix(in srgb, var(--ink) 30%, transparent); }
+.wf-line.s { width: 60%; } .wf-line.xs { width: 35%; }
+.wf-card { display: flex; flex-direction: column; gap: 4px; padding: 6px; border-radius: 5px; background: var(--wf-soft); }
+.wf-img { flex: none; height: 26px; border-radius: 4px; background: var(--wf-fill); }
+.wf-banner { flex: none; height: 30px; border-radius: 5px; background: var(--wf-fill); }
+.wf-ad { flex: none; display: grid; place-items: center; height: 22px; border-radius: 4px; color: var(--faint);
+  background: repeating-linear-gradient(135deg, var(--wf-soft) 0 5px, transparent 5px 10px); box-shadow: inset 0 0 0 1px var(--line); }
+.wf-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.wf-chip { height: 12px; padding: 0 7px; border-radius: 999px; background: var(--wf-soft); box-shadow: inset 0 0 0 1px var(--wf-fill); display: inline-flex; align-items: center; }
+.wf-chip.on { background: var(--ink); box-shadow: none; color: var(--bg); }
+.wf-field { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 6px; height: 16px; padding: 0 7px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--wf-fill); background: var(--bg); color: var(--muted); }
+.wf-field.pill { border-radius: 999px; }
+.wf-check { display: flex; align-items: center; gap: 4px; }
+.wf-check::before { content: ""; width: 7px; height: 7px; border-radius: 2px; box-shadow: inset 0 0 0 1px var(--faint); }
+.wf-check.on::before { background: var(--ink); box-shadow: none; }
+.wf-fab { position: absolute; right: 10px; bottom: 12px; display: inline-flex; align-items: center; height: 18px; padding: 0 8px; border-radius: 999px; background: var(--ink); color: var(--bg); }
+.wf-toc { display: flex; flex-direction: column; gap: 3px; padding: 6px; border-radius: 5px; background: var(--wf-soft); color: var(--muted); }
+.wf-toc.links span { color: var(--ink); text-decoration: underline; text-decoration-color: var(--wf-fill); text-underline-offset: 2px; }
+.wf-toc.links span::before { content: "\2192\00a0"; color: var(--faint); }
+.wf-tabs { flex: none; display: flex; gap: 8px; color: var(--muted); }
+.wf-tabs span { padding-bottom: 2px; }
+/* What the concept is testing: outlined in the accent so it reads first in a squint test */
+.wf .focus { outline: 1.5px solid var(--accent); outline-offset: 2px; border-radius: 5px; }
+.wf-note { font-size: 13px; color: var(--faint); }
+
+.quote { margin: 8px 0 0; max-width: 600px; padding: 4px 0 4px 18px; border-left: 2px solid var(--olive); }
+.quote p { margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 20px; line-height: 1.4; color: var(--ink); }
+.quote cite { display: block; margin-top: 6px; font-style: normal; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--faint); }
+.heur { margin: 4px 0 0; max-width: 600px; font-size: 14px; line-height: 1.55; color: var(--faint); }
+.heur b { font-weight: 500; color: var(--muted); }
+
+.plan { margin: 24px 0 0; }
+.wf.flat { aspect-ratio: auto; }
+

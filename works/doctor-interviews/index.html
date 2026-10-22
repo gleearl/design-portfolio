@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asking doctors before we build | Glee, UI/UX Designer</title>
+<meta name="description" content="User interviews and concept testing with three medical professionals for the MIMS disease and medical news website: five parts of the site, 2 to 3 concepts each, and recommendations that shipped in 2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>
+try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page">
+
+<nav class="nav" aria-label="Primary">
+  <a class="name" href="/">Glee Earl Rupal</a>
+  <ul>
+    <li><a href="/" aria-current="page">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/notes/">Notes</a></li>
+  </ul>
+  <ul>
+    <li>
+      <button class="copy-email" id="copy-email" type="button" data-email="glee.rupal@gmail.com">
+        <span class="when-idle">Email</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span>
+      </button>
+      <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+    </li>
+    <li><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://x.com/gleeeearl" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</nav>
+<button class="gbtn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#why">Why we asked</a></li>
+    <li><a href="#plan">How I planned it</a></li>
+    <li><a href="#filter">Specialty filter</a></li>
+    <li><a href="#search">Search</a></li>
+    <li><a href="#mobile">Mobile navigation</a></li>
+    <li><a href="#related">Related content</a></li>
+    <li><a href="#learned">What I learned</a></li>
+  </ol>
+</nav>
+<main class="stack">
+  <article id="top" class="post-page case">
+    <a class="back" href="/#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
+    <h1 class="post-h1">Asking doctors before we build</h1>
+    <p class="lede">User interviews and concept testing for the MIMS disease and medical news website. Three medical professionals, five parts of the site, and a set of recommendations that all shipped.</p>
+    <figure class="cover"><img src="/images/doctor-interviews/cover.svg" alt="Three low-fidelity concept wireframes labelled A, B and C, with short quotes from a medical writer, a CME lead and a physician" width="2400" height="1180"></figure>
+    <dl class="facts">
+      <div><dt>Timeline</dt><dd>2025</dd></div>
+      <div><dt>Scope</dt><dd>User research, concept testing</dd></div>
+    </dl>
+
+    <section class="cs" id="overview">
+      <p class="cs-label">Overview</p>
+      <h2 class="cs-title">Put the options in front of the people who read the site.</h2>
+      <div class="prose">
+        <p>After a revamp of the MIMS disease and medical news website, we had a short list of things we weren’t sure about. Rather than pick concepts in a meeting room, I put two or three options for each one in front of the people the site is for.</p>
+        <p>I spoke to a medical writer, a CME lead and a physician, one at a time, over one week in July 2025. I wrote a report after each session and combined them into one set of recommendations. The team approved them, and all of them shipped later that year.</p>
+      </div>
+    </section>
+
+    <section class="cs" id="why">
+      <p class="cs-label">Why we asked</p>
+      <h2 class="cs-title">The revamp left a few open questions.</h2>
+      <div class="prose">
+        <p>The new site had a better structure, but some parts of it could be argued either way from inside the team:</p>
+        <p>On the news list, choosing a specialty made it jump to the front of the filter. Helpful or confusing? On mobile, the main menu sat behind a burger icon. Did people still find the other sections? Disease pages showed contents and next-page links at both the top and the bottom. Was that clear? Was search easy to find, and should it be on every page? And did readers notice related articles and diseases at all?</p>
+        <p>I wanted to hear from people who read medical content for a living before we changed anything.</p>
+      </div>
+    </section>
+
+    <section class="cs" id="plan">
+      <p class="cs-label">How I planned it</p>
+      <h2 class="cs-title">Five topics, a few concepts each, and one question: why?</h2>
+      <div class="prose">
+        <p>I planned and ran the round on my own, from choosing the topics to writing up the results.</p>
+        <p>For every topic I designed two or three concepts that solved the same problem in different ways. Where it made sense, one of them was the live design, so we had something real to compare against. Some concepts were deliberately low-fidelity and grey. I wanted people to react to the structure, not the colours.</p>
+        <p>In each session I showed the concepts side by side and asked which one they would use, and why. The why mattered most. A preference without a reason is hard to design from. A reason like “it looks like an ad” tells you exactly what to fix.</p>
+      </div>
+      <div class="journey plan">
+        <ol class="j-steps">
+          <li class="j-step"><span class="j-n">01</span><h4>Pick the topics</h4><p>Five parts of the site the revamp left us unsure about.</p></li>
+          <li class="j-step"><span class="j-n">02</span><h4>Design the concepts</h4><p>Two or three per topic, some low-fidelity on purpose.</p></li>
+          <li class="j-step"><span class="j-n">03</span><h4>Talk to three people</h4><p>A medical writer, a CME lead and a physician, 23 to 30 July 2025.</p></li>
+          <li class="j-step"><span class="j-n">04</span><h4>Write it up each time</h4><p>Background, feedback per concept, their pick and their words.</p></li>
+          <li class="j-step"><span class="j-n">05</span><h4>Recommend</h4><p>One summary with a recommendation per topic, two weeks later.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cs" id="filter">
+      <p class="cs-label">Specialty filter</p>
+      <h2 class="cs-title">Making a filter look like a filter.</h2>
+      <div class="prose">
+        <p>On the news list, readers narrow articles down by specialty. I tested a dropdown, a row of visible specialties, and a combined version that shows every specialty in one place.</p>
+        <p>All three preferred a filter they could see. The medical writer didn’t recognise the dropdown as a filter at all.</p>
+      </div>
+      <blockquote class="quote"><p>“It doesn’t intuitively look like a filter, whereas like usually websites have that filter symbol.”</p><cite>Medical writer</cite></blockquote>
+      <ul class="concepts">
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: a news list with a specialty dropdown above it">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-line h"></div>
+            <div class="wf-field focus">All specialties <span>▾</span></div>
+            <div class="wf-card"><div class="wf-line"></div><div class="wf-line s"></div></div>
+            <div class="wf-card"><div class="wf-line"></div><div class="wf-line s"></div></div>
+            <div class="wf-card"><div class="wf-line"></div><div class="wf-line xs"></div></div>
+          </div>
+          <p class="concept-tag">Concept A</p>
+          <h3>Dropdown</h3>
+          <p>Tidy, but it hid the choices and didn’t read as a filter.</p>
+        </li>
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: a news list with specialties shown as a row of tags">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-line h"></div>
+            <div class="wf-chips focus"><span class="wf-chip on">All</span><span class="wf-chip">Cardiology</span><span class="wf-chip">Oncology</span><span class="wf-chip">Neurology</span></div>
+            <div class="wf-card"><div class="wf-line"></div><div class="wf-line s"></div></div>
+            <div class="wf-card"><div class="wf-line"></div><div class="wf-line s"></div></div>
+            <div class="wf-card"><div class="wf-line"></div><div class="wf-line xs"></div></div>
+          </div>
+          <p class="concept-tag">Concept B <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Shipped</span></p>
+          <h3>Visible specialties</h3>
+          <p>Easy to scan and one click to use. The base we kept.</p>
+        </li>
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: a news list with a side panel listing every specialty as a checkbox">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-row">
+              <div class="wf-side focus"><span class="wf-check on">All</span><span class="wf-check">Cardiology</span><span class="wf-check">Oncology</span><span class="wf-check">Neurology</span><span class="wf-check">Pediatrics</span></div>
+              <div class="wf-col">
+                <div class="wf-line h"></div>
+                <div class="wf-card"><div class="wf-line"></div><div class="wf-line s"></div></div>
+                <div class="wf-card"><div class="wf-line"></div><div class="wf-line s"></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="concept-tag">Concept C</p>
+          <h3>Combined</h3>
+          <p>Every specialty in one place. We borrowed its steady layout.</p>
+        </li>
+      </ul>
+      <div class="prose">
+        <p>The CME lead noticed something we had been unsure about. On the live site, a specialty jumped to the front of the row once you picked it, and for a moment she lost her place.</p>
+      </div>
+      <blockquote class="quote"><p>“If the component moves, then it sort of... for a fraction of seconds, you tend to get a little confused.”</p><cite>CME lead</cite></blockquote>
+      <ul class="concepts n2">
+        <li class="concept">
+          <div class="wf flat" role="img" aria-label="Wireframe: after picking Cardiology, the Cardiology tag has moved to the front of the row">
+            <div class="wf-chips"><span class="wf-chip on focus">Cardiology</span><span class="wf-chip">All</span><span class="wf-chip">Oncology</span><span class="wf-chip">Neurology</span></div>
+          </div>
+          <p class="concept-tag">Before</p>
+          <p>The picked specialty jumps to the front, so the row shifts under your cursor.</p>
+        </li>
+        <li class="concept">
+          <div class="wf flat" role="img" aria-label="Wireframe: after picking Cardiology, the Cardiology tag stays in its place and is highlighted">
+            <div class="wf-chips"><span class="wf-chip">All</span><span class="wf-chip on focus">Cardiology</span><span class="wf-chip">Oncology</span><span class="wf-chip">Neurology</span></div>
+          </div>
+          <p class="concept-tag">After <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Shipped</span></p>
+          <p>The picked specialty stays where it is and is highlighted in place.</p>
+        </li>
+      </ul>
+      <p class="heur"><b>Why it works:</b> a visible filter means people recognise their options instead of having to remember them (heuristic 6). An item that stays put keeps the row predictable and makes the current choice clear (heuristics 1 and 4).</p>
+    </section>
+
+    <section class="cs" id="search">
+      <p class="cs-label">Search</p>
+      <h2 class="cs-title">Search belongs next to what it searches.</h2>
+      <div class="prose">
+        <p>I tested three places for search on the disease page: in the top bar, inside a large banner, and in the content area.</p>
+        <p>Two of the three participants felt the top-bar search blended into the frame of the site, sitting next to the dark navigation and the ad space. The banner was hard to miss, but the CME lead said it “looks like an ad banner.” What worked was search inside the content, close to what it searches, with a label that says what it is for.</p>
+      </div>
+      <blockquote class="quote"><p>“It is right in front… there’s nothing above or below to confuse.”</p><cite>CME lead</cite></blockquote>
+      <ul class="concepts">
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: search field inside the dark top navigation bar, next to an ad slot">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><span class="grow"></span><span class="wf-field pill focus" style="height:11px;width:38%">Search</span></div>
+            <div class="wf-ad">Ad</div>
+            <div class="wf-banner"></div>
+            <div class="wf-line h"></div>
+            <div class="wf-line"></div>
+            <div class="wf-line s"></div>
+          </div>
+          <p class="concept-tag">Concept A</p>
+          <h3>In the top bar</h3>
+          <p>Read as part of the site frame, not as a tool.</p>
+        </li>
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: a large banner with a search field inside it">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-banner focus" style="height:52px;display:flex;align-items:center;padding:0 12px"><span class="wf-field pill" style="flex:1">Search</span></div>
+            <div class="wf-line h"></div>
+            <div class="wf-line"></div>
+            <div class="wf-line s"></div>
+          </div>
+          <p class="concept-tag">Concept B</p>
+          <h3>In a banner</h3>
+          <p>Hard to miss, but it looked like an advert.</p>
+        </li>
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: a search field labelled Search diseases placed in the content area under the page heading">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-banner"></div>
+            <div class="wf-line h"></div>
+            <div class="wf-field focus">Search diseases <span>⌕</span></div>
+            <div class="wf-line"></div>
+            <div class="wf-line s"></div>
+          </div>
+          <p class="concept-tag">Concept C <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Shipped</span></p>
+          <h3>In the content</h3>
+          <p>Clearly labelled and away from ads. Now on every page.</p>
+        </li>
+      </ul>
+      <p class="heur"><b>Why it works:</b> a search field next to ads and navigation loses its contrast, so it drops down the visual hierarchy (heuristic 8). A label like “Search diseases” uses the reader’s words and tells them what they will get (heuristic 2).</p>
+    </section>
+
+    <section class="cs" id="mobile">
+      <p class="cs-label">Mobile navigation</p>
+      <h2 class="cs-title">Speed or structure? They wanted both.</h2>
+      <div class="prose">
+        <p>Disease pages are long. On a phone, should the contents be a floating button you can open from anywhere, or a full list at the top? This was the one topic with no clear winner, and I think that made it the most useful.</p>
+        <p>The medical writer liked the floating button for one-handed reading, found the full list faster for finding things, and suggested a mix of both. The CME lead preferred the full list but worried it looked long. The physician liked how fast the floating version was but found its dropdown confusing, and wanted to see what was in a section before jumping to it.</p>
+        <p>Read side by side, they weren’t really disagreeing. Each one valued a different thing: speed, an overview, and knowing what is in a section before you open it.</p>
+      </div>
+      <blockquote class="quote"><p>“Being able to scroll everything in the whole page with one hand is great.”</p><cite>Medical writer</cite></blockquote>
+      <ul class="concepts">
+        <li class="concept">
+          <div class="wf phone" role="img" aria-label="Phone wireframe: a disease page with a floating Contents button at the bottom right">
+            <div class="wf-bar"><i class="logo"></i><span class="grow"></span><i></i></div>
+            <div class="wf-line h"></div>
+            <div class="wf-line"></div><div class="wf-line"></div><div class="wf-line s"></div>
+            <div class="wf-line"></div><div class="wf-line"></div><div class="wf-line xs"></div>
+            <div class="wf-line"></div><div class="wf-line s"></div>
+            <span class="wf-fab focus">Contents ▴</span>
+          </div>
+          <p class="concept-tag">Concept A</p>
+          <h3>Floating contents</h3>
+          <p>Quick with one hand, but the dropdown hid what each section held.</p>
+        </li>
+        <li class="concept">
+          <div class="wf phone" role="img" aria-label="Phone wireframe: a disease page that opens with a full list of every section">
+            <div class="wf-bar"><i class="logo"></i><span class="grow"></span><i></i></div>
+            <div class="wf-line h"></div>
+            <div class="wf-toc focus"><span>Overview</span><span>Causes</span><span>Symptoms</span><span>Diagnosis</span><span>Treatment</span><span>Prevention</span><span>References</span></div>
+            <div class="wf-line"></div><div class="wf-line s"></div>
+          </div>
+          <p class="concept-tag">Concept B</p>
+          <h3>Full contents list</h3>
+          <p>Clear and complete. Easy to understand, but long.</p>
+        </li>
+        <li class="concept">
+          <div class="wf phone" role="img" aria-label="Phone wireframe: a full contents list where each item is a jump link to its section">
+            <div class="wf-bar"><i class="logo"></i><span class="grow"></span><i></i></div>
+            <div class="wf-line h"></div>
+            <div class="wf-toc links focus"><span>Overview</span><span>Causes</span><span>Symptoms</span><span>Diagnosis</span><span>Treatment</span></div>
+            <div class="wf-line h" style="width:45%"></div>
+            <div class="wf-line"></div><div class="wf-line s"></div>
+          </div>
+          <p class="concept-tag">Combined <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Shipped</span></p>
+          <h3>Full list with jump links</h3>
+          <p>The structure of B, with each item jumping straight to its section.</p>
+        </li>
+      </ul>
+      <div class="prose">
+        <h2>The header</h2>
+        <p>I also tested the mobile header with the physician: the main sections shown at the top, or tucked into a burger menu. With the condensed version she asked where the tabs had gone. She wanted to see them “so I can change and compare.” We kept the main sections visible.</p>
+      </div>
+      <ul class="concepts n2">
+        <li class="concept">
+          <div class="wf phone" role="img" aria-label="Phone wireframe: header with only a logo and a burger menu icon">
+            <div class="wf-bar"><i class="logo"></i><span class="grow"></span><span class="focus" style="color:var(--bg);padding:0 2px">☰</span></div>
+            <div class="wf-banner"></div>
+            <div class="wf-line h"></div>
+            <div class="wf-line"></div><div class="wf-line"></div><div class="wf-line s"></div>
+          </div>
+          <p class="concept-tag">Before</p>
+          <p>Main sections hidden behind the burger menu.</p>
+        </li>
+        <li class="concept">
+          <div class="wf phone" role="img" aria-label="Phone wireframe: header with Drugs, Disease and News shown as tabs under the logo">
+            <div class="wf-bar"><i class="logo"></i><span class="grow"></span><i></i></div>
+            <div class="wf-tabs focus"><span>Drugs</span><span>Disease</span><span>News</span></div>
+            <div class="wf-banner"></div>
+            <div class="wf-line h"></div>
+            <div class="wf-line"></div><div class="wf-line"></div><div class="wf-line s"></div>
+          </div>
+          <p class="concept-tag">After <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Shipped</span></p>
+          <p>Main sections visible, one tap to switch.</p>
+        </li>
+      </ul>
+      <p class="heur"><b>Why it works:</b> hidden contents and hidden sections both ask people to remember what is there (heuristic 6). Visible sections give a quick way to move between them and back (heuristic 3).</p>
+    </section>
+
+    <section class="cs" id="related">
+      <p class="cs-label">Related content</p>
+      <h2 class="cs-title">Seen, not skipped.</h2>
+      <div class="prose">
+        <p>On an article page, where should related articles and diseases go, and do they need images? Everyone agreed on the first part: related content at the very bottom gets missed.</p>
+      </div>
+      <blockquote class="quote"><p>“Putting everything on the bottom just minimizes chances of people visiting the related articles.”</p><cite>Medical writer</cite></blockquote>
+      <div class="prose">
+        <p>Images split the group. Two participants said images made related items stand out and easier to tell apart from ads. The physician didn’t need them and raised something the others didn’t: “More image… more delay.” It was a trade-off worth taking seriously.</p>
+      </div>
+      <ul class="concepts">
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: an article with related links only at the very bottom, below the fold">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-line h"></div>
+            <div class="wf-line"></div><div class="wf-line"></div><div class="wf-line s"></div>
+            <div class="wf-line"></div><div class="wf-line"></div><div class="wf-line xs"></div>
+            <div class="wf-line"></div>
+            <div class="wf-row focus" style="margin-top:auto"><div class="wf-card" style="flex:1"><div class="wf-line"></div></div><div class="wf-card" style="flex:1"><div class="wf-line"></div></div><div class="wf-card" style="flex:1"><div class="wf-line"></div></div></div>
+          </div>
+          <p class="concept-tag">Concept A</p>
+          <h3>Bottom only</h3>
+          <p>Out of sight while reading, so it was easy to miss.</p>
+        </li>
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: an article with a column of text links to related content on the right">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-row">
+              <div class="wf-col"><div class="wf-line h"></div><div class="wf-line"></div><div class="wf-line"></div><div class="wf-line s"></div><div class="wf-line"></div><div class="wf-line"></div><div class="wf-line xs"></div></div>
+              <div class="wf-side focus"><div class="wf-line"></div><div class="wf-line s"></div><div class="wf-line"></div><div class="wf-line s"></div><div class="wf-line"></div></div>
+            </div>
+          </div>
+          <p class="concept-tag">Concept B</p>
+          <h3>Side, text links</h3>
+          <p>Visible and quick to load. One participant felt text alone didn’t stand out.</p>
+        </li>
+        <li class="concept">
+          <div class="wf" role="img" aria-label="Wireframe: an article with related cards on the right, each with an optional small image">
+            <div class="wf-bar"><i class="logo"></i><i></i><i></i><i></i></div>
+            <div class="wf-row">
+              <div class="wf-col"><div class="wf-line h"></div><div class="wf-line"></div><div class="wf-line"></div><div class="wf-line s"></div><div class="wf-line"></div><div class="wf-line"></div><div class="wf-line xs"></div></div>
+              <div class="wf-side focus"><div class="wf-card"><div class="wf-img"></div><div class="wf-line"></div></div><div class="wf-card"><div class="wf-line"></div><div class="wf-line s"></div></div></div>
+            </div>
+          </div>
+          <p class="concept-tag">Concept C <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Shipped</span></p>
+          <h3>Side, images optional</h3>
+          <p>Seen while reading. Works with or without an image, so pages stay quick.</p>
+        </li>
+      </ul>
+      <p class="heur"><b>Why it works:</b> content below the fold sits at the bottom of the visual hierarchy, so moving it beside the article lifts it. Images are used only where they help, which keeps the page light (heuristic 8).</p>
+    </section>
+
+    <section class="cs" id="learned">
+      <p class="cs-label">What I learned</p>
+      <h2 class="cs-title">People are good at telling you why something feels wrong.</h2>
+      <div class="prose">
+        <p>They can’t always tell you the fix, but the reason is usually enough to design from. A few things I’m taking into every project since.</p>
+        <h2>Ask why, not which</h2>
+        <p>“Which do you prefer?” gave me a vote. “Why?” gave me something to design with. Hearing that a search bar “looks like an ad banner,” or that a moving filter made someone lose their place for a moment, was more useful than any pick, because it told me exactly what to change.</p>
+        <h2>Mixed feedback is a brief, not a tie</h2>
+        <p>On mobile navigation all three people wanted different things. Once I wrote down the reason behind each choice, they weren’t really disagreeing: speed, an overview, and a preview before jumping. The version that shipped tries to give all three.</p>
+        <h2>Context changes how a design reads</h2>
+        <p>The same search field was invisible in the top bar, looked like an advert in a banner, and worked in the content area. Nothing about the field changed, only what sat around it. I now review components where they will actually live, not on their own.</p>
+        <h2>Users settle arguments the team can’t</h2>
+        <p>We had gone back and forth about the specialty that jumped to the front of the filter. One sentence from the CME lead settled it. A short round of interviews cost far less than another meeting.</p>
+        <h2>Small rounds are worth it, if you’re honest about them</h2>
+        <p>Three people won’t give you statistics, so I looked for agreement and reasons rather than counting votes. One participant works within the wider MIMS group, and I tested the mobile header with one person only. Next time I’d recruit more widely, give each concept a fixed name from the start (“Design 2” drifted between sessions), add a short task like “find the treatment section”, and check back after launch to see whether the changes did what people told us they would.</p>
+      </div>
+    </section>
+
+    <section class="cs cta" id="talk">
+      <p class="cs-label">Let’s talk</p>
+      <h2 class="cs-title">I’d love to tell you more on a call.</h2>
+      <div class="prose">
+        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through the sessions, the trade-offs and what I’d do next.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="cta-btn primary copy-email" type="button" data-email="glee.rupal@gmail.com"><span class="when-idle">Email me</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span></button>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Glee Earl Rupal</span>
+</footer>
+
+</div>
+<script src="/main.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9b7e7ef9bee34fc794ec679c5f0cd559"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
