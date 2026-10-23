@@ -769,3 +769,71 @@ html { scroll-behavior: smooth; }
 .note .opener { font-family: 'Newsreader', Georgia, serif; font-size: 22px; line-height: 1.5; color: var(--ink); }
 .note .pull { margin: 8px 0; padding-left: 16px; border-left: 2px solid var(--accent); font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--ink); }
 .note .signoff { margin-top: 8px; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 20px; color: var(--ink); }
+
+/* Work features (BBB profile form, AskChamber, ...). Each page sets its stage colour with a class
+   next to .bx, and its column ratios with --cols on the bento or duo. Screens sit on a teal stage (the product's own brand colour)
+   in browser frames or as floating dialogs; facts run four across on wide screens. */
+.bx { --stage: #0E5D7B; --stage-2: #08425A; }
+.bx.ac { --stage: #2563D6; --stage-2: #0A2660; }
+.bx.neo { --stage: #EA6E46; --stage-2: #B03E24; }
+.bx.gc { --stage: #34A85C; --stage-2: #10542C; }
+@media (min-width: 900px) { .facts-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.bx-stage { margin: 28px 0 0; display: flex; flex-direction: column; gap: 12px; }
+.bx-pad { padding: clamp(16px, 4.5vw, 64px); border-radius: 24px;
+  background: radial-gradient(rgba(255, 255, 255, .13) 1.2px, transparent 1.4px) 0 0 / 22px 22px, linear-gradient(135deg, var(--stage), var(--stage-2)); }
+.bx-stage figcaption { color: var(--faint); font-size: 14px; padding: 0 4px; }
+.bx-browser { overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 30px 60px -20px rgba(2, 24, 36, .55), 0 0 0 1px rgba(255, 255, 255, .08); }
+.bx-browser img, .bx-bento img, .bx-float { display: block; width: 100%; height: auto; }
+.bx-bento > div > img, .bx-float { border-radius: 12px; box-shadow: 0 30px 60px -20px rgba(2, 24, 36, .6); }
+/* Bento columns. Set --cols so each column's width follows its aspect ratio
+   (BBB: address | name over accreditation | contact, ratio (1 / height-to-width: 1.516, 1.507, 1.623), with the middle one trimmed for its inner gap, so all three end at the same line. */
+.bx-bento { display: grid; gap: 16px; align-items: center; }
+.bx-bento > div { display: flex; flex-direction: column; gap: 16px; }
+@media (min-width: 720px) { .bx-bento { grid-template-columns: var(--cols); gap: 20px; } .bx-bento > div { gap: 20px; } }
+/* Two screens side by side, no overlap. Set --cols from their width-to-height ratios so both are the same height. */
+.bx-duo { display: grid; gap: 16px; align-items: center; }
+@media (min-width: 720px) { .bx-duo { grid-template-columns: var(--cols); gap: 20px; } }
+/* Principles: three numbered cards */
+.bx-cards { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 12px; counter-reset: none; }
+@media (min-width: 720px) { .bx-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.bx-cards li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 20px; background: var(--panel); }
+.bx-n { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: var(--accent); }
+.bx-cards h3, .bx-role h3 { margin: 12px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; color: var(--ink); }
+.bx-cards p, .bx-role p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+/* My role: design and front end side by side */
+.bx-role { display: grid; gap: 12px; margin-top: 20px; }
+@media (min-width: 720px) { .bx-role { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.bx-role > div { display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 20px; border: 1px solid var(--line); }
+.bx-role h3 { margin-top: 0; }
+/* Phones in a row: four across on wide screens, two by two on phones */
+.bx-phones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: center; }
+@media (min-width: 720px) { .bx-phones { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; } }
+.bx-phone { padding: 5px; border-radius: 22px; background: #111; box-shadow: 0 30px 60px -20px rgba(2, 24, 36, .6); }
+.bx-phone img { display: block; width: 100%; height: auto; border-radius: 17px; }
+
+/* View all link under the home cards */
+.view-all { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line); font-weight: 500; color: var(--ink); transition: background .2s ease; }
+.view-all svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s var(--ease); }
+.view-all:hover { background: var(--panel); color: var(--ink); }
+.view-all:hover svg { transform: translateX(3px); }
+
+/* All works: one row per project, newest first */
+.all-works { display: flex; flex-direction: column; gap: 12px; }
+.work-list { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.work-list li { border-bottom: 1px solid var(--line); }
+.wl-row { display: grid; grid-template-columns: 56px minmax(0, 1fr) 16px; align-items: center; gap: 4px 16px; padding: 16px 8px; margin: 0 -8px; border-radius: 12px; color: var(--ink); transition: background .2s ease; }
+.wl-row:hover { background: var(--panel); color: var(--ink); }
+.wl-year { font-size: 13px; color: var(--faint); }
+.wl-thumb { display: none; }
+.wl-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.wl-title { font-weight: 500; }
+.wl-meta { font-size: 15px; color: var(--faint); }
+.wl-status { display: none; font-size: 13px; color: var(--faint); }
+.wl-go { width: 16px; height: 16px; fill: none; stroke: var(--faint); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s var(--ease), stroke .2s ease; }
+.wl-row:hover .wl-go { transform: translateX(3px); stroke: var(--ink); }
+@media (min-width: 720px) {
+  .wl-row { grid-template-columns: 56px 112px minmax(0, 1fr) auto 16px; gap: 20px; }
+  .wl-thumb { display: block; aspect-ratio: 2400 / 1180; overflow: hidden; border-radius: 8px; }
+  .wl-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .wl-status { display: block; }
+}

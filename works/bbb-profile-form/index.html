@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BBB business profile form | Glee, UI/UX Designer</title>
+<meta name="description" content="A form that lets a business check its BBB profile and fix one field at a time, designed in Figma and built on the front end by me.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>
+try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page">
+
+<nav class="nav" aria-label="Primary">
+  <a class="name" href="/">Glee Earl Rupal</a>
+  <ul>
+    <li><a href="/" aria-current="page">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/notes/">Notes</a></li>
+  </ul>
+  <ul>
+    <li>
+      <button class="copy-email" id="copy-email" type="button" data-email="glee.rupal@gmail.com">
+        <span class="when-idle">Email</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span>
+      </button>
+      <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+    </li>
+    <li><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://x.com/gleeeearl" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</nav>
+<button class="gbtn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    <li><a href="#profile">The profile</a></li>
+    <li><a href="#dialogs">Dialogs</a></li>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="#submit">Submitting</a></li>
+    <li><a href="#role">My role</a></li>
+  </ol>
+</nav>
+<main class="stack">
+  <article id="top" class="post-page case bx bbb">
+    <a class="back" href="/#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
+    <h1 class="post-h1">BBB business profile form</h1>
+    <p class="lede">A form that lets a business check its Better Business Bureau profile and fix only what changed. I designed it in Figma and coded the front end.</p>
+    <figure class="cover"><img src="/images/bbb-profile/cover.jpg" alt="The company profile page in a browser window, with the missing information check and the business address dialog open over it, on a teal background" width="2400" height="1180"></figure>
+    <dl class="facts facts-4">
+      <div><dt>Year</dt><dd>2019</dd></div>
+      <div><dt>Role</dt><dd>Designer and front-end developer</dd></div>
+      <div><dt>Platform</dt><dd>Web, desktop first</dd></div>
+      <div><dt>Tools</dt><dd>Figma</dd></div>
+    </dl>
+
+    <section class="cs" id="profile">
+      <p class="cs-label">The profile</p>
+      <h2 class="cs-title">Confirm it, don’t refill it.</h2>
+      <div class="prose">
+        <p>Most of a business profile is already on file, so the form opens on the profile itself. Every value has a pencil beside it, and an owner with nothing to change can finish in one click.</p>
+      </div>
+      <figure class="bx-stage">
+        <div class="bx-pad"><div class="bx-browser"><img src="/images/bbb-profile/profile.jpg" alt="Company profile page for a sample business: addresses, phones, emails, fax and website each with an edit pencil, an orange This information is correct button, business category tags and profile enhancements marked Missing or Entered" loading="lazy"></div></div>
+        <figcaption>The profile page, with the confirm button at the top of the right column</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="dialogs">
+      <p class="cs-label">Dialogs</p>
+      <h2 class="cs-title">One field, one dialog.</h2>
+      <div class="prose">
+        <p>Each pencil opens a dialog for one kind of information. Names, addresses and phone numbers can have several values, so each dialog lists them with tags like Primary, Mailing or Billing, with an add form below.</p>
+      </div>
+      <figure class="bx-stage">
+        <div class="bx-pad bx-bento" style="--cols: minmax(0, .66fr) minmax(0, .642fr) minmax(0, .616fr)">
+          <div><img src="/images/bbb-profile/modal-address.png" alt="Business Address dialog: three addresses tagged Primary, Mailing or Billing, a map, an add address form, a review note, and Cancel and Save Changes" loading="lazy"></div>
+          <div>
+            <img src="/images/bbb-profile/modal-name.png" alt="Business Name dialog: four names, one tagged Primary, with edit and remove icons, an add form and a review note" loading="lazy">
+            <img src="/images/bbb-profile/modal-accredit.png" alt="Learn about BBB Accreditation card asking whether the business would like to be contacted, with Yes, No and Maybe buttons" loading="lazy">
+          </div>
+          <div><img src="/images/bbb-profile/modal-contact.png" alt="Contact Information dialog: name fields with prefix and title, then phone, fax, email and address picked from values already on the profile" loading="lazy"></div>
+        </div>
+        <figcaption>Business address, business name, the accreditation question and contact information</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="principles">
+      <p class="cs-label">Principles</p>
+      <h2 class="cs-title">Three rules behind every screen.</h2>
+      <ol class="bx-cards">
+        <li><span class="bx-n">01</span><h3>Confirm, don’t retype</h3><p>Show what is on file and ask if it is still right. Owners only touch what changed.</p></li>
+        <li><span class="bx-n">02</span><h3>Same pattern everywhere</h3><p>One dialog, one value table, one set of tags. Learn it once, use it for every field.</p></li>
+        <li><span class="bx-n">03</span><h3>Say what happens next</h3><p>Every dialog notes that edits are reviewed and take a few days to publish.</p></li>
+      </ol>
+    </section>
+
+    <section class="cs" id="submit">
+      <p class="cs-label">Submitting</p>
+      <h2 class="cs-title">A last check, then a clear thank you.</h2>
+      <div class="prose">
+        <p>If required details are still empty, the form lists exactly which ones and why they matter before it sends. The answers are full sentences, and going back to fix it is the filled button.</p>
+      </div>
+      <figure class="bx-stage">
+        <div class="bx-pad bx-duo" style="--cols: minmax(0, 1.3fr) minmax(0, 2.3fr)">
+          <img class="bx-float" src="/images/bbb-profile/modal-missing.png" alt="You have missing information dialog listing Phone Number, Business Start Date, A Primary Contact and Product and Services, with two full sentence answers" loading="lazy">
+          <div class="bx-browser"><img src="/images/bbb-profile/thanks.jpg" alt="Thank you page: the information will be reviewed and applied to the online profile, with buttons to review changes or learn about BBB Accreditation" loading="lazy"></div>
+        </div>
+        <figcaption>The missing information check and the thank you page</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="role">
+      <p class="cs-label">My role</p>
+      <h2 class="cs-title">Designed it, then built it.</h2>
+      <div class="bx-role">
+        <div><h3>Design</h3><p>Flows, wireframes and the final UI in Figma: the profile page, every field dialog, the missing information check, sign up and thank you.</p></div>
+        <div><h3>Front end</h3><p>I coded the screens myself. Designing with the build in mind kept the parts few, so every field reused the same dialog and table.</p></div>
+      </div>
+    </section>
+
+    <section class="cs cta" id="talk">
+      <p class="cs-label">Let’s talk</p>
+      <h2 class="cs-title">I’d love to tell you more on a call.</h2>
+      <div class="prose">
+        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through the decisions, the trade-offs and what I’d do next.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="cta-btn primary copy-email" type="button" data-email="glee.rupal@gmail.com"><span class="when-idle">Email me</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span></button>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Glee Earl Rupal</span>
+</footer>
+
+</div>
+<script src="/main.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9b7e7ef9bee34fc794ec679c5f0cd559"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

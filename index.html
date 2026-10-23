@@ -51,6 +51,7 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
   <section id="work">
     <h2 class="label">Works</h2>
     <div class="cards">
+      <!-- Top 10 only, newest first. Every work is listed at /works/. -->
       <a href="/works/design-system/" class="gcard">
         <div class="thumb has-cover"><img src="/images/design-system/cover-components.svg" alt="" loading="lazy"></div>
         <div class="card-text"><span class="card-head"><span class="card-title">MIMS web app design system</span><span class="card-year">Implemented 2026</span></span><span class="card-meta">Design system · Figma variables · Components</span></div>
@@ -60,7 +61,7 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         <div class="card-text"><span class="card-head"><span class="card-title">Asking doctors before we build</span><span class="card-year">Shipped 2025</span></span><span class="card-meta">User interviews · Concept testing · Web</span></div>
       </a>
       <a href="/works/notification-system/" class="gcard">
-        <div class="thumb has-cover"><img src="/images/notifications/cover-motion.svg" alt="" loading="lazy"></div>
+        <div class="thumb has-cover"><img src="/images/notifications/cover-motion.svg?v=2" alt="" loading="lazy"></div>
         <div class="card-text"><span class="card-head"><span class="card-title">MIMS app notifications</span><span class="card-year">Shipped 2025</span></span><span class="card-meta">UX design · User flows · Mobile UI</span></div>
       </a>
       <a href="/works/easyfs/" class="gcard">
@@ -75,11 +76,24 @@ try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') 
         <div class="thumb has-cover"><img src="/images/easypos/cover-motion.svg" alt="" loading="lazy"></div>
         <div class="card-text"><span class="card-head"><span class="card-title">easyPOS</span><span class="card-year">Shipped 2024</span></span><span class="card-meta">Touch register and back office · UI/UX design</span></div>
       </a>
+      <a href="/works/greencheck/" class="gcard">
+        <div class="thumb has-cover"><img src="/images/greencheck/cover.jpg" alt="" loading="lazy"></div>
+        <div class="card-text"><span class="card-head"><span class="card-title">Greencheck</span><span class="card-year">Implemented 2022</span></span><span class="card-meta">SaaS · UI/UX design · Front end</span></div>
+      </a>
+      <a href="/works/askchamber/" class="gcard">
+        <div class="thumb has-cover"><img src="/images/askchamber/cover.jpg" alt="" loading="lazy"></div>
+        <div class="card-text"><span class="card-head"><span class="card-title">AskChamber</span><span class="card-year">Implemented 2020</span></span><span class="card-meta">Web directory · UI/UX design · Front end</span></div>
+      </a>
       <a href="/works/ui-style-guide/" class="gcard">
         <div class="thumb has-cover"><img src="/images/ui-style-guide/cover.jpg" alt="" loading="lazy"></div>
-        <div class="card-text"><span class="card-head"><span class="card-title">AskChamber UI style guide</span><span class="card-year">Implemented 2018</span></span><span class="card-meta">Design system · Typography · Components</span></div>
+        <div class="card-text"><span class="card-head"><span class="card-title">AskChamber UI style guide</span><span class="card-year">Implemented 2020</span></span><span class="card-meta">Design system · Typography · Components</span></div>
+      </a>
+      <a href="/works/bbb-profile-form/" class="gcard">
+        <div class="thumb has-cover"><img src="/images/bbb-profile/cover.jpg" alt="" loading="lazy"></div>
+        <div class="card-text"><span class="card-head"><span class="card-title">BBB business profile form</span><span class="card-year">Implemented 2019</span></span><span class="card-meta">Web form · UI/UX design · Front end</span></div>
       </a>
     </div>
+    <a class="view-all" href="/works/">View all works<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </section>
 </main>
 

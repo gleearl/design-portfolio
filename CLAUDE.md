@@ -26,6 +26,7 @@ Glee's UI/UX design portfolio: a public site that shows design case studies and 
 
 ## Content rules
 - Voice: first person, plain and specific, outcomes over adjectives.
+- Works listing: the home page shows only the latest 10 works as cards (newest first) with a View all works link; every work is listed at /works/ (list view: year, thumbnail, title, meta, status). When adding a work, add it to /works/ and, if it is in the latest 10, to the home cards (the 11th drops off the home page).
 - No em dashes in site copy.
 - No internal project or code names (for example MERNA) in copy, URLs, file names or alt text. Use plain descriptions.
 - Employer or client work (e.g. MIMS): only show what is cleared for public use. Note NDA limits, redactions and permissions per case study in PROGRESS.md.

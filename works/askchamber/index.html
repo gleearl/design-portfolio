@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AskChamber | Glee, UI/UX Designer</title>
+<meta name="description" content="AskChamber, a local business directory: search on a map, business profiles and the owner settings behind them. Designed in Figma and coded on the front end by me.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>
+try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page">
+
+<nav class="nav" aria-label="Primary">
+  <a class="name" href="/">Glee Earl Rupal</a>
+  <ul>
+    <li><a href="/" aria-current="page">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/notes/">Notes</a></li>
+  </ul>
+  <ul>
+    <li>
+      <button class="copy-email" id="copy-email" type="button" data-email="glee.rupal@gmail.com">
+        <span class="when-idle">Email</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span>
+      </button>
+      <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+    </li>
+    <li><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://x.com/gleeeearl" target="_blank" rel="noopener">X</a></li>
+  </ul>
+</nav>
+<button class="gbtn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+
+<nav class="toc" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ol>
+    <li><a href="#find">Find a pro</a></li>
+    <li><a href="#browse">Browse</a></li>
+    <li><a href="#compare">Compare</a></li>
+    <li><a href="#business">For businesses</a></li>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="#role">My role</a></li>
+  </ol>
+</nav>
+<main class="stack">
+  <article id="top" class="post-page case bx ac">
+    <a class="back" href="/#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>All works</a>
+    <h1 class="post-h1">AskChamber</h1>
+    <p class="lede">A directory that connects people with trusted local businesses, and gives owners a place to keep their listing right. I designed it in Figma and coded the front end.</p>
+    <figure class="cover"><img src="/images/askchamber/cover.jpg" alt="Roofing contractors in Salt Lake City listed beside a map with pins, and a business profile open in a second browser window, on a blue background" width="2400" height="1180"></figure>
+    <dl class="facts facts-4">
+      <div><dt>Year</dt><dd>2020</dd></div>
+      <div><dt>Role</dt><dd>Designer and front-end developer</dd></div>
+      <div><dt>Platform</dt><dd>Web, desktop first</dd></div>
+      <div><dt>Tools</dt><dd>Figma</dd></div>
+    </dl>
+
+    <section class="cs" id="find">
+      <p class="cs-label">Find a pro</p>
+      <h2 class="cs-title">One search, what and where.</h2>
+      <div class="prose">
+        <p>The homepage leads with a single question: what service do you need, and where. Popular services sit right below as photo tiles for people who would rather browse.</p>
+      </div>
+      <figure class="bx-stage">
+        <div class="bx-pad"><div class="bx-browser"><img src="/images/askchamber/home.jpg" alt="AskChamber homepage: a photo hero with Find your trusted local pros for your home project, a service and location search, and a grid of popular services such as windows, solar panels, siding and bathroom" loading="lazy"></div></div>
+        <figcaption>The homepage: search first, then popular services</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="browse">
+      <p class="cs-label">Browse</p>
+      <h2 class="cs-title">Pictures first, lists second.</h2>
+      <div class="prose">
+        <p>People who are not sure what to search for can browse instead: service categories as photo tiles, and city pages that group local businesses into things to taste, do, shop and stay.</p>
+      </div>
+      <figure class="bx-stage">
+        <div class="bx-pad bx-duo" style="--cols: minmax(0, 1fr) minmax(0, 1.19fr)">
+          <div class="bx-browser"><img src="/images/askchamber/categories.jpg" alt="Category page with photo tiles for services such as home repairs, central air, windows, solar panels, kitchen and bathroom, and a row of more categories with icons" loading="lazy"></div>
+          <div class="bx-browser"><img src="/images/askchamber/city.jpg" alt="City page with a sunset skyline hero reading Discover Businesses in Askchamber, tiles for taste, things to do, shop and at home services, and lists of business types under each" loading="lazy"></div>
+        </div>
+        <figcaption>Service categories, and a city page</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="compare">
+      <p class="cs-label">Compare</p>
+      <h2 class="cs-title">A list, a map and the full story.</h2>
+      <div class="prose">
+        <p>Results sit beside a map, each with its address, phone, a Request a Quote button and its count of Bright Spots. Opening one shows the full profile: photos, highlights, hours on a map, services and payment options.</p>
+      </div>
+      <figure class="bx-stage">
+        <div class="bx-pad bx-duo" style="--cols: minmax(0, 1.04fr) minmax(0, .96fr)">
+          <div class="bx-browser"><img src="/images/askchamber/listing.jpg" alt="Search results for roofing contractors in Salt Lake City: business cards with Request a Quote buttons and Bright Spots counts beside a map with pins" loading="lazy"></div>
+          <div class="bx-browser"><img src="/images/askchamber/profile.jpg" alt="A roofing company profile: photos and videos, about the business, Bright Spot highlights, location and hours on a map, services offered and payment options" loading="lazy"></div>
+        </div>
+        <figcaption>Search results on a map, and a business profile</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="business">
+      <p class="cs-label">For businesses</p>
+      <h2 class="cs-title">Owners keep it current.</h2>
+      <div class="prose">
+        <p>Business owners get their own settings: the company profile with logo, cover photo and categories, a service area picked by state and county, and plans to grow the listing, from site management to advertising, priced by the day.</p>
+      </div>
+      <figure class="bx-stage">
+        <div class="bx-pad bx-bento" style="--cols: minmax(0, .607fr) minmax(0, .566fr)">
+          <div><div class="bx-browser"><img src="/images/askchamber/settings-profile.jpg" alt="Company profile settings: cover photo and logo upload, upgrade options, and fields for company name, business categories, Bright Spots and service area" loading="lazy"></div></div>
+          <div>
+            <img src="/images/askchamber/settings-counties.png" alt="Dialog asking which Texas counties the business serves, with a grid of county checkboxes, Select all, Deselect all and Save" loading="lazy">
+            <div class="bx-browser"><img src="/images/askchamber/plans.jpg" alt="Plans for businesses: site management plans such as website monitoring and review management, and advertising plans such as being listed on top and social media posts, each with a daily price and an add service button" loading="lazy"></div>
+          </div>
+        </div>
+        <figcaption>Company profile, service area by county, and plans for businesses</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs" id="principles">
+      <p class="cs-label">Principles</p>
+      <h2 class="cs-title">Three rules behind every screen.</h2>
+      <ol class="bx-cards">
+        <li><span class="bx-n">01</span><h3>Search is always there</h3><p>The service and location search sits in the header of every page, so a new search is never more than one step away.</p></li>
+        <li><span class="bx-n">02</span><h3>Trust at a glance</h3><p>Every listing shows its Bright Spots, and profiles show what is verified, so people can compare before they call.</p></li>
+        <li><span class="bx-n">03</span><h3>Easy to correct</h3><p>Every profile has a Suggest an Edit link, and owners can claim a business and track their changes.</p></li>
+      </ol>
+    </section>
+
+    <section class="cs" id="role">
+      <p class="cs-label">My role</p>
+      <h2 class="cs-title">Designed it, then built it.</h2>
+      <div class="bx-role">
+        <div><h3>Design</h3><p>The consumer pages, business profiles and owner settings in Figma, all on the <a href="/works/ui-style-guide/">AskChamber UI style guide</a> I made for the product.</p></div>
+        <div><h3>Front end</h3><p>I coded the screens myself. Building on one style guide kept the buttons, fields and cards the same on every page.</p></div>
+      </div>
+    </section>
+
+    <section class="cs cta" id="talk">
+      <p class="cs-label">Let’s talk</p>
+      <h2 class="cs-title">I’d love to tell you more on a call.</h2>
+      <div class="prose">
+        <p>There’s more to this project than fits on one page. If you’re interested, I’m happy to walk you through the decisions, the trade-offs and what I’d do next.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="cta-btn primary copy-email" type="button" data-email="glee.rupal@gmail.com"><span class="when-idle">Email me</span><span class="when-hover">Copy email</span><span class="when-done">Copied</span></button>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>© 2026 Glee Earl Rupal</span>
+</footer>
+
+</div>
+<script src="/main.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9b7e7ef9bee34fc794ec679c5f0cd559"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
