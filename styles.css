@@ -772,12 +772,11 @@ html { scroll-behavior: smooth; }
 
 /* Work features (BBB profile form, AskChamber, ...). Each page sets its stage colour with a class
    next to .bx, and its column ratios with --cols on the bento or duo. Screens sit on a teal stage (the product's own brand colour)
-   in browser frames or as floating dialogs; facts run four across on wide screens. */
+   in browser frames or as floating dialogs. */
 .bx { --stage: #0E5D7B; --stage-2: #08425A; }
 .bx.ac { --stage: #2563D6; --stage-2: #0A2660; }
 .bx.neo { --stage: #EA6E46; --stage-2: #B03E24; }
 .bx.gc { --stage: #34A85C; --stage-2: #10542C; }
-@media (min-width: 900px) { .facts-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .bx-stage { margin: 28px 0 0; display: flex; flex-direction: column; gap: 12px; }
 .bx-pad { padding: clamp(16px, 4.5vw, 64px); border-radius: 24px;
   background: radial-gradient(rgba(255, 255, 255, .13) 1.2px, transparent 1.4px) 0 0 / 22px 22px, linear-gradient(135deg, var(--stage), var(--stage-2)); }

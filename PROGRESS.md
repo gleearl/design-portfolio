@@ -67,6 +67,7 @@ To check before publishing:
 - Which employer and client work can be shown publicly.
 
 ## Change log
+- 2026-10-24: Per Glee: every work page now shows only two facts, Timeline and Scope. AskChamber, BBB profile form, Greencheck and Neo eBINDR dropped Year/Role/Platform/Tools for Timeline (same year) and Scope (UI/UX design, front-end development); unused four-column .facts-4 CSS removed.
 - 2026-10-24: Notifications case study page cover (images/notifications/cover.jpg) rebuilt on the same dark navy gradient as the card, per Glee: same three phones (lock screen, notifications, learning tab) in the same positions, with thin light edges and deeper shadows; linked as ?v=2. Not committed.
 - 2026-10-24: MIMS app notifications card cover (images/notifications/cover-motion.svg, used on the home card and /works/) switched to a dark navy background per Glee, with light flow lines, subtler circles and deeper shadows; linked as ?v=2 so browsers fetch the new file. Not committed.
 - 2026-10-24: Per Glee: home shows only the latest 10 works, with a View all works link to a new list page /works/ (all 11 works: year, thumbnail, title, meta, status). Neo eBINDR moved to 2018 (now 11th, so only on /works/); AskChamber UI style guide moved to 2020 so it sits next to AskChamber. Years updated on both work pages. Rule added to CLAUDE.md. Not committed.
