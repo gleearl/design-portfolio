@@ -24,6 +24,9 @@ Glee's UI/UX design portfolio: a public site that shows design case studies and 
 - Share previews: every note has Open Graph and X card tags (title, description, canonical URL, date; absolute https://design.gleearl.com URLs). Text only, no share image, per Glee. Copy the tag block from notes/note-template/.
 - Favicon: an orange circle in the accent colour (#E65F2E), 62.5% of the icon box so it reads smaller in the tab: /favicon.svg, /favicon.ico (16, 32, 48) and /apple-touch-icon.png (180, on white). Every content page links all three in <head>, before the font links; add them to every new page.
 
+- Resume: /resume/ is built from the Figma resume frame (link in PROGRESS.md, Links). After any change to resume/index.html, regenerate the PDF with a local server running from the repo root:
+  `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=resume/Glee-Earl-Rupal-Resume.pdf http://localhost:<port>/resume/` and check it is still one page.
+
 ## Content rules
 - Voice: first person, plain and specific, outcomes over adjectives.
 - Works listing: the home page shows only the latest 10 works as cards (newest first) with a View all works link; every work is listed at /works/ (list view: year, thumbnail, title, meta, status). When adding a work, add it to /works/ and, if it is in the latest 10, to the home cards (the 11th drops off the home page).

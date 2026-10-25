@@ -6,6 +6,7 @@ A live design portfolio on the web. Exact goal and audience to be decided (see O
 - Out of scope: <add as decided>
 
 ## Links
+- Resume Figma: https://www.figma.com/design/YkFmslvkFN1qvywbBH27za/EasyFIS?node-id=40000025-220 (source for /resume/; on changes, re-pull and regenerate the PDF)
 - <none yet: live URL / repo / Figma / content doc>
 
 ## ▶ Resume here (updated 2026-10-20)
@@ -67,6 +68,8 @@ To check before publishing:
 - Which employer and client work can be shown publicly.
 
 ## Change log
+- 2026-10-26: Per Glee: /resume/ toolbar now matches the site: Geist 15px, back link styled like .back ("Home" with arrow), Download PDF styled like .cta-btn.primary (44px, ink, orange on hover), filename in Geist Mono 13px. PDF unchanged (toolbar is hidden in print).
+- 2026-10-26: Online resume added at /resume/ from Figma (EasyFIS file, node 40000025-220, "Resume · V11 Polished"): PDF-viewer look (soft backdrop, white letter page, toolbar with back link and Download PDF), reflows to one column on mobile, prints 1:1 on letter. /resume/Glee-Earl-Rupal-Resume.pdf is generated from the page with headless Chrome. Icons in images/resume/. Not linked from the nav yet. Not committed.
 - 2026-10-24: Per Glee: every work page now shows only two facts, Timeline and Scope. AskChamber, BBB profile form, Greencheck and Neo eBINDR dropped Year/Role/Platform/Tools for Timeline (same year) and Scope (UI/UX design, front-end development); unused four-column .facts-4 CSS removed.
 - 2026-10-24: Notifications case study page cover (images/notifications/cover.jpg) rebuilt on the same dark navy gradient as the card, per Glee: same three phones (lock screen, notifications, learning tab) in the same positions, with thin light edges and deeper shadows; linked as ?v=2. Not committed.
 - 2026-10-24: MIMS app notifications card cover (images/notifications/cover-motion.svg, used on the home card and /works/) switched to a dark navy background per Glee, with light flow lines, subtler circles and deeper shadows; linked as ?v=2 so browsers fetch the new file. Not committed.

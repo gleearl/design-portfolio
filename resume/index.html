@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume | Glee Earl Rupal, Product Designer</title>
+<meta name="description" content="Resume of Glee Earl Rupal, product designer (UI/UX) with 9 years across UI/UX design and frontend development.">
+<link rel="canonical" href="https://design.gleearl.com/resume/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=JetBrains+Mono:wght@300;400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Sizes come from the Figma letter page (612 x 792). Every length is N * --u,
+   so the page scales as one piece on screen and prints at 1:1 on letter paper. */
+:root {
+  --u: 1.4px;
+  --main: #374047;
+  --secondary: #606E79;
+  --blue: #1D77E2;
+  /* Toolbar tokens follow /styles.css so it matches the rest of the site */
+  --desk: #F3F4F2;
+  --ink: #32404F;
+  --bg: #FFFFFF;
+  --faint: rgba(50, 64, 79, .72);
+  --line: rgba(50, 64, 79, .12);
+  --accent: #E65F2E;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --desk: #1A1C20; --ink: #ECEDEF; --bg: #0C0D10; --faint: #868A94; --line: rgba(255, 255, 255, .08); --accent: #FF8A5C; }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--desk); font-family: "Space Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+
+/* Viewer toolbar */
+.bar {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 12px 24px; background: color-mix(in srgb, var(--desk) 85%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line); color: var(--ink);
+  font: 15px/1.5 "Geist", system-ui, sans-serif;
+}
+.bar a { text-decoration: none; transition: color .2s ease; }
+.bar :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+/* Same as .back in /styles.css */
+.back { display: inline-flex; align-items: center; gap: 8px; color: var(--faint); }
+.back svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s var(--ease); }
+.back:hover { color: var(--ink); }
+.back:hover svg { transform: translateX(-3px); }
+.bar .file { font: 13px "Geist Mono", ui-monospace, monospace; color: var(--faint); }
+/* Same as .cta-btn.primary in /styles.css */
+.download {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px;
+  border: 1px solid var(--ink); background: var(--ink); color: var(--bg); font-weight: 500;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.download:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* Page */
+.desk { padding: 40px 16px 64px; }
+.sheet {
+  width: calc(612 * var(--u)); min-height: calc(792 * var(--u)); margin: 0 auto;
+  padding: calc(34 * var(--u)) calc(22 * var(--u)) calc(30 * var(--u)) calc(29 * var(--u));
+  background: #fff; color: var(--main);
+  box-shadow: 0 1px 2px rgba(20, 22, 28, .06), 0 12px 40px rgba(20, 22, 28, .1);
+  display: flex; flex-direction: column; gap: calc(24 * var(--u));
+}
+.mono { font-family: "JetBrains Mono", monospace; }
+
+.head { display: flex; flex-direction: column; gap: calc(11 * var(--u)); }
+.head h1 { font-size: calc(24 * var(--u)); font-weight: 700; line-height: normal; }
+.role { font-size: calc(11 * var(--u)); color: var(--secondary); }
+.contact { list-style: none; display: flex; flex-wrap: wrap; gap: calc(4 * var(--u)) calc(14 * var(--u)); font-size: calc(9 * var(--u)); }
+.contact li { display: flex; align-items: center; gap: calc(4 * var(--u)); }
+.contact img { width: calc(10 * var(--u)); height: calc(10 * var(--u)); display: block; }
+.contact a.plain { text-decoration: none; }
+
+.summary { width: calc(374 * var(--u)); font-size: calc(9 * var(--u)); font-weight: 300; color: #000; }
+
+.cols { display: flex; gap: calc(15 * var(--u)); align-items: flex-start; }
+.main-col { width: calc(374 * var(--u)); display: flex; flex-direction: column; gap: calc(19 * var(--u)); }
+.side-col { width: calc(172 * var(--u)); display: flex; flex-direction: column; gap: calc(14 * var(--u)); }
+
+h2 { font-size: calc(12 * var(--u)); font-weight: 700; color: var(--blue); line-height: normal; }
+h3 { font-size: calc(10 * var(--u)); font-weight: 700; line-height: normal; }
+
+.jobs { display: flex; flex-direction: column; gap: calc(22 * var(--u)); }
+.job { display: flex; flex-direction: column; gap: calc(6 * var(--u)); }
+.job header { display: flex; flex-direction: column; gap: calc(3 * var(--u)); }
+.job h3 .at { color: var(--secondary); }
+.job time, .dates { font-size: calc(8 * var(--u)); line-height: calc(10 * var(--u)); }
+.job ul { font-size: calc(9 * var(--u)); font-weight: 300; letter-spacing: calc(-.18 * var(--u)); line-height: calc(13 * var(--u)); padding-left: calc(13.5 * var(--u)); }
+
+.side-group { display: flex; flex-direction: column; gap: calc(12 * var(--u)); }
+.skills { gap: calc(19 * var(--u)); }
+.skill-list { display: flex; flex-direction: column; gap: calc(12 * var(--u)); }
+.item { display: flex; flex-direction: column; gap: calc(4 * var(--u)); }
+.item h3.medium { font-weight: 500; }
+.item p, .lines span { font-size: calc(9 * var(--u)); font-weight: 300; line-height: normal; }
+.lines { display: flex; flex-direction: column; }
+.lines .meta { font-family: "JetBrains Mono", monospace; font-size: calc(8 * var(--u)); color: var(--secondary); }
+
+/* Tablet: shrink the page so it still fits */
+@media (max-width: 900px) { :root { --u: 1.15px; } }
+
+/* Mobile: drop the fixed page and reflow into one readable column */
+@media (max-width: 720px) {
+  :root { --u: 1.45px; }
+  .bar { padding: 10px 16px; }
+  .bar .file { display: none; }
+  .desk { padding: 16px 16px 40px; }
+  .sheet { width: 100%; min-height: 0; padding: 28px 20px 32px; }
+  .summary, .main-col, .side-col { width: 100%; }
+  .cols { flex-direction: column; gap: calc(28 * var(--u)); }
+}
+
+@page { size: letter; margin: 0; }
+@media print {
+  /* Figma px map 1:1 to points on a 612 x 792 pt letter page */
+  :root { --u: 1pt; }
+  body { background: #fff; }
+  .bar { display: none; }
+  .desk { padding: 0; }
+  .sheet { box-shadow: none; height: calc(792 * var(--u)); overflow: hidden; }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="back" href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Home</a>
+  <span class="file">Glee-Earl-Rupal-Resume.pdf</span>
+  <a class="download" href="/resume/Glee-Earl-Rupal-Resume.pdf" download>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Download PDF
+  </a>
+</header>
+
+<main class="desk">
+  <article class="sheet">
+    <header class="head">
+      <h1>Glee Earl Rupal</h1>
+      <p class="role mono">Product Designer (UI/UX)</p>
+      <ul class="contact">
+        <li><img src="/images/resume/mail.svg" alt="" width="10" height="10"><a class="plain" href="mailto:glee.rupal@gmail.com">glee.rupal@gmail.com</a></li>
+        <li><img src="/images/resume/map-pin.svg" alt="" width="10" height="10">Cebu City, Philippines</li>
+        <li><img src="/images/resume/linkedin.svg" alt="" width="10" height="10"><a href="https://www.linkedin.com/in/gleearl/" target="_blank" rel="noopener">linkedin.com/in/gleearl</a></li>
+        <li><img src="/images/resume/globe.svg" alt="" width="10" height="10"><a href="https://design.gleearl.com/">design.gleearl.com</a></li>
+      </ul>
+    </header>
+
+    <p class="summary">Full stack product designer with 9 years across UI/UX design and frontend development. I make digital products that look good, feel right for the people using them, and work better because I know how they’re built.</p>
+
+    <div class="cols">
+      <section class="main-col" aria-labelledby="exp">
+        <h2 id="exp">Experience</h2>
+        <div class="jobs">
+          <article class="job">
+            <header>
+              <h3>UI/UX Designer <span class="at mono">@ MIMS Pte Ltd</span></h3>
+              <time class="mono">February 2024 - Present</time>
+            </header>
+            <ul>
+              <li>Design end-to-end web experiences for medical education and drug reference platforms used by healthcare professionals across Asia.</li>
+              <li>Design new features and redesign existing flows for the MIMS Education and MIMS Drugs mobile apps, consistent with web.</li>
+              <li>Lead GA4-informed UX proposals to final design, lifting engagement and retention.</li>
+              <li>Conducted user interviews and concept testing with doctors, turning findings into prioritized design decisions.</li>
+              <li>Built design system foundations (tokens, typography, Figma libraries) and streamlined design-to-code handoff with Claude Code and Figma MCP.</li>
+            </ul>
+          </article>
+          <article class="job">
+            <header>
+              <h3>UI/UX Designer <span class="at mono">@ Humedit</span></h3>
+              <time class="mono">July 2022 - December 2023</time>
+            </header>
+            <ul>
+              <li>Owned the design of three apps in Humedit’s Philippine product line (accounting, HR and point of sale), from wireframes to high-fidelity prototypes.</li>
+              <li>Partnered with cross-functional teams to design for usability and accessibility across diverse user groups.</li>
+              <li>Shipped production frontend features in Angular and Vue, true to the design.</li>
+            </ul>
+          </article>
+          <article class="job">
+            <header>
+              <h3>Full Stack Designer <span class="at mono">@ Hurdman, Inc</span></h3>
+              <time class="mono">December 2018 - May 2022</time>
+            </header>
+            <ul>
+              <li>Established the team’s frontend setup with JavaScript, HTML5, CSS3 and SASS.</li>
+              <li>Translated design prototypes into production-ready, mobile-responsive web UI.</li>
+              <li>Delivered full-cycle design for client projects, including work contracted by the Better Business Bureau (BBB).</li>
+            </ul>
+          </article>
+          <article class="job">
+            <header>
+              <h3>Jr. Web Designer <span class="at mono">@ Mopro</span></h3>
+              <time class="mono">April 2017 - October 2018</time>
+            </header>
+            <ul>
+              <li>Designed and built landing pages, microsites and training sites for enterprise clients.</li>
+              <li>Developed responsive pages in HTML, CSS and JavaScript, tested across browsers.</li>
+              <li>Collaborated with designers and PMs to launch client sites and handle revisions.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <aside class="side-col">
+        <section class="side-group skills" aria-labelledby="skills">
+          <h2 id="skills">Skills</h2>
+          <div class="skill-list">
+            <div class="item"><h3>Design</h3><p>UX research, usability testing, interaction design, prototyping, design systems, accessibility</p></div>
+            <div class="item"><h3>Tools</h3><p>Figma, FigJam, GA4, GitHub, Jira, Notion</p></div>
+            <div class="item"><h3>AI Tools</h3><p>Claude Code, Claude Design, Figma MCP, ChatGPT</p></div>
+            <div class="item"><h3>Frontend</h3><p>HTML, S(CSS), JavaScript, TypeScript, React, Angular, Vue</p></div>
+          </div>
+        </section>
+
+        <section class="side-group" aria-labelledby="edu">
+          <h2 id="edu">Education</h2>
+          <div class="item">
+            <h3 class="medium">BS Information Technology</h3>
+            <div class="lines">
+              <span>Cebu Institute of Technology - University</span>
+              <span class="meta">Cebu City, Philippines</span>
+              <span class="meta">2013 - 2017</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="side-group" aria-labelledby="certs">
+          <h2 id="certs">Certifications</h2>
+          <div class="item">
+            <h3 class="medium">Interaction Design Foundation</h3>
+            <div class="lines">
+              <span>Design for Thought and Emotion</span>
+              <span>Conducting Usability Testing</span>
+              <span>User Experience: The Beginner’s Guide</span>
+              <span class="meta">Issued April 2025</span>
+            </div>
+          </div>
+          <div class="item">
+            <h3 class="medium">Foundations of User Experience (UX) Design</h3>
+            <div class="lines">
+              <span>Google</span>
+              <span class="meta">Issued July 2023</span>
+              <span class="meta">Credential ID JCEKJPZLR3TB</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="side-group" aria-labelledby="interests">
+          <h2 id="interests">Interests</h2>
+          <div class="item"><p>Hiking, camping, backpacking, travelling</p></div>
+        </section>
+      </aside>
+    </div>
+  </article>
+</main>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9b7e7ef9bee34fc794ec679c5f0cd559"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
